@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state:{
-        test:1
+        num:0
     },
     mutations,
 })

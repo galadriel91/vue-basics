@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <VueVuex/>
     </div>
 </template>
 
 <script>
+import VueVuex from 'Components/VueVuex';
 export default {
-
+    components:{
+        VueVuex
+    }
 }
 </script>
 
