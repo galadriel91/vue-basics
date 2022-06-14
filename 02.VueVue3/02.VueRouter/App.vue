@@ -1,6 +1,9 @@
 <template>
     <div>
-        App
+
+        <div class="container">
+            App
+        </div>
     </div>
 </template>
 
@@ -10,6 +13,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+    @import 'Style/index';
 </style>
