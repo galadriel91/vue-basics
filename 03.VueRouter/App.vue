@@ -2,6 +2,7 @@
     <div>
         <RouterNav/>
         <div class="container">
+            <RouterView/>
         </div>        
     </div>
 </template>
