@@ -2,7 +2,7 @@
     <div>
         <RouterNav/>
         <div class="container">
-            App
+            <RouterView/>
         </div>
     </div>
 </template>
