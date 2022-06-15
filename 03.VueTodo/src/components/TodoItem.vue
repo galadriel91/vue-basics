@@ -12,10 +12,10 @@
                     <button type="submit" class="xi-check-min" @mousedown="onSubmitUpdate"></button>
                 </form>
                 <button class="xi-pen updateBtn" @click="onClickUpdate" v-if="!isUpdate"></button>
-            </div>
+            </div>-->
             <div class="buttonWrap">
                 <button class="xi-minus-square-o" @click="onClickRemove"></button>
-            </div> -->
+            </div>
         </div>
     </li>
 </template>
@@ -31,6 +31,9 @@ export default {
     methods:{
         onClickCheck(){
             this.$store.commit('CHECK_TODO' , this.item.id)
+        },
+        onClickRemove(){
+            this.$store.commit('REMOVE_TODO' , this.item.id)
         }
     }
 }
