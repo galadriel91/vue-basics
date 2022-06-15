@@ -53,7 +53,15 @@ export default {
             this.value = ''
         },
         onSubmitUpdate(){
-            
+            if(this.value.length){
+                this.$store.commit('UPDATE_TODO' , {
+                    id:this.item.id,
+                    content:this.value
+                })
+                this.isUpdate = false
+            }else{
+                alert('다시 한번 확인해 주세요')
+            }
         }
     }
 }
