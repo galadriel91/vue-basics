@@ -28,6 +28,11 @@ export default {
             required:true
         }
     },
+    methods:{
+        onClickCheck(){
+            this.$store.commit('CHECK_TODO' , this.item.id)
+        }
+    }
 }
 </script>
 
