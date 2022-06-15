@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <TodoHeader/>
     </div>
 </template>
 
 <script>
+import TodoHeader from 'Components/TodoHeader.vue';
 export default {
-
+    components:{
+        TodoHeader
+    }
 }
 </script>
 
