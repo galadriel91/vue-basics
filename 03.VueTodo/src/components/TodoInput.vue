@@ -13,20 +13,20 @@ export default {
         }
     },
     methods:{
-        // onSubmitForm(){
-        //     if(this.value.length){
-        //         this.$store.commit('ADD_TODO' , {
-        //             id:Date.now(),
-        //             content:this.value,
-        //             isCheck:false
-        //         })
-        //         this.value = ''
-        //         this.$refs.input.focus()
-        //     }else{
-        //         alert('다시 한번 확인 해 주세요')
-        //         this.$refs.input.focus()
-        //     }
-        // }
+        onSubmitForm(){
+            if(this.value.length){
+                this.$store.commit('ADD_TODO' , {
+                    id:Date.now(),
+                    content:this.value,
+                    isCheck:false
+                })
+                this.value = ''
+                this.$refs.input.focus()
+            }else{
+                alert('다시 한번 확인 해 주세요')
+                this.$refs.input.focus()
+            }
+        }
     },
 }
 </script>
