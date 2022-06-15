@@ -1,6 +1,6 @@
 #  Vue & VueRouter
 
-Vue3 & VueRouter 연결
+Vue3 & VueRouter 연결 연습
 
 ##  개발 환경 
 
