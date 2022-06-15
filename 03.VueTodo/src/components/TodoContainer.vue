@@ -6,7 +6,9 @@
 
 <script>
 export default {
-
+    created(){
+        this.$store.commit('GET_TODO')
+    }
 }
 </script>
 
