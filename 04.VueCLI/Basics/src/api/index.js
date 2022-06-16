@@ -12,7 +12,12 @@ const fetchUserItem = (userId) => {
     return instance.get(`user/${userId}.json`)
 }
 
+const fetchPostItem = (postId) => {
+    return instance.get(`item/${postId}.json`)
+}
+
 export{
     fetchListItem,
-    fetchUserItem
+    fetchUserItem,
+    fetchPostItem
 }

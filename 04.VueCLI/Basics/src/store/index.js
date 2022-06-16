@@ -9,7 +9,8 @@ export const store = new Vuex.Store({
     state:{
         isLoading : false,
         list:[],
-        user:{}
+        user:{},
+        post:{}
     },
     mutations,
     actions

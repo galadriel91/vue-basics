@@ -27,6 +27,10 @@ export const router = new VueRouter({
         {
             path:'/user/:id',
             component: () => import('@/pages/UserPage')
+        },
+        {
+            path:'/post/:id',
+            component: () => import('@/pages/PostPage')
         }
     ]
 })
