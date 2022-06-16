@@ -21,11 +21,22 @@
 </template>
 
 <script>
+    import { useStore } from 'vuex'
     export default {
         props:{
             item:{
                 type:Object,
                 required:true
+            }
+        },
+        setup(props){
+            const store = useStore()
+            const onClickCheck = () => {
+                store.commit('CHECK_TODO' , props.item.id)
+            }
+            
+            return{
+                onClickCheck
             }
         }
     }
