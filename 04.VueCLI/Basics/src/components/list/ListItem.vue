@@ -29,9 +29,6 @@ export default {
         ITEMLIST(){
             return this.$store.state.list
         }
-    },
-    updated(){
-        this.$store.commit('OFF_LOADING')
     }
 }
 </script>

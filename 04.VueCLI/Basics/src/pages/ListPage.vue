@@ -6,13 +6,12 @@
 
 <script>
     import ListItem from '@/components/list/ListItem.vue';
+    import mixins from '@/utils/mixins'
     export default {
         components:{
             ListItem
         },
-        mounted(){
-            this.$store.dispatch('FETCH_LIST' , this.$route.name)
-        }
+        mixins:[mixins],
     }
 </script>
 

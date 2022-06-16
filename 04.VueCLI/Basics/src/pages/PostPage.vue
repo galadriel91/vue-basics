@@ -23,7 +23,7 @@
 <script>
 import UserItem from "@/components/user/UserItem.vue"
 // import PostComments from '@/components/post/PostComments.vue';
-// import mixins from '@/utils/mixins'
+import mixins from '@/utils/mixins'
 export default{
     components:{
         UserItem,
@@ -39,10 +39,7 @@ export default{
             return this.$store.state.post
         }
     },
-    mounted(){
-        this.$store.commit('OFF_LOADING')
-    }
-    // mixins:[mixins],
+    mixins:[mixins],
     // beforeRouteUpdate (to, from, next) {
     //     this.$store.commit('ON_LOADING')
     //     this.$store.dispatch(`FETCH_${to.name}` , to.params.id)

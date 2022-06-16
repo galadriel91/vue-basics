@@ -10,7 +10,7 @@
 
 <script>
 import UserItem from '@/components/user/UserItem.vue';
-// import mixins from '@/utils/mixins'
+import mixins from '@/utils/mixins'
 export default {
     components:{
         UserItem
@@ -20,9 +20,7 @@ export default {
             return this.$store.state.user
         }
     },
-    mounted(){
-        this.$store.commit('OFF_LOADING')
-    }
+    mixins:[mixins]
 //    beforeRouteUpdate (to, from, next) {
 //         this.$store.commit('ON_LOADING')
 //         this.$store.dispatch(`FETCH_${to.name}` , to.params.id)
@@ -38,7 +36,6 @@ export default {
 //             next({path:'/404'})
 //         })
 //     },
-    // mixins:[mixins]
 }
 </script>
 
