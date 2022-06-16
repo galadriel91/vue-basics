@@ -12,10 +12,10 @@
                     <button type="submit" class="xi-check-min" @mousedown="onSubmitUpdate"></button>
                 </form>
                 <button class="xi-pen updateBtn" @click="onClickUpdate" v-if="!isUpdate"></button>
-            </div>
+            </div>-->
             <div class="buttonWrap">
                 <button class="xi-minus-square-o" @click="onClickRemove"></button>
-            </div> -->
+            </div>
         </div>
     </li>
 </template>
@@ -34,9 +34,13 @@
             const onClickCheck = () => {
                 store.commit('CHECK_TODO' , props.item.id)
             }
-            
+            const onClickRemove = () => {
+                store.commit('REMOVE_TODO' , props.item.id)
+            }
+
             return{
-                onClickCheck
+                onClickCheck,
+                onClickRemove
             }
         }
     }
