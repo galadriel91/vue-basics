@@ -23,6 +23,10 @@ export const router = new VueRouter({
             path:'/jobs',
             name:'jobs',
             component: () => import('@/pages/ListPage')
+        },
+        {
+            path:'/user/:id',
+            component: () => import('@/pages/UserPage')
         }
     ]
 })
