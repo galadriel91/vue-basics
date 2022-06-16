@@ -7,7 +7,8 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state:{
-        isLoading : false
+        isLoading : false,
+        list:[]
     },
     mutations,
     actions
