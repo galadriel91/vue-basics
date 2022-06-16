@@ -15,5 +15,10 @@ export default{
         const index = state.todos.findIndex(v=>v.id === payload)
         state.todos.splice(index , 1)
         localStorage.setItem('todos' , JSON.stringify(state.todos))
+    },
+    UPDATE_TODO(state , payload){
+        const index = state.todos.findIndex(v=>v.id === payload.id)
+        state.todos[index].content = payload.content
+        saveItem(state.todos)
     }
 }

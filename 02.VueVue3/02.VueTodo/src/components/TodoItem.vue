@@ -7,11 +7,11 @@
             </div>
             <div class="titleWrap">
                 <h4 :class="{complete:item.isCheck}" v-if="!isUpdate">{{item.content}}</h4>
-            <!--    <form v-else @submit.prevent="onSubmitUpdate">
+                <form v-else @submit.prevent="onSubmitUpdate">
                     <input type="text" :placeholder="item.content" ref="update" v-model="value" @blur.self="onClickBlur">
                     <button type="submit" class="xi-check-min" @mousedown="onSubmitUpdate"></button>
                 </form>
-                <button class="xi-pen updateBtn" @click="onClickUpdate" v-if="!isUpdate"></button>-->
+                <button class="xi-pen updateBtn" @click="onClickUpdate" v-if="!isUpdate"></button>
             </div>
             <div class="buttonWrap">
                 <button class="xi-minus-square-o" @click="onClickRemove"></button>
@@ -22,6 +22,7 @@
 
 <script>
     import { useStore } from 'vuex'
+    import { ref , nextTick } from 'vue'
     export default {
         props:{
             item:{
@@ -31,16 +32,46 @@
         },
         setup(props){
             const store = useStore()
+
+            const isUpdate = ref(false)
+            const update = ref(null)
+
+            const onClickUpdate = () => {
+                isUpdate.value = true
+                nextTick(()=>{
+                    update.value.focus()
+                })
+            }
+
+            const value = ref('')
+            const onSubmitUpdate = () => {
+
+            }
+
             const onClickCheck = () => {
                 store.commit('CHECK_TODO' , props.item.id)
+                isUpdate.value = false
             }
             const onClickRemove = () => {
                 store.commit('REMOVE_TODO' , props.item.id)
             }
 
+            const onClickBlur = () => {
+                setTimeout(()=>{
+                    isUpdate.value = false
+                },100)
+                value.value = ''
+            }
+
             return{
                 onClickCheck,
-                onClickRemove
+                onClickRemove,
+                onClickUpdate,
+                onSubmitUpdate,
+                onClickBlur,
+                value,
+                isUpdate,
+                update
             }
         }
     }
