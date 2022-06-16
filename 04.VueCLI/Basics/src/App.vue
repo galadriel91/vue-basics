@@ -2,7 +2,7 @@
     <div>
         <CliNav/>
         <div>
-
+            <RouterView/>
         </div>
         <CliFooter/>
         <CliLoading :loading="ISLOADING"/>
