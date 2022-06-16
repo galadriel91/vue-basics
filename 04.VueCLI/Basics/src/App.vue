@@ -4,14 +4,17 @@
         <div>
 
         </div>
+        <CliFooter/>
     </div>
 </template>
 
 <script>
     import CliNav from '@/components/common/CliNav.vue';
+    import CliFooter from '@/components/common/CliFooter.vue';
     export default {
         components:{
-            CliNav
+            CliNav,
+            CliFooter
         }
     }
 </script>
