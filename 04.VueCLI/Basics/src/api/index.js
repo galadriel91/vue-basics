@@ -4,10 +4,10 @@ const instance = axios.create({
     baseURL:'https://api.hnpwa.com/v0/'
 })
 
-const fetchNewsItem = () => {
-    return instance.get('news/1.json')
+const fetchListItem = (pageName) => {
+    return instance.get(`${pageName}/1.json`)
 }
 
 export{
-    fetchNewsItem
+    fetchListItem
 }

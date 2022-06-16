@@ -1,9 +1,9 @@
-import { fetchNewsItem } from '@/api'
+import { fetchListItem } from '@/api'
 
 export default{
-    async FETCH_NEWS({commit}){
-        const { data } = await fetchNewsItem();
-        commit('FETCH_NEWS_ITEM' , data)
+    async FETCH_LIST({commit} , payload){
+        const { data } = await fetchListItem(payload);
+        commit('FETCH_LIST_ITEM' , data)
         return data
     }
 }

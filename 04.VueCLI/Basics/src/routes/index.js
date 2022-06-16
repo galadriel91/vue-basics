@@ -11,15 +11,18 @@ export const router = new VueRouter({
         },
         {
             path:'/news',
-            component: () => import('@/pages/NewsPage')
+            name:'news',
+            component: () => import('@/pages/ListPage')
         },
         {
             path:'/ask',
-            component: () => import('@/pages/AskPage')
+            name:'ask',
+            component: () => import('@/pages/ListPage')
         },
         {
             path:'/jobs',
-            component: () => import('@/pages/JobsPage')
+            name:'jobs',
+            component: () => import('@/pages/ListPage')
         }
     ]
 })

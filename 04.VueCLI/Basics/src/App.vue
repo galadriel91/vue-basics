@@ -2,7 +2,7 @@
     <div>
         <CliNav/>
         <div>
-            <RouterView/>
+            <RouterView :key="$route.path"/>
         </div>
         <CliFooter/>
         <CliLoading :loading="ISLOADING"/>
