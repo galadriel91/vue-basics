@@ -40,7 +40,7 @@ export default{
         }
     },
     mounted(){
-        this.$store.dispatch('FETCH_POST' , this.$route.params.id)
+        this.$store.commit('OFF_LOADING')
     }
     // mixins:[mixins],
     // beforeRouteUpdate (to, from, next) {

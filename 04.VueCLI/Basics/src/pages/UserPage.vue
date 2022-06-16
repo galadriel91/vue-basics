@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted(){
-        this.$store.dispatch('FETCH_USER' , this.$route.params.id)
+        this.$store.commit('OFF_LOADING')
     }
 //    beforeRouteUpdate (to, from, next) {
 //         this.$store.commit('ON_LOADING')
