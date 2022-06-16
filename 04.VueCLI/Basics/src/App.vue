@@ -5,16 +5,24 @@
 
         </div>
         <CliFooter/>
+        <CliLoading :loading="ISLOADING"/>
     </div>
 </template>
 
 <script>
     import CliNav from '@/components/common/CliNav.vue';
     import CliFooter from '@/components/common/CliFooter.vue';
+    import CliLoading from '@/components/common/CliLoading.vue';
     export default {
         components:{
             CliNav,
-            CliFooter
+            CliFooter,
+            CliLoading
+        },
+        computed:{
+            ISLOADING(){
+                return this.$store.state.isLoading
+            }
         }
     }
 </script>
