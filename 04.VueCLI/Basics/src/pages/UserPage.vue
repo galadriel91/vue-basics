@@ -21,21 +21,6 @@ export default {
         }
     },
     mixins:[mixins]
-//    beforeRouteUpdate (to, from, next) {
-//         this.$store.commit('ON_LOADING')
-//         this.$store.dispatch(`FETCH_${to.name}` , to.params.id)
-//         .then(()=>{
-//             if(this.USERITEM == null){
-//                 next({path:'/404'})
-//             }else{
-//                 next()
-//             }
-//         })
-//         .catch((err)=>{
-//              console.log(err)
-//             next({path:'/404'})
-//         })
-//     },
 }
 </script>
 
