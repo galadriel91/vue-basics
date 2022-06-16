@@ -45,7 +45,15 @@
 
             const value = ref('')
             const onSubmitUpdate = () => {
-
+                if(value.value.length){
+                    store.commit('UPDATE_TODO' , {
+                        id:props.item.id,
+                        content:value.value
+                })
+                isUpdate.value = false
+                }else{
+                    alert('다시 한번 확인해 주세요')
+                }
             }
 
             const onClickCheck = () => {
