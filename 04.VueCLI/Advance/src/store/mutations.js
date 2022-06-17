@@ -4,5 +4,8 @@ export default{
     },
     FETCH_USER_ITEM(state , payload){
         state.user = payload
+    },
+    FETCH_POST_ITEM(state , payload){
+        state.post = payload
     }
 }

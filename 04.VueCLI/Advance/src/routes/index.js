@@ -46,6 +46,12 @@ export const router = new createRouter({
             name:'USER',
             component:()=> import('@/pages/UserPage'),
             beforeEnter:getParamsPage()
+        },
+        {
+            path:'/post/:id',
+            name:'POST',
+            component:()=> import('@/pages/PostPage'),
+            beforeEnter:getParamsPage()
         }
     ]
 })
