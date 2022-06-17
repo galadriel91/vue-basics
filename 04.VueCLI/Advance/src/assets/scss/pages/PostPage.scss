@@ -1,4 +1,10 @@
 .itemContainer{
+    a{
+        transition: all .5s;
+        &:hover{
+            color: #396EB0;
+        }
+    }
     width: 120rem; min-height: calc(100vh - 14rem); margin: 0 auto;
     .itemWrap{
         margin-left: 1rem;
