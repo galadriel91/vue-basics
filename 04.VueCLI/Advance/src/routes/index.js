@@ -8,6 +8,13 @@ const getPage = () => (to , from , next) => {
     })
 }
 
+const getParamsPage = () => (to , from , next) => {
+    store.dispatch(`FETCH_${to.name}` , to.params.id)
+    .then(()=>{
+        next()
+    })
+}
+
 
 export const router = new createRouter({
     history:createWebHashHistory(),
@@ -33,6 +40,12 @@ export const router = new createRouter({
             name:'jobs',
             component:()=> import('@/pages/ListPage'),
             beforeEnter:getPage()
+        },
+        {
+            path:'/user/:id',
+            name:'USER',
+            component:()=> import('@/pages/UserPage'),
+            beforeEnter:getParamsPage()
         }
     ]
 })
