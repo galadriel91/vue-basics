@@ -1,24 +1,20 @@
-# vue-cli
+#  Vue Cli Basic
 
-## Project setup
-```
-npm install
-```
+  [HackerNews](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md/) API
+  
+  VueCLI + Vue3 를 이용하여 기본적인 기능을 클론 코딩
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+##  개발 환경 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [Chrome](https://www.google.com/intl/ko/chrome/)
 
-### Lints and fixes files
-```
-npm run lint
-```
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+
+- [Node.js](https://nodejs.org/ko/)
+
+## Vue Cli
+ - npm install -g @vue/cli 
+ - vue create [프로젝트 폴더명] or .[현재 디렉토리]
+
