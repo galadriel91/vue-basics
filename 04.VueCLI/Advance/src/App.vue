@@ -1,6 +1,9 @@
 <template>
     <div>
         <CliNav/>
+        <div>
+            <RouterView :key="$route.path"/>
+        </div>
         <CliFooter/>
         <CliLoading :loading="ISLOADING"/>
     </div>

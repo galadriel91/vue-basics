@@ -4,7 +4,8 @@ import actions from './actions'
 
 export const store = createStore({
     state:{
-        isLoading:false
+        isLoading:false,
+        list:[]
     },
     mutations,
     actions
