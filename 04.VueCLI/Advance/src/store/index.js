@@ -6,7 +6,8 @@ export const store = createStore({
     state:{
         isLoading:false,
         list:[],
-        user:{}
+        user:{},
+        post:{}
     },
     mutations,
     actions

@@ -10,6 +10,7 @@
 
 <script>
     import UserItem from '@/components/user/UserItem.vue';
+    import { useOffLoading } from '@/composable/useOffLoading'
     import { computed } from 'vue'
     import { useStore } from 'vuex'
     export default {
@@ -21,6 +22,7 @@
             const USERITEM = computed(()=>{
                 return store.state.user
             })
+            useOffLoading()
             return { USERITEM }
         }
     }
