@@ -1,0 +1,41 @@
+.inputWrap{
+    height: 30rem;
+    background: #fff; box-shadow: 0 4px 10px -4px rgba(0,0,0,0.2);
+    border-radius: .5rem;
+    // margin-bottom: 2.4rem;
+    // border-bottom: 1px solid #eee;
+    form{
+        div{
+            position: relative; padding: 2.4rem;
+            input{
+                width: 100%; padding: 1rem; box-sizing: border-box;
+                border: 1px solid #777; border-radius: .5rem;
+                font-size: 1.8rem; color: #000;  margin-bottom: 3rem;
+                &:focus{
+                    outline: none;
+                }
+                &::placeholder{
+                    color: #000;
+                }
+            }
+            textarea{
+                width: 100%; min-height: 10em; padding: 1rem; box-sizing: border-box;
+                border: 1px solid #777; border-radius: .5rem;
+                font-size: 1.5rem; line-height: 2.6rem; overflow: hidden;
+                resize: none;
+                &:focus{
+                    outline: none;
+                }
+            }
+            button{
+                position: absolute; bottom: 2rem; right: 2rem;
+                width: 5%; font-size: 2rem; background: none;
+                color: #000; cursor: pointer;
+            }
+        }
+        button[type="submit"]{
+            float: right; width: 9.6rem; padding: 1.2rem 0; border-radius: 4px; background: #42b883; 
+            font-size: 1.6rem; color: #fff; font-family: 'ChosunGu'; cursor: pointer;
+        }
+    }
+}
