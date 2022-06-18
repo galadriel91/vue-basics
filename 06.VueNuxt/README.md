@@ -8,6 +8,8 @@ Layouts을 이용하여 공통부분을 정의 하는 점이 편했다.
 
 앞으로 Nuxt을 사용해 더 많은 기능을 학습해야겠다.
 
+추후 TypeScript 학습 후 Nuxt3을 써봐야지.
+
 ##  개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
