@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// import { addCartItem } from '@/api/index'
+import { addCartItem } from '@/api/index'
 
 export default {
     props:{
@@ -26,10 +26,10 @@ export default {
         // onLoadImage(){
         //     this.$store.commit('OFF_LOADING')
         // },
-        // async onClickCartItem(){
-        //     await addCartItem(this.postItem)
-        //     this.$router.push('/cart')
-        // }
+        async onClickCartItem(){
+            await addCartItem(this.postItem)
+            this.$router.push('/cart')
+        }
     }
 }
 </script>

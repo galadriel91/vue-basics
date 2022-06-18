@@ -16,8 +16,13 @@ const fetchPostItem = (itemId) => {
     return instance.get(`/products/${itemId}`)
 }
 
+const addCartItem = (postItem) => {
+    return instance.post('/carts' , postItem)
+}
+
 export{
     fetchProductsItem,
     fetchCartsItem,
-    fetchPostItem
+    fetchPostItem,
+    addCartItem
 }
