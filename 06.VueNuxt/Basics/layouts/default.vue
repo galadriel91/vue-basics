@@ -1,6 +1,9 @@
 <template>
     <div>
         <NuxtHeader/>
+        <div>
+            <Nuxt/>
+        </div>
         <NuxtFooter/>
         <NuxtLoading :loading="LOADING"/>
     </div>
