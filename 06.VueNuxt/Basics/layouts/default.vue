@@ -1,12 +1,15 @@
 <template>
     <div>
-        App
+        <NuxtHeader/>
     </div>
 </template>
 
 <script>
+    import NuxtHeader from '@/components/common/NuxtHeader.vue';
     export default {
-        
+        components:{
+            NuxtHeader
+        }
     }
 </script>
 
