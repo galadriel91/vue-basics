@@ -27,17 +27,17 @@ export default {
     //     }
     // },
 
-    // methods:{
-    //     onClickPost(value){
-    //         this.$router.push(`/post/${value}`)
-    //     },
-    //     onLoadImage(){
-    //         this.imageLoading.push(true)
-    //         if(this.imageLoading.length === this.mainItem.length){
-    //             this.$store.commit('OFF_LOADING')
-    //         }
-    //     },
-    // }
+    methods:{
+        onClickPost(value){
+            this.$router.push(`/post/${value}`)
+        },
+        // onLoadImage(){
+        //     this.imageLoading.push(true)
+        //     if(this.imageLoading.length === this.mainItem.length){
+        //         this.$store.commit('OFF_LOADING')
+        //     }
+        // },
+    }
 }
 </script>
 

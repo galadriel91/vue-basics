@@ -12,7 +12,12 @@ const fetchCartsItem = () => {
     return instance.get('/carts')
 }
 
+const fetchPostItem = (itemId) => {
+    return instance.get(`/products/${itemId}`)
+}
+
 export{
     fetchProductsItem,
-    fetchCartsItem
+    fetchCartsItem,
+    fetchPostItem
 }
