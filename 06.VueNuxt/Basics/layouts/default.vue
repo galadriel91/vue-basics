@@ -23,7 +23,8 @@
             LOADING(){
                 return this.$store.state.isLoading
             }
-        }
+        },
+        middleware:'loading'
     }
 </script>
 

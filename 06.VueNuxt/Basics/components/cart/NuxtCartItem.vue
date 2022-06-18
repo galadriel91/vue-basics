@@ -17,7 +17,7 @@ export default {
     data(){
         return{
             cartItem : [],
-            // imageLoading:[]
+            imageLoading:[]
         }
     },
 
@@ -30,14 +30,14 @@ export default {
         this.cartItem = item
     },
 
-    // methods:{
-    //     onLoadImage(){
-    //         this.imageLoading.push(true)
-    //         if(this.imageLoading.length === this.cartItem.length){
-    //             this.$store.commit('OFF_LOADING')
-    //         }
-    //     },
-    // }
+    methods:{
+        onLoadImage(){
+            this.imageLoading.push(true)
+            if(this.imageLoading.length === this.cartItem.length){
+                this.$store.commit('OFF_LOADING')
+            }
+        },
+    }
 }
 </script>
 

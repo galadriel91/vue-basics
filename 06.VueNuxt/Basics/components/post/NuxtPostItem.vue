@@ -23,9 +23,9 @@ export default {
     },
 
     methods:{
-        // onLoadImage(){
-        //     this.$store.commit('OFF_LOADING')
-        // },
+        onLoadImage(){
+            this.$store.commit('OFF_LOADING')
+        },
         async onClickCartItem(){
             await addCartItem(this.postItem)
             this.$router.push('/cart')

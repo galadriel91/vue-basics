@@ -21,22 +21,22 @@ export default {
         }
     },
 
-    // data(){
-    //     return{
-    //         imageLoading:[]
-    //     }
-    // },
+    data(){
+        return{
+            imageLoading:[]
+        }
+    },
 
     methods:{
         onClickPost(value){
             this.$router.push(`/post/${value}`)
         },
-        // onLoadImage(){
-        //     this.imageLoading.push(true)
-        //     if(this.imageLoading.length === this.mainItem.length){
-        //         this.$store.commit('OFF_LOADING')
-        //     }
-        // },
+        onLoadImage(){
+            this.imageLoading.push(true)
+            if(this.imageLoading.length === this.mainItem.length){
+                this.$store.commit('OFF_LOADING')
+            }
+        },
     }
 }
 </script>
