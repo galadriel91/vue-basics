@@ -24,19 +24,19 @@ export default {
     //     }
     // },
 
-    // methods:{
-    //     onClickCart(){
-    //         this.$router.push('/cart')
-    //     },
+    methods:{
+        onClickCart(){
+            this.$router.push('/cart')
+        },
 
-    //     onChangeValue(value){
-    //         this.value = value
-    //     },
+        // onChangeValue(value){
+        //     this.value = value
+        // },
 
-    //     async onSubmitSearch(){
-    //         this.$router.push(`/search/${this.value}`)
-    //     }
-    // }
+        // async onSubmitSearch(){
+        //     this.$router.push(`/search/${this.value}`)
+        // }
+    }
 }
 </script>
 

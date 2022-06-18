@@ -8,6 +8,11 @@ const fetchProductsItem = () => {
     return instance.get('/products')
 }
 
+const fetchCartsItem = () => {
+    return instance.get('/carts')
+}
+
 export{
-    fetchProductsItem
+    fetchProductsItem,
+    fetchCartsItem
 }
