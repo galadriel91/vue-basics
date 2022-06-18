@@ -20,9 +20,18 @@ const addCartItem = (postItem) => {
     return instance.post('/carts' , postItem)
 }
 
+const fetchSearchItem = (keyword) => {
+    return instance.get(`/products/` , {
+        params:{
+            name_like : keyword
+        }
+    })
+}
+
 export{
     fetchProductsItem,
     fetchCartsItem,
     fetchPostItem,
-    addCartItem
+    addCartItem,
+    fetchSearchItem
 }
