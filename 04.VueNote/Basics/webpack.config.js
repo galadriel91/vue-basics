@@ -11,6 +11,7 @@ module.exports = {
             Images:path.resolve('./src/assets/images/'),
             Components:path.resolve('./src/components/'),
             Store:path.resolve('./src/store/'),
+            Routes:path.resolve('./src/routes/'),
         }
     },
     entry:{
