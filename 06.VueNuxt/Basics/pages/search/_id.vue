@@ -29,7 +29,7 @@ export default {
             return { searchItem }        
         }else{
             const searchItem = []
-            // store.commit('OFF_LOADING')
+            store.commit('OFF_LOADING')
             return { searchItem }
         }
     },
