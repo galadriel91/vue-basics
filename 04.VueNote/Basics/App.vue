@@ -1,16 +1,22 @@
 <template>
     <div>
-        App
-        <RouterView/>
+        <NoteHeader/>
+        <div class="container">
+            <RouterView/>
+        </div>
     </div>
 </template>
 
 <script>
+    import NoteHeader from 'Components/common/NoteHeader.vue';
     export default {
-        
+        components:{
+            NoteHeader
+        }        
     }
 </script>
 
-<style lang="scss">
+
+NoteHeader<style lang="scss">
     @import 'Style/index';
 </style>
