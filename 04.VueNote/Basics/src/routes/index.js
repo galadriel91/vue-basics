@@ -11,7 +11,7 @@ export const router = new VueRotuer({
             component:()=>import('Pages/MainPage')
         },
         {
-            path:'/edit',
+            path:'/edit/:id',
             name:'edit',
             component:()=>import('Pages/EditPage')
         },
@@ -19,6 +19,10 @@ export const router = new VueRotuer({
             path:'/create',
             name:'create',
             component:()=>import('Pages/CreatePage')
+        },
+        {
+            path:'/item/:id',
+            component:()=>import('Pages/ItemPage')
         }
     ]
 })
