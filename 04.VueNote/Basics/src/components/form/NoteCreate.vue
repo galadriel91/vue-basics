@@ -21,6 +21,12 @@
 
 <script>
 export default {
+    data(){
+        return{
+            title:'',
+            content:'',
+        }
+    },
     methods:{
         onClickMain(){
             this.$router.push('/')
