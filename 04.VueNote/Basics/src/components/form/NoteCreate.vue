@@ -30,6 +30,23 @@ export default {
     methods:{
         onClickMain(){
             this.$router.push('/')
+        },
+        onSubmitForm(){
+            if(this.title.length && this.content.length){
+                this.$store.commit('ADD_NOTE' , {
+                    id:Date.now(),
+                    title: this.title,
+                    content: this.content,
+                })
+                this.onInitialForm()
+                this.$router.push('/')
+            }else{
+                alert('다시 한번 확인해 주세요')
+            }
+        },
+        onInitialForm(){
+            this.title = ''
+            this.content = ''
         }
     }
 }
