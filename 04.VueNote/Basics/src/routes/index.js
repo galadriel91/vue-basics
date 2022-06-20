@@ -22,6 +22,7 @@ export const router = new VueRotuer({
         },
         {
             path:'/item/:id',
+            name:'item',
             component:()=>import('Pages/ItemPage')
         }
     ]
