@@ -12,6 +12,9 @@
     export default {
         components:{
             NoteHeader
+        },
+        mounted(){
+            this.$store.commit('GET_NOTE')
         }        
     }
 </script>
