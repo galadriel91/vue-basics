@@ -26,7 +26,7 @@ export default {
     },
     methods:{
         onClickEditPage(){
-            this.$router.push('/edit/1')
+            this.$router.push(`/edit/${this.item.id}`)
         },
         onClickRemoveItem(){
             alert('아이템을 삭제 하시겠습니까?')

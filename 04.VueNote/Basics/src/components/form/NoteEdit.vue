@@ -4,11 +4,11 @@
             <div class="formWrap">
                 <div>
                     <label for="title">제목</label>
-                    <input id="title" type="text" placeholder="제목을 입력해 주세요" v-model="title" ref="titleInput">
+                    <input id="title" type="text" :placeholder="item.title" v-model="title" ref="titleInput">
                 </div>
                 <div>
                     <label for="content">내용</label>
-                    <textarea id="content" placeholder="내용을 입력해 주세요" v-model="content" ></textarea>
+                    <textarea id="content" :placeholder="item.content" v-model="content" ></textarea>
                 </div>
             </div>
             <div class="buttonWrap">
