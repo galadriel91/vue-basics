@@ -45,6 +45,9 @@ export default {
             })
             this.$router.push('/')
         }
+    },
+    mounted(){
+        this.$refs.titleInput.focus()
     }
 }
 </script>

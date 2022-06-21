@@ -48,6 +48,9 @@ export default {
             this.title = ''
             this.content = ''
         }
+    },
+    mounted(){
+        this.$refs.titleInput.focus()
     }
 }
 </script>

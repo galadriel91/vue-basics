@@ -17,7 +17,6 @@ export default {
     },
     mounted(){
         this.$store.commit('GET_NOTE_ITEM' , this.$route.params.id)
-        // console.log(this.$route.params.id)
     },
 }
 </script>
