@@ -38,12 +38,17 @@ export default {
             this.$router.push('/')
         },
         onSubmitForm(){
-            this.$store.commit('UPDATE_NOTE' , {
+            if(this.title.length && this.content.length){
+                this.$store.commit('UPDATE_NOTE' , {
                 id:this.item.id,
                 title:this.title,
                 content:this.content
             })
-            this.$router.push('/')
+                this.$router.push('/')
+            }else{
+                alert('다시 한번 확인해 주세요')
+                this.$refs.titleInput.focus()
+            }
         }
     },
     mounted(){
