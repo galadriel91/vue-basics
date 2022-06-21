@@ -1,21 +1,12 @@
-.todoItem{
-    position: relative; display: flex; align-items: center; justify-content: center; flex-direction: column;
+.noteItem{
+    position: relative;
     border-radius: .5rem; margin-bottom: 2rem; padding: 2.4rem; box-shadow: 0 4px 10px -4px rgba(0,0,0,0.2);
     background: #fff; height: 15rem;
 
     button{
         cursor: pointer; background: none;
     }
-
-    .checkWrap{
-        width: 5%; margin-top: -.15rem;
-        button{
-            font-size: 2.2rem; color: rgb(61, 61, 61);
-            &.xi-check-square-o{
-                color: #42b883;
-            }
-        }
-    }
+    
     .contentWrap{
         padding: 0 1rem; box-sizing: border-box;
         &Title{

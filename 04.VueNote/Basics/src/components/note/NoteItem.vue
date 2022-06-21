@@ -1,5 +1,5 @@
 <template>
-    <li class="todoItem">
+    <li class="noteItem">
         <div class="contentWrap">
             <h3 class="contentWrapTitle">{{item.title}}</h3>
             <div class="contentWrapContent">
