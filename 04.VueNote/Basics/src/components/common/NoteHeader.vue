@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1>{{HEADERNAME}}</h1>
-        <button class="xi-plus" @click="onClickCreate" v-if="PAGENAME"></button>
+        <button class="xi-plus" @click="onClickCreate" v-if="PAGENAME && NOTES.length"></button>
     </header>
 </template>
 
@@ -15,6 +15,9 @@ export default {
     computed:{
         PAGENAME(){
             return this.$route.name === 'main'
+        },
+        NOTES(){
+            return this.$store.state.notes
         },
         HEADERNAME(){
             const name = this.$route.name
