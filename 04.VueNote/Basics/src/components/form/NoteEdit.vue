@@ -36,6 +36,14 @@ export default {
     methods:{
         onClickMain(){
             this.$router.push('/')
+        },
+        onSubmitForm(){
+            this.$store.commit('UPDATE_NOTE' , {
+                id:this.item.id,
+                title:this.title,
+                content:this.content
+            })
+            this.$router.push('/')
         }
     }
 }
