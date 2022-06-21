@@ -1,11 +1,10 @@
 <template>
     <li class="todoItem">
         <div class="contentWrap">
-            <h3 class="contentWrapTitle">해야할 일의 제목입니다.</h3>
+            <h3 class="contentWrapTitle">{{item.title}}</h3>
             <div class="contentWrapContent">
                 <p>
-                    해야할 일의 내용입니다. 해야할 일의 내용입니다. 해야할 일의 내용입니다.해야할 일의 내용입니다.해야할 일의 내용입니다.
-                    해야할 일의 내용입니다. 해야할 일의 내용입니다. 해야할 일의 내용입니다.해야할 일의 내용입니다.해야할 일의 내용입니다.
+                    {{item.content}}
                 </p>
             </div>
         </div>

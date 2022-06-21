@@ -1,9 +1,7 @@
 <template>
     <div>
         <ul>
-            <NoteItem/>
-            <NoteItem/>
-            <NoteItem/>
+            <NoteItem v-for="note in NOTES" :key="note.id" :item="note"/>
         </ul>
     </div>
 </template>
@@ -13,6 +11,11 @@ import NoteItem from 'Components/note/NoteItem.vue';
 export default {
     components:{
         NoteItem
+    },
+    computed:{
+        NOTES(){
+            return this.$store.state.notes
+        }
     }
 }
 </script>
