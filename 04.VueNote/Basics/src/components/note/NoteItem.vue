@@ -29,7 +29,7 @@ export default {
             this.$router.push(`/edit/${this.item.id}`)
         },
         onClickRemoveItem(){
-            alert('아이템을 삭제 하시겠습니까?')
+            this.$store.commit('REMOVE_NOTE' , this.item.id)
         }
     }
 }
