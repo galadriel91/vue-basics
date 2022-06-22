@@ -42,7 +42,8 @@ export default {
                 this.$store.commit('UPDATE_NOTE' , {
                 id:this.item.id,
                 title:this.title,
-                content:this.content
+                content:this.content,
+                date: new Date()
             })
                 this.$router.push('/')
             }else{
