@@ -43,7 +43,8 @@ export default {
                 id:this.item.id,
                 title:this.title,
                 content:this.content,
-                date: new Date()
+                date: new Date(),
+                update: true
             })
                 this.$router.push('/')
             }else{

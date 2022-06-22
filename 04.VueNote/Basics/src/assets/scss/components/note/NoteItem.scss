@@ -29,15 +29,23 @@
     .contentInfoWrap{
         width: 100%; display: flex; justify-content: space-between; align-items: center;
         margin-top: 1.5rem; padding: 0 1rem; box-sizing: border-box;
-        span{
-            margin-right: 1rem;
-            font-size: 1.5rem;
+        .dateWrap{
+            span{
+                margin-right: .5rem;
+                font-size: 1.5rem;
+                &:nth-child(2){
+                    font-size: 1.2rem;
+                }
+            }
         }
         button{
             margin: 0 .3rem;
             font-size: 1.7rem; 
-            &:hover{
+            &:nth-child(1):hover{
                 color: #42b883;
+            }
+            &:nth-child(2):hover{
+                color: crimson;
             }
         }
     }

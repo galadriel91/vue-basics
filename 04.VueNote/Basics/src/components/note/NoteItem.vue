@@ -9,7 +9,10 @@
             </div>
         </div>
         <div class="contentInfoWrap">
-            <span>{{DATE}}</span>
+            <div class="dateWrap">
+                <span>{{DATE}}</span>
+                <span v-if="item.update">최근 수정</span>
+            </div>
             <div class="btnWrap">
                 <button class="xi-pen-o" @click="onClickEditPage"></button>
                 <button class="xi-minus-square-o" @click="onClickRemoveItem"></button>
