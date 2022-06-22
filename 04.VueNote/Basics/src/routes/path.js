@@ -1,3 +1,5 @@
+import { getItemBeforePage } from './guard'
+
 export default[
     {
         path:'/',
@@ -9,7 +11,8 @@ export default[
         path:'/edit/:id',
         name:'edit',
         component:()=>import('Pages/EditPage'),
-        meta:{title:'Edit Note'}
+        meta:{title:'Edit Note'},
+        beforeEnter:getItemBeforePage()
     },
     {
         path:'/create',
@@ -21,6 +24,6 @@ export default[
         path:'/item/:id',
         name:'item',
         component:()=>import('Pages/ItemPage'),
-        meta:{title:'Post Note'}
+        meta:{title:'Post Note'},
     }
 ]

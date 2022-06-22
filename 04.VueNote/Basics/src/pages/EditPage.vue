@@ -15,9 +15,6 @@ export default {
             return this.$store.state.editItem
         }
     },
-    mounted(){
-        this.$store.commit('GET_NOTE_ITEM' , this.$route.params.id)
-    },
 }
 </script>
 
