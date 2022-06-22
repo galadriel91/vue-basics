@@ -11,9 +11,15 @@
                     <textarea id="content" :placeholder="item.content" v-model="content" ></textarea>
                 </div>
             </div>
-            <div class="buttonWrap">
-                <button @click="onClickMain">취소</button>
-                <button type="submit">수정</button>
+            <div class="infoWrap" :class="{noUpdate : !item.update}">
+                <div class="dateWrap" v-if="item.update">
+                    <span>최근 수정일:</span>
+                    <span>{{DATE}}</span>
+                </div>
+                <div class="buttonWrap">
+                    <button @click="onClickMain">취소</button>
+                    <button type="submit">수정</button>
+                </div>
             </div>
         </form>
     </div>
@@ -51,6 +57,20 @@ export default {
                 alert('다시 한번 확인해 주세요')
                 this.$refs.titleInput.focus()
             }
+        }
+    },
+    computed:{
+        DATE(){
+            const date = new Date(this.item.date)
+            const daysArray = ['일', '월', '화', '수', '목', '금', '토']
+            const year = date.getFullYear()
+            const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
+            const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()
+            const days = daysArray[date.getDay()]
+            const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
+            const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
+            const result = `${year}-${month}-${day} ${hours}:${minutes} (${days})` 
+            return result
         }
     },
     mounted(){

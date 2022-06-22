@@ -36,17 +36,26 @@
                 }
             }
         }
-        .buttonWrap{
-            padding: 0 2.4rem; display: flex; justify-content: flex-end;
-            button{
-                display: inline-block; width: 10rem; height: 4rem; border-radius: .5rem;
-                font-size: 1.4rem; cursor: pointer;
-                &:nth-child(1){
-                    margin-right: 1rem;
-                    background: none; border: 1px solid #dee2e6;
-                }
-                &:nth-child(2){
-                    background: #42b883; color: #fff;
+        .infoWrap{
+            padding: 0 2.4rem; display: flex; justify-content: space-between; align-items: center;
+            &.noUpdate{
+                justify-content: flex-end;
+            }
+            .dateWrap{
+                margin-left: .25rem;
+                font-size: 1.4rem;
+            }
+            .buttonWrap{
+                button{
+                    display: inline-block; width: 10rem; height: 4rem; border-radius: .5rem;
+                    font-size: 1.4rem; cursor: pointer;
+                    &:nth-child(1){
+                        margin-right: 1rem;
+                        background: none; border: 1px solid #dee2e6;
+                    }
+                    &:nth-child(2){
+                        background: #42b883; color: #fff;
+                    }
                 }
             }
         }
