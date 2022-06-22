@@ -9,7 +9,8 @@
             </div>
         </div>
         <div class="contentInfoWrap">
-            <span>2022 - 05 - 26</span>
+            <span>{{DATE}}</span>
+            <!-- <span>2022 - 05 - 26</span> -->
             <button class="xi-pen-o" @click="onClickEditPage"></button>
             <button class="xi-minus-square-o" @click="onClickRemoveItem"></button>
         </div>
@@ -31,7 +32,19 @@ export default {
         onClickRemoveItem(){
             this.$store.commit('REMOVE_NOTE' , this.item.id)
         }
-    }
+    },
+    computed:{
+        DATE(){
+            const date = new Date(this.item.date)
+            const daysArray = ['일', '월', '화', '수', '목', '금', '토']
+            const year = date.getFullYear()
+            const month = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth()
+            const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()
+            const days = daysArray[date.getDay()]
+            const result = `${year}-${month}-${day} (${days})` 
+            return result
+        }
+    },
 }
 </script>
 

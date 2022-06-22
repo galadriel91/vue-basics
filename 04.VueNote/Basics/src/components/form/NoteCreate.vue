@@ -37,6 +37,7 @@ export default {
                     id:Date.now(),
                     title: this.title,
                     content: this.content,
+                    date: new Date()
                 })
                 this.onInitialForm()
                 this.$router.push('/')
