@@ -1,15 +1,20 @@
 <template>
     <ul>
-        <li v-if="CURRENTPAGE !== 1"><a href="javascript:void(0);" @click="onClickGetItem(CURRENTPAGE - 1)">이전</a></li>
-        <li v-for="page in TOTALPAGE" :key="page">
-            <a href='javascript:void(0);' :class="{active:page == CURRENTPAGE}" @click="onClickGetItem(page)">{{page}}</a>
-        </li>
-        <li v-if="CURRENTPAGE !== TOTALPAGE"><a href="javascript:void(0);" @click="onClickGetItem(CURRENTPAGE + 1)">다음</a></li>
+        <li v-if="CURRENTPAGE !== 1"><a href="javascript:void(0);" @click="onClickPrev">이전</a></li>
+        <li v-if="CURRENTPAGE !== TOTALPAGE"><a href="javascript:void(0);" @click="onClickNext">다음</a></li>
     </ul>  
 </template>
 
 <script>
 export default {
+    methods:{
+        onClickNext(){
+            this.$store.commit('NEXT_PAGE')
+        },
+        onClickPrev(){
+            this.$store.commit('PREV_PAGE')
+        }
+    },
     computed:{
         TOTALPAGE(){
             return Math.ceil(this.$store.state.notes.length / 3)

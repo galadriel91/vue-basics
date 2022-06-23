@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul v-if="NOTES.length">
-            <NoteItem v-for="note in NOTES.slice(FIRST, LAST)" :key="note.id" :item="note"/>
+            <NoteItem v-for="note in NOTES.slice(0 + INDEX, 3 + INDEX)" :key="note.id" :item="note"/>
         </ul>
         <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
@@ -22,11 +22,8 @@ export default {
         NOTES(){
             return this.$store.state.notes
         },
-        FIRST(){
-            return this.$store.state.firstIndex
-        },
-        LAST(){
-            return this.$store.state.lastIndex
+        INDEX(){
+            return this.$store.state.pageIndex
         }
     },
     methods:{
