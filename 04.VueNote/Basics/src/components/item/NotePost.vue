@@ -1,22 +1,23 @@
 <template>
-    <div class="inputWrap">
-        <div class="formWrap">
+    <div class="postWrap">
+        <div class="postLeft">
             <div class="titleWrap">
                 <h2>{{item.title}}</h2>
-                <!-- <label for="title">제목</label> -->
-                <!-- <input id="title" type="text" :placeholder="item.title" v-model="title" ref="titleInput"> -->
             </div>
             <div class="contentWrap">
                 <p>{{item.content}}</p>
-                <!-- <label for="content">내용</label> -->
-                <!-- <textarea id="content" :placeholder="item.content" v-model="content" ></textarea> -->
+                <div class="dateWrap">
+                    <span>{{DATE}}</span>
+                    <span v-if="item.update">수정</span>
+                    <span v-else>작성</span>
+                </div>
             </div>
         </div>
         <div class="postRight">
-            <button>이전</button>
+            <button @click="onClickMain">이전</button>
             <div class="buttonWrap">
-                <button @click="onClickMain">수정</button>
-                <button type="submit">삭제</button>
+                <button @click="onClickEdit">수정</button>
+                <button @click="onClickRemove">삭제</button>
             </div>
         </div>
     </div>
@@ -30,29 +31,18 @@ export default {
             required:false
         }
     },
-    data(){
-        return{
-            title:'',
-            content:'',
-        }
-    },
     methods:{
         onClickMain(){
             this.$router.push('/')
         },
-        onSubmitForm(){
-            if(this.title.length && this.content.length){
-                this.$store.commit('UPDATE_NOTE' , {
-                id:this.item.id,
-                title:this.title,
-                content:this.content,
-                date: new Date(),
-                update: true
-            })
+        onClickEdit(){
+            this.$router.push(`/edit/${this.item.id}`)
+        },
+        onClickRemove(){
+            const result = confirm('노트를 삭제하시겠습니까?')
+            if(result){
+                this.$store.commit('REMOVE_NOTE' , this.item.id)
                 this.$router.push('/')
-            }else{
-                alert('다시 한번 확인해 주세요')
-                this.$refs.titleInput.focus()
             }
         }
     },
