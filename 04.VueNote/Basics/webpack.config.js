@@ -13,6 +13,7 @@ module.exports = {
             Store:path.resolve('./src/store/'),
             Routes:path.resolve('./src/routes/'),
             Pages:path.resolve('./src/pages/'),
+            Utils:path.resolve('./src/utils/'),
         }
     },
     entry:{
