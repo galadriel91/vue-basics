@@ -22,8 +22,9 @@ export default[
     },
     {
         path:'/item/:id',
-        name:'item',
+        name:'POST',
         component:()=>import('Pages/ItemPage'),
         meta:{title:'Post Note'},
+        beforeEnter:getItemBeforePage()
     }
 ]

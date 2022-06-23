@@ -1,6 +1,6 @@
 <template>
     <li class="noteItem">
-        <div class="contentWrap">
+        <div class="contentWrap" @click="onClickGetItem">
             <h3 class="contentWrapTitle">{{item.title}}</h3>
             <div class="contentWrapContent">
                 <p>
@@ -35,6 +35,9 @@ export default {
         },
         onClickRemoveItem(){
             this.$store.commit('REMOVE_NOTE' , this.item.id)
+        },
+        onClickGetItem(){
+            this.$router.push(`/item/${this.item.id}`)
         }
     },
     computed:{
