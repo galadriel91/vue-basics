@@ -27,6 +27,8 @@ export default {
                 return 'Create Page'
             }else if(name === 'edit'){
                 return 'Edit Page'
+            }else if(name === 'POST'){
+                return 'Post Page'
             }
         }
     }
