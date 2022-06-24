@@ -1,7 +1,6 @@
 <template>
     <div>
-        App
-        <RouterView/>
+        Edit
     </div>
 </template>
 
@@ -11,6 +10,6 @@
     }
 </script>
 
-<style lang="scss">
-    @import '@/assets/scss/index';
+<style lang="scss" scoped>
+
 </style>
