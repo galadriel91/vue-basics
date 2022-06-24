@@ -10,8 +10,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    div{
-        color:red
-    }
+<style lang="scss">
+    @import '@/assets/scss/index';
 </style>
