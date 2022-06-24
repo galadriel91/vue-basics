@@ -1,13 +1,16 @@
 <template>
     <div>
-        App
+        <NoteHeader/>
         <RouterView/>
     </div>
 </template>
 
 <script>
+    import NoteHeader from '@/components/common/NoteHeader.vue';
     export default {
-        
+        components:{
+            NoteHeader
+        }
     }
 </script>
 
