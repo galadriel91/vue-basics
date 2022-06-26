@@ -13,7 +13,7 @@
             </div>
             <div class="infoWrap" :class="{noUpdate : !item.update}">
                 <div class="dateWrap" v-if="item.update">
-                    <span>최근 수정일:</span>
+                    <span>최근 수정일: </span>
                     <span>{{DATE}}</span>
                 </div>
                 <div class="buttonWrap">
@@ -29,7 +29,7 @@
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import { computed , ref , onMounted} from 'vue' 
-// import { defineDate } from 'Utils/aboutDate'
+import { useDate } from '@/composable/useDate'
 export default {
     props:{
         item:{
@@ -45,7 +45,7 @@ export default {
         const titleInput = ref('')
 
         const DATE = computed(()=>{
-            const result = defineDate(props.item.date)
+            const result = useDate(props.item.date)
             return result
         })
 
@@ -74,7 +74,7 @@ export default {
         })
 
         return{
-            title, content, titleInput , onClickMain , onSubmitForm
+            title, content, titleInput , onClickMain , onSubmitForm , DATE
         }
     },
 }
