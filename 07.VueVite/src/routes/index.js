@@ -1,4 +1,10 @@
 import { createWebHashHistory , createRouter } from 'vue-router'
+import { store } from '@/store/index'
+
+export const getItemBeforePage = () => (to , from , next) => {
+    store.commit('GET_NOTE_ITEM' , to.params.id)
+    next()
+}
 
 export const router = createRouter({
     history:createWebHashHistory(),
@@ -14,7 +20,7 @@ export const router = createRouter({
             name:'edit',
             component: () => import('@/pages/EditPage'),
             meta:{title:'Edit Note'},
-            // beforeEnter:getItemBeforePage()
+            beforeEnter:getItemBeforePage()
         },
         {
             path:'/create',
