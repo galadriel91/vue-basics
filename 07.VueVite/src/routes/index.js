@@ -29,11 +29,11 @@ export const router = createRouter({
             meta:{title:'Create Note'}
         },
         {
-            path:'/post/:id',
+            path:'/item/:id',
             name:'POST',
-            component: () => import('@/pages/PostPage'),
+            component: () => import('@/pages/ItemPage'),
             meta:{title:'Post Note'},
-            // beforeEnter:getItemBeforePage()
+            beforeEnter:getItemBeforePage()
         }
     ]
 })
