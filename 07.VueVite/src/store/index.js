@@ -4,7 +4,7 @@ import mutations from './mutations'
 export const store = createStore({
     state:{
         notes:[],
-        pageIndex:1,
+        pageIndex:0,
         editItem:{}
     },
     mutations,

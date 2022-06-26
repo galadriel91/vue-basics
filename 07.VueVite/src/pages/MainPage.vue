@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul v-if="NOTES.length">
-            <NoteItem v-for="note in NOTES" :key="note.id" :item="note"/>
+            <NoteItem v-for="note in NOTES.slice(0 + INDEX , 3 + INDEX)" :key="note.id" :item="note"/>
         </ul>
         <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
