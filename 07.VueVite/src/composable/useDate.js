@@ -1,4 +1,4 @@
-export const useDate = (value) => {
+export const useDate = (value , pageName = 'other') => {
     const date = new Date(value)
     const daysArray = ['일', '월', '화', '수', '목', '금', '토']
     const year = date.getFullYear()
@@ -7,6 +7,11 @@ export const useDate = (value) => {
     const days = daysArray[date.getDay()]
     const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
     const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
-    const result = `${year}-${month}-${day} ${hours}:${minutes} (${days})` 
-    return result
+    if(pageName === 'other'){
+        const result = `${year}-${month}-${day} ${hours}:${minutes} (${days})` 
+        return result
+    }else{
+        const result = `${year}-${month}-${day} (${days})` 
+        return result
+    }
 }

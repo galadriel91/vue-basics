@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router'
+import { useDate } from '@/composable/useDate'
+import { useRouter , useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 export default {
@@ -35,15 +36,10 @@ export default {
     setup(props){
         const store = useStore();
         const router = useRouter();
-
+        const route = useRoute()
+    
         const DATE = computed(()=>{
-            const date = new Date(props.item.date)
-            const daysArray = ['일', '월', '화', '수', '목', '금', '토']
-            const year = date.getFullYear()
-            const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
-            const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()
-            const days = daysArray[date.getDay()]
-            const result = `${year}-${month}-${day} (${days})` 
+            const result = useDate(props.item.date , route.name)
             return result
         })
 
