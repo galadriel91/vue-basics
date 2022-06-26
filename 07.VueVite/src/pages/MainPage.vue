@@ -6,20 +6,20 @@
         <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
         </div>
-        <!-- <NotePagi/> -->
+        <NotePagi/>
     </div>
 </template>
 
 <script>
 import NoteItem from '@/components/note/NoteItem.vue';
-// import NotePagi from 'Components/note/NotePagi.vue';
+import NotePagi from '@/components/note/NotePagi.vue';
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 export default {
     components:{
         NoteItem,
-        // NotePagi
+        NotePagi
     },
     setup(){
         const store = useStore()
