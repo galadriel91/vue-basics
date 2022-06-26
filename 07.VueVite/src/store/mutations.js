@@ -15,4 +15,9 @@ export default{
         state.notes[index] = payload
         localStorage.setItem('notes' , JSON.stringify(state.notes))
     },
+    REMOVE_NOTE(state , payload){
+        const index = state.notes.findIndex(v=> v.id === parseInt(payload))
+        state.notes.splice(index , 1)
+        localStorage.setItem('notes' , JSON.stringify(state.notes))
+    },
 }
