@@ -1,12 +1,15 @@
 <template>
     <div>
-        Create
+        <NoteCreate/>
     </div>
 </template>
 
 <script>
+    import NoteCreate from '@/components/form/NoteCreate.vue';
     export default {
-        
+        components:{
+            NoteCreate
+        }
     }
 </script>
 
