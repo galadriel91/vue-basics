@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <WordRelay/>
     </div>
 </template>
 
 <script>
+import WordRelay from 'Components/WordRelay.vue';
 export default {
-
+    components:{
+        WordRelay
+    }
 }
 </script>
 
