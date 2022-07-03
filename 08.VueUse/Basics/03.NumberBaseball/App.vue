@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <NumberBaseball/>
     </div>
 </template>
 
 <script>
+import NumberBaseball from 'Components/NumberBaseball.vue';
 export default {
-
+    components: {
+        NumberBaseball
+    },
 }
 </script>
 
