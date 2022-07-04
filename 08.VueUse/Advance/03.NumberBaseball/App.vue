@@ -1,16 +1,16 @@
 <template>
     <div class="container">
-        App
+        <NumberBaseball/>
     </div>
 </template>
 
 <script>
+import NumberBaseball from 'Components/NumberBaseball.vue'
 export default {
-    setup () {
-        
-
-        return {}
-    }
+    components: { NumberBaseball },
+    setup() {
+        return {};
+    },
 }
 </script>
 
