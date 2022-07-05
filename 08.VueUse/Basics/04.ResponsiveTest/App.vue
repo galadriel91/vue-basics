@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <ResponsiveTest/>
     </div>
 </template>
 
 <script>
+import ResponsiveTest from 'Components/ResponsiveTest.vue';
 export default {
-
+    components:{
+    ResponsiveTest,
+}
 }
 </script>
 
