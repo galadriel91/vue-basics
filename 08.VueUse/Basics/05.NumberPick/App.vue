@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <NumberPick/>
     </div>
 </template>
 
 <script>
+import NumberPick from 'Components/NumberPick.vue';
 export default {
-
+    components:{
+        NumberPick
+    }
 }
 </script>
 
