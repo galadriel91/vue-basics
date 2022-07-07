@@ -1,11 +1,15 @@
 <template>
     <div class="container">
-        App
+        <RspGame/>
     </div>
 </template>
 
 <script>
+import RspGame from 'Components/RspGame.vue';
 export default {
+    components:{
+        RspGame
+    }
 }
 </script>
 
