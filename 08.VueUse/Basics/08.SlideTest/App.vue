@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <SlideNav/>
     </div>
 </template>
 
 <script>
+import SlideNav from 'Components/SlideNav.vue';
 export default {
-
+    components:{
+        SlideNav
+    }
 }
 </script>
 
