@@ -1,0 +1,9 @@
+.slideWrap{
+    .slick-slider{
+        height: calc(100vh - 6rem);
+    }
+    img{
+        min-width: 100%;
+        height: calc(100vh - 6rem);
+    }
+}
