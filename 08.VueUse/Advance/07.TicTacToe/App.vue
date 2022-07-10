@@ -1,16 +1,15 @@
 <template>
-  <div class="container">
-    App
-  </div>
+    <div class="container">
+        <TicTacToe/>
+    </div>
 </template>
 
 <script>
+import TicTacToe from 'Components/TicTacToe.vue';
 export default {
-  setup () {
-    
-
-    return {}
-  }
+    components:{
+        TicTacToe,
+    },
 }
 </script>
 
