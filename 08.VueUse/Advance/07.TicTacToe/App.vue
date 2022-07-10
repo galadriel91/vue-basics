@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     App
   </div>
 </template>
@@ -14,6 +14,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+  @import 'Style/index';
 </style>
