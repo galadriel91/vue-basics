@@ -65,6 +65,7 @@ export default {
     setup() {
         const removeTodo = inject('removeTodo');
         const completeTodo = inject('completeTodo');
+        const today = inject('today');
         const menu = [
             {
                 str: '할일 삭제',
@@ -77,6 +78,7 @@ export default {
         ];
         return {
             menu,
+            today,
             completeTodo,
         };
     },
