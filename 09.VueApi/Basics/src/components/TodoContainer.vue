@@ -1,10 +1,16 @@
 <template>
-    <div>TodoContainer</div>
+    <div>
+        <TodoList />
+    </div>
 </template>
 
 <script>
+import TodoList from '@/components/TodoList.vue';
 import { provide, readonly, ref } from 'vue';
 export default {
+    components: {
+        TodoList,
+    },
     setup() {
         const todos = ref([]);
         provide('todos', readonly(todos));
