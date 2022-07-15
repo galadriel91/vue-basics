@@ -1,16 +1,15 @@
 <template>
     <div class="container">
-        App
+        <VuePinia/>
     </div>
 </template>
 
 <script>
+import VuePinia from 'Components/VuePinia.vue';
 export default {
-    setup () {
-        
-
-        return {}
-    }
+    components:{
+        VuePinia
+    },
 }
 </script>
 
