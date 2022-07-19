@@ -13,21 +13,4 @@ html{
 
 body{
     font-family: 'ChosunGu'; font-size: 1rem;
-    background: #f3ede7; box-sizing: border-box;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 100vh;
-}
-
-input , textarea{
-    font-family: 'ChosunGu';
-}
-
-.container{
-    width: 56rem; margin: 0 auto;
-}
-
-@media screen and (max-width:1210px) {
-    body{
-        padding: 0 1.5rem;
-    }
 }

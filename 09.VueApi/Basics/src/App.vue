@@ -1,9 +1,15 @@
 <template>
-    <div>App</div>
+    <div>
+        <NoteHeader />
+    </div>
 </template>
 
 <script>
+import NoteHeader from '@/components/common/NoteHeader.vue';
 export default {
+    components: {
+        NoteHeader,
+    },
     setup() {
         return {};
     },
