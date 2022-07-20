@@ -1,7 +1,7 @@
 <template>
     <div>
         <NoteHeader />
-        <div>
+        <div class="container">
             <RouterView />
         </div>
         <NoteFooter />

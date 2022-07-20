@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Create Page</h1>
         <NoteForm />
     </div>
 </template>
@@ -16,4 +17,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+</style>
