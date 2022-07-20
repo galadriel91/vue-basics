@@ -11,7 +11,7 @@
                         >>
                     </li>
                     <li @click="onClickOffBar">
-                        <RouterLink to="/"><span>Create</span></RouterLink
+                        <RouterLink to="/create"><span>Create</span></RouterLink
                         >>
                     </li>
                 </ul>

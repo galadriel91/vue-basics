@@ -1,6 +1,9 @@
 <template>
     <div>
         <NoteHeader />
+        <div>
+            <RouterView />
+        </div>
         <NoteFooter />
         <NoteLoading />
     </div>
