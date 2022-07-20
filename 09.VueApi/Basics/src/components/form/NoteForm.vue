@@ -31,12 +31,20 @@
 
 <script>
 import { ref } from 'vue';
-
+import { fetchNoteItem } from '@/api';
 export default {
     setup() {
         const title = ref('');
         const content = ref('');
-        return { title, content };
+        const onSubmitForm = async () => {
+            const { data } = await fetchNoteItem({
+                title: title.value,
+                content: content.value,
+                id: Date.now(),
+            });
+            console.log(data);
+        };
+        return { title, content, onSubmitForm };
     },
 };
 </script>
