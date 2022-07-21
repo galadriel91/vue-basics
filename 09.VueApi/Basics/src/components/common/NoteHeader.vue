@@ -1,25 +1,28 @@
 <template>
     <header>
         <div class="headerWrap">
-            <h1>
-                <RouterLink to="/"><span>Vue Note</span></RouterLink>
-            </h1>
-            <nav :class="{ open: isCheck }">
-                <ul>
-                    <li @click="onClickOffBar">
-                        <RouterLink to="/"><span>Notes</span></RouterLink
-                        >>
-                    </li>
-                    <li @click="onClickOffBar">
-                        <RouterLink to="/create"><span>Create</span></RouterLink
-                        >>
-                    </li>
-                </ul>
-            </nav>
-            <button
-                :class="{ 'xi-close': isCheck, 'xi-bars': !isCheck }"
-                @click="onClickBars"
-            ></button>
+            <h1><RouterLink to="/">Vue Note</RouterLink></h1>
+            <div>
+                <nav :class="{ showing: isActive }">
+                    <ul>
+                        <li @click="onClickRemove">
+                            <RouterLink to="/"><span>Note</span></RouterLink>
+                        </li>
+                        <li @click="onClickRemove">
+                            <RouterLink to="/about"
+                                ><span>Create</span></RouterLink
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <a
+                    href="javascript:void(0)"
+                    class="wholeBtn"
+                    @click="onToggleActive"
+                >
+                    <span :class="{ active: isActive }">&nbsp;</span>
+                </a>
+            </div>
         </div>
     </header>
 </template>
