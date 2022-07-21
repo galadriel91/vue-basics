@@ -4,6 +4,10 @@ export const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
+            path: '/',
+            component: () => import('@/pages/MainPage.vue'),
+        },
+        {
             path: '/create',
             component: () => import('@/pages/CreatePage.vue'),
         },
