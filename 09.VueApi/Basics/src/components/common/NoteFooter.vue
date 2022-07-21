@@ -1,12 +1,15 @@
 <template>
     <footer>
-        <div class="footerWrap">
-            <h2>© {{ YEAR }} LEE MOON SEOB</h2>
-            <a
-                href="https://github.com/galadriel91"
-                target="_blank"
-                class="xi-github"
-            ></a>
+        <div class="wave wave-bg">&nbsp;</div>
+        <div class="footerInfoWrap">
+            <div class="footerInfo">
+                <h2>© {{ YEAR }} LEE MOON SEOB</h2>
+                <a
+                    href="https://github.com/galadriel91"
+                    target="_blank"
+                    class="xi-github"
+                ></a>
+            </div>
         </div>
     </footer>
 </template>

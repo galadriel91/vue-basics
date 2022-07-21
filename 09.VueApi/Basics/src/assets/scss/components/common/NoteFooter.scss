@@ -1,13 +1,52 @@
 footer{
-    text-align: center; background: #FBF4E9;
-    .footerWrap{
-        padding: 1rem 0; height: 6rem;
-        h2{
-            font-size: 1.8rem; color: #000;
+    @-webkit-keyframes move{
+        from{-webkit-mask-position:0 top;mask-position:0 top}
+        to{-webkit-mask-position:-150rem top;mask-position:-150rem top}
+    }
+    @keyframes move{
+        from{-webkit-mask-position:0 top;mask-position:0 top}
+        to{-webkit-mask-position:-150rem top;mask-position:-150rem top}
+    }
+    .wave{
+        height: 6rem;
+        -webkit-mask-image: url('@/assets/images/wave_mask.svg'); -webkit-mask-size: 150rem auto; -webkit-mask-position: left top; -webkit-mask-repeat: repeat-x;
+        mask-image: url('@/assets/images/wave_mask.svg'); mask-size: 150rem auto; mask-position: left top; mask-repeat: repeat-x;
+        animation: move 10s linear infinite; -webkit-animation: move 10s linear infinite;
+    }
+    .wave-bg{
+        background: #def3f7;
+    }
+    .footerInfoWrap{
+        text-align: center; background: #def3f7;
+        .footerInfo{
+            height: 8rem;
+            h2{
+                font-size: 2rem; color: #000;
+                margin-bottom: .5rem;
+            }
+            a{
+                font-size: 3rem;
+            }
         }
-        a{
-            margin-top: 1rem; display: inline-block;
-            font-size: 2.5rem; color: #000;
+    }
+}
+
+@media all and (max-width: 1080px) {
+    footer{
+        .wave{
+            height: 3rem; -webkit-mask-size: 50rem auto;
+        }
+        .footerInfoWrap{
+            .footerInfo{
+                height: 6rem;
+                padding: 1rem 0;
+                h2{
+                    font-size: 1.6rem;
+                }
+                a{
+                    font-size: 2.5rem;
+                }
+            }
         }
     }
 }
