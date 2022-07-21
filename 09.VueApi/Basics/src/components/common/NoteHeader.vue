@@ -1,36 +1,41 @@
 <template>
     <header>
-        <div class="headerWrap">
-            <h1><RouterLink to="/">Vue Note</RouterLink></h1>
-            <div>
-                <nav :class="{ showing: isActive }">
-                    <ul>
-                        <li @click="onClickRemove">
-                            <RouterLink to="/"><span>Note</span></RouterLink>
-                        </li>
-                        <li @click="onClickRemove">
-                            <RouterLink to="/about"
-                                ><span>Create</span></RouterLink
-                            >
-                        </li>
-                    </ul>
-                </nav>
-                <a
-                    href="javascript:void(0)"
-                    class="wholeBtn"
-                    @click="onToggleActive"
-                >
-                    <span :class="{ active: isActive }">&nbsp;</span>
-                </a>
-            </div>
-        </div>
+        <!-- <h1>Vue Note</h1> -->
+        <!-- <button
+            class="xi-plus"
+            @click="onClickCreate"
+            v-if="PAGENAME && NOTES.length"
+        ></button> -->
     </header>
 </template>
 
 <script>
-import { ref, computed } from 'vue';
 export default {
-    setup() {},
+    // methods: {
+    //     onClickCreate() {
+    //         this.$router.push('/create');
+    //     },
+    // },
+    // computed: {
+    //     PAGENAME() {
+    //         return this.$route.name === 'main';
+    //     },
+    //     NOTES() {
+    //         return this.$store.state.notes;
+    //     },
+    //     HEADERNAME() {
+    //         const name = this.$route.name;
+    //         if (name === 'main') {
+    //             return 'Vue Note Basic';
+    //         } else if (name === 'create') {
+    //             return 'Create Page';
+    //         } else if (name === 'edit') {
+    //             return 'Edit Page';
+    //         } else if (name === 'POST') {
+    //             return 'Post Page';
+    //         }
+    //     },
+    // },
 };
 </script>
 

@@ -30,21 +30,44 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { addNoteItem } from '@/api';
+import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useStore } from '@/store';
 export default {
     setup() {
+        const router = useRouter();
+        const store = useStore();
+        const { onAddItem } = store;
+        // data
         const title = ref('');
+        const titleInput = ref('');
         const content = ref('');
-        const onSubmitForm = async () => {
-            const { data } = await addNoteItem({
-                title: title.value,
-                content: content.value,
-                id: Date.now(),
-            });
-            console.log(data);
+        const onClickMain = () => {
+            router.push('/');
         };
-        return { title, content, onSubmitForm };
+        const onInitialForm = () => {
+            title.value = '';
+            content.value = '';
+        };
+        const onSubmitForm = () => {
+            if (title.value.length && content.value.length) {
+                onAddItem({
+                    id: Date.now(),
+                    title: title.value,
+                    content: content.value,
+                    date: new Date(),
+                    update: false,
+                });
+                onClickMain();
+                onInitialForm();
+            } else {
+                alert('다시 한번 확인해 주세요');
+            }
+        };
+        onMounted(() => {
+            titleInput.value.focus();
+        });
+        return { title, content, onSubmitForm, titleInput };
     },
 };
 </script>

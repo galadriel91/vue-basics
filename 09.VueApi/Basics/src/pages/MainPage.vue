@@ -8,21 +8,20 @@
 
 <script>
 import NoteItem from '@/components/note/NoteItem.vue';
-import { fetchNoteItem } from '@/api';
-import { ref } from 'vue';
+import { useStore } from '@/store';
+import { onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
 export default {
     components: {
         NoteItem,
     },
     setup() {
-        const notes = ref([]);
-        const fetchItem = async () => {
-            const { data } = await fetchNoteItem();
-            console.log(data);
-            notes.value = data;
-            return data;
-        };
-        fetchItem();
+        const store = useStore();
+        const { notes } = storeToRefs(store);
+        const { onGetItem } = store;
+        onMounted(() => {
+            onGetItem();
+        });
         return {
             notes,
         };
