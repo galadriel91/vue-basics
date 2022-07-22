@@ -11,3 +11,7 @@ export const fetchNoteItem = () => {
 export const addNoteItem = notes => {
     return instance.post('/notes', notes);
 };
+
+export const removeNoteItem = id => {
+    return instance.delete(`/notes/${id}`);
+};

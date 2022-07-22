@@ -15,22 +15,33 @@
             </div>
             <div class="btnWrap">
                 <button class="xi-pen-o"></button>
-                <button class="xi-minus-square-o"></button>
+                <button
+                    class="xi-minus-square-o"
+                    @click="onClickRemoveItem"
+                ></button>
             </div>
         </div>
     </li>
 </template>
 
 <script>
+import { useStore } from '@/store';
 export default {
     props: {
         item: {
             type: Object,
-            required: false,
+            required: true,
         },
     },
-    setup() {
-        return {};
+    setup(props) {
+        const store = useStore();
+        const { onRemoveItem } = store;
+        const onClickRemoveItem = () => {
+            onRemoveItem(props.item.id);
+        };
+        return {
+            onClickRemoveItem,
+        };
     },
 };
 </script>

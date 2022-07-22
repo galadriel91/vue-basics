@@ -1,4 +1,4 @@
-import { addNoteItem, fetchNoteItem } from '@/api';
+import { addNoteItem, fetchNoteItem, removeNoteItem } from '@/api';
 import { defineStore } from 'pinia';
 
 export const useStore = defineStore('store', {
@@ -14,6 +14,11 @@ export const useStore = defineStore('store', {
         async onAddItem(note) {
             const { data } = await addNoteItem(note);
             this.notes.push(data);
+            return data;
+        },
+        async onRemoveItem(id) {
+            const { data } = await removeNoteItem(id);
+            this.onGetItem();
             return data;
         },
     },
