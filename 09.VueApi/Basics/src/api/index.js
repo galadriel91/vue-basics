@@ -15,3 +15,7 @@ export const addNoteItem = notes => {
 export const removeNoteItem = id => {
     return instance.delete(`/notes/${id}`);
 };
+
+export const editNoteItem = id => {
+    return instance.get(`/notes/${id}`);
+};

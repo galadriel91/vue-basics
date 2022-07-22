@@ -1,9 +1,15 @@
-import { addNoteItem, fetchNoteItem, removeNoteItem } from '@/api';
+import {
+    addNoteItem,
+    fetchNoteItem,
+    removeNoteItem,
+    editNoteItem,
+} from '@/api';
 import { defineStore } from 'pinia';
 
 export const useStore = defineStore('store', {
     state: () => ({
         notes: [],
+        editItem: {},
     }),
     actions: {
         async onGetItem() {
@@ -19,6 +25,11 @@ export const useStore = defineStore('store', {
         async onRemoveItem(id) {
             const { data } = await removeNoteItem(id);
             this.onGetItem();
+            return data;
+        },
+        async onGetEditItem(id) {
+            const { data } = await editNoteItem(id);
+            this.editItem = data;
             return data;
         },
     },
