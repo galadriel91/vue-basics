@@ -14,7 +14,7 @@
                 <!-- <span v-if="item.update">최근 수정</span> -->
             </div>
             <div class="btnWrap">
-                <button class="xi-pen-o"></button>
+                <button class="xi-pen-o" @click="onClickEditPage"></button>
                 <button
                     class="xi-minus-square-o"
                     @click="onClickRemoveItem"
@@ -26,6 +26,7 @@
 
 <script>
 import { useStore } from '@/store';
+import { useRouter } from 'vue-router';
 export default {
     props: {
         item: {
@@ -35,12 +36,17 @@ export default {
     },
     setup(props) {
         const store = useStore();
+        const router = useRouter();
         const { onRemoveItem } = store;
         const onClickRemoveItem = () => {
             onRemoveItem(props.item.id);
         };
+        const onClickEditPage = () => {
+            router.push(`/edit/${props.item.id}`);
+        };
         return {
             onClickRemoveItem,
+            onClickEditPage,
         };
     },
 };

@@ -11,5 +11,10 @@ export const router = createRouter({
             path: '/create',
             component: () => import('@/pages/CreatePage.vue'),
         },
+        {
+            path: '/edit/:id',
+            name: 'edit',
+            component: () => import('@/pages/EditPage.vue'),
+        },
     ],
 });
