@@ -4,5 +4,9 @@ export const useStore = defineStore('store', {
     state: () => ({
         todos: [],
     }),
-    actions: {},
+    actions: {
+        addTodoItem(todo) {
+            this.todos.push(todo);
+        },
+    },
 });
