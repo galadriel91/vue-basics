@@ -1,7 +1,7 @@
 <template>
     <li>
         <div class="itemWrap">
-            <!-- <div class="checkWrap">
+            <div class="checkWrap">
                 <button
                     class="xi-checkbox-blank"
                     v-if="!item.isCheck"
@@ -12,7 +12,7 @@
                     v-else
                     @click="onClickCheck"
                 ></button>
-            </div> -->
+            </div>
             <div class="titleWrap">
                 <h4 :class="{ complete: item.isCheck }" v-if="!isUpdate">
                     {{ item.content }}
@@ -37,17 +37,19 @@
                     v-if="!isUpdate"
                 ></button> -->
             </div>
-            <!-- <div class="buttonWrap">
+            <div class="buttonWrap">
                 <button
                     class="xi-minus-square-o"
                     @click="onClickRemove"
                 ></button>
-            </div> -->
+            </div>
         </div>
     </li>
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useStore } from '@/store';
 export default {
     props: {
         item: {
@@ -55,8 +57,22 @@ export default {
             required: true,
         },
     },
-    setup() {
-        return {};
+    setup(props) {
+        const store = useStore();
+        const { checkTodoItem, removeTodoItem } = store;
+        const isUpdate = ref(false);
+        const onClickCheck = () => {
+            checkTodoItem(props.item.id);
+            isUpdate.value = false;
+        };
+        const onClickRemove = () => {
+            removeTodoItem(props.item.id);
+        };
+        return {
+            isUpdate,
+            onClickCheck,
+            onClickRemove,
+        };
     },
 };
 </script>
