@@ -17,7 +17,7 @@
                 <h4 :class="{ complete: item.isCheck }" v-if="!isUpdate">
                     {{ item.content }}
                 </h4>
-                <!-- <form v-else @submit.prevent="onSubmitUpdate">
+                <form v-else @submit.prevent="onSubmitUpdate">
                     <input
                         type="text"
                         :placeholder="item.content"
@@ -35,7 +35,7 @@
                     class="xi-pen updateBtn"
                     @click="onClickUpdate"
                     v-if="!isUpdate"
-                ></button> -->
+                ></button>
             </div>
             <div class="buttonWrap">
                 <button
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, nextTick } from 'vue';
 import { useStore } from '@/store';
 export default {
     props: {
@@ -59,19 +59,49 @@ export default {
     },
     setup(props) {
         const store = useStore();
-        const { checkTodoItem, removeTodoItem } = store;
+        const { checkTodoItem, removeTodoItem, updateTodoItem } = store;
+
+        // Update Toggle
         const isUpdate = ref(false);
+        const update = ref(null);
+        const onClickUpdate = () => {
+            isUpdate.value = true;
+            nextTick(() => {
+                update.value.focus();
+            });
+        };
+        // Submit Update
+        const value = ref('');
+        const onSubmitUpdate = () => {
+            if (value.value.length) {
+                updateTodoItem({
+                    id: props.item.id,
+                    content: value.value,
+                });
+                isUpdate.value = false;
+            } else {
+                alert('다시 한번 확인해 주세요');
+            }
+        };
+        // Check Done
         const onClickCheck = () => {
             checkTodoItem(props.item.id);
             isUpdate.value = false;
+            value.value = '';
         };
+
+        // RemoveItem
         const onClickRemove = () => {
             removeTodoItem(props.item.id);
         };
         return {
             isUpdate,
+            update,
+            value,
             onClickCheck,
             onClickRemove,
+            onClickUpdate,
+            onSubmitUpdate,
         };
     },
 };

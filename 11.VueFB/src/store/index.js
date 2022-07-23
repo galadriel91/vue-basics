@@ -16,5 +16,9 @@ export const useStore = defineStore('store', {
             const index = this.todos.findIndex(v => v.id === id);
             this.todos.splice(index, 1);
         },
+        updateTodoItem(todo) {
+            const index = this.todos.findIndex(v => v.id === todo.id);
+            this.todos[index].content = todo.content;
+        },
     },
 });
