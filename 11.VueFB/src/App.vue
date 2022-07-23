@@ -1,9 +1,16 @@
 <template>
-    <div>App</div>
+    <div class="container">
+        <TodoHeader />
+    </div>
 </template>
 
 <script>
-export default {};
+import TodoHeader from '@/components/TodoHeader.vue';
+export default {
+    components: {
+        TodoHeader,
+    },
+};
 </script>
 
 <style lang="scss">
