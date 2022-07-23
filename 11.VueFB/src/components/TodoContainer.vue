@@ -1,32 +1,26 @@
 <template>
     <ul>
-        <!-- <TodoItem v-for="todo in TODOS" :key="todo.id" :item="todo" /> -->
+        <TodoItem v-for="todo in todos" :key="todo.id" :item="todo" />
     </ul>
 </template>
 
 <script>
-// import TodoItem from 'Components/TodoItem.vue';
-// import { computed } from 'vue';
-// import { useStore } from 'vuex';
-// export default {
-//     components: {
-//         TodoItem,
-//     },
-//     setup() {
-//         const store = useStore();
-//         const getItem = () => {
-//             store.commit('GET_TODO');
-//         };
-//         getItem();
-//         const TODOS = computed(() => {
-//             return store.state.todos;
-//         });
+import TodoItem from '@/components/TodoItem.vue';
+import { useStore } from '@/store';
+import { storeToRefs } from 'pinia';
+export default {
+    components: {
+        TodoItem,
+    },
+    setup() {
+        const store = useStore();
+        const { todos } = storeToRefs(store);
 
-//         return {
-//             TODOS,
-//         };
-//     },
-// };
+        return {
+            todos,
+        };
+    },
+};
 </script>
 
 <style lang="scss" scoped>
