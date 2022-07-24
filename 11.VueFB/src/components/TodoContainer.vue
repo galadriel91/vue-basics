@@ -15,7 +15,8 @@ export default {
     setup() {
         const store = useStore();
         const { todos } = storeToRefs(store);
-
+        const { getTodoItem } = store;
+        getTodoItem();
         return {
             todos,
         };
