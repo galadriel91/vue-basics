@@ -15,9 +15,8 @@ export const useStore = defineStore('store', {
         async removeTodoItem(id) {
             await dbService.doc(`/todos/${id}`).delete();
         },
-        updateTodoItem(todo) {
-            const index = this.todos.findIndex(v => v.id === todo.id);
-            this.todos[index].content = todo.content;
+        async updateTodoItem({ id, content }) {
+            await dbService.doc(`/todos/${id}`).update({ content });
         },
         getTodoItem() {
             dbService.collection('todos').onSnapshot(snap => {
