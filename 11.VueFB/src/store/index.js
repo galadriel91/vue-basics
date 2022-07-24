@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia';
+import { dbService } from '@/utils/fs';
 
 export const useStore = defineStore('store', {
     state: () => ({
         todos: [],
     }),
     actions: {
-        addTodoItem(todo) {
+        async addTodoItem(todo) {
+            await dbService.collection('todos').add(todo);
             this.todos.push(todo);
         },
         checkTodoItem(id) {
