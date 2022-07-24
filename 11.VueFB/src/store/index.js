@@ -9,9 +9,8 @@ export const useStore = defineStore('store', {
         async addTodoItem(todo) {
             await dbService.collection('todos').add(todo);
         },
-        checkTodoItem(id) {
-            const index = this.todos.findIndex(v => v.id === id);
-            this.todos[index].isCheck = !this.todos[index].isCheck;
+        async checkTodoItem({ id, isCheck }) {
+            await dbService.doc(`/todos/${id}`).update({ isCheck });
         },
         async removeTodoItem(id) {
             await dbService.doc(`/todos/${id}`).delete();

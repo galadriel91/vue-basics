@@ -85,7 +85,10 @@ export default {
         };
         // Check Done
         const onClickCheck = () => {
-            checkTodoItem(props.item.id);
+            checkTodoItem({
+                id: props.item.id,
+                isCheck: !props.item.isCheck,
+            });
             isUpdate.value = false;
             value.value = '';
         };
