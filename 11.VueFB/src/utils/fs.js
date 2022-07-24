@@ -1,12 +1,14 @@
 import firebase from 'firebase/app';
+import 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyBgDoS4ecEQMMo0vxFkyWZzV7Ogh_dccQ0',
-    authDomain: 'fir-basics-e8978.firebaseapp.com',
-    projectId: 'fir-basics-e8978',
-    storageBucket: 'fir-basics-e8978.appspot.com',
-    messagingSenderId: '628808333904',
-    appId: '1:628808333904:web:ef1cd5d998c3ca1ba82f55',
+    apiKey: import.meta.env.VITE_APP_API_KEY,
+    authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_APP_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_APP_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_APP_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_APP_ID,
 };
 
-export const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+export const authService = firebase.auth();
