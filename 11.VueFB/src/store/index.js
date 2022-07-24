@@ -22,9 +22,14 @@ export const useStore = defineStore('store', {
             const index = this.todos.findIndex(v => v.id === todo.id);
             this.todos[index].content = todo.content;
         },
-        async getTodoItem() {
-            const todoItem = await dbService.collection('todos').get();
-            todoItem.forEach(v => this.todos.unshift(v.data()));
+        getTodoItem() {
+            dbService.collection('todos').onSnapshot(snap => {
+                const todos = snap.docs.map(todo => ({
+                    ...todo.data(),
+                    id: todo.id,
+                }));
+                this.todos = todos;
+            });
         },
     },
 });
