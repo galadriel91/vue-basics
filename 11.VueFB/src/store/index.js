@@ -8,15 +8,13 @@ export const useStore = defineStore('store', {
     actions: {
         async addTodoItem(todo) {
             await dbService.collection('todos').add(todo);
-            this.todos.push(todo);
         },
         checkTodoItem(id) {
             const index = this.todos.findIndex(v => v.id === id);
             this.todos[index].isCheck = !this.todos[index].isCheck;
         },
-        removeTodoItem(id) {
-            const index = this.todos.findIndex(v => v.id === id);
-            this.todos.splice(index, 1);
+        async removeTodoItem(id) {
+            await dbService.doc(`/todos/${id}`).delete();
         },
         updateTodoItem(todo) {
             const index = this.todos.findIndex(v => v.id === todo.id);
