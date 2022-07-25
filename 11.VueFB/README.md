@@ -1,35 +1,22 @@
-# vue-fb
+#  Vue3 + FireBase Basics
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue3 + Vite, FireBase - FireStore Database 이용해서 간단한 Todo 구현
 
-## Recommended IDE Setup
+##  개발 환경 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Chrome](https://www.google.com/intl/ko/chrome/)
 
-## Customize configuration
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 
-## Project Setup
+- [Node.js](https://nodejs.org/ko/)
 
-```sh
-npm install
-```
+##  Dependencies
 
-### Compile and Hot-Reload for Development
+- Pinia : [Pinia](https://www.npmjs.com/package/pinia)
 
-```sh
-npm run dev
-```
+- FireBase : [FireBase](https://www.npmjs.com/package/firebase)
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Vue3 Vite
+ - npm create vite@latest
