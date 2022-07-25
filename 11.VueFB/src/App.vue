@@ -26,10 +26,15 @@ export default {
         const store = useStore();
         const { todos } = storeToRefs(store);
         const { offLoading } = store;
-        watch(todos, () => {
-            console.log(1);
-            offLoading();
-        });
+        watch(
+            todos,
+            () => {
+                offLoading();
+            },
+            {
+                deep: true,
+            },
+        );
     },
 };
 </script>

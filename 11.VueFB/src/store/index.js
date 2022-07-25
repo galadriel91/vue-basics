@@ -18,6 +18,7 @@ export const useStore = defineStore('store', {
             await dbService.collection('todos').add(todo);
         },
         async checkTodoItem({ id, isCheck }) {
+            this.onLoading();
             await dbService.doc(`/todos/${id}`).update({ isCheck });
         },
         async removeTodoItem(id) {
@@ -25,6 +26,7 @@ export const useStore = defineStore('store', {
             await dbService.doc(`/todos/${id}`).delete();
         },
         async updateTodoItem({ id, content }) {
+            this.onLoading();
             await dbService.doc(`/todos/${id}`).update({ content });
         },
         async getTodoItem() {
