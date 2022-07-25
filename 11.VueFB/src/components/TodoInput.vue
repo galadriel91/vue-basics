@@ -22,7 +22,7 @@ export default {
         const onSubmitForm = () => {
             if (value.value.length) {
                 addTodoItem({
-                    id: Date.now(),
+                    created: Date.now(),
                     content: value.value,
                     isCheck: false,
                 });

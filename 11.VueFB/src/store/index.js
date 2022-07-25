@@ -36,6 +36,7 @@ export const useStore = defineStore('store', {
                     ...todo.data(),
                     id: todo.id,
                 }));
+                todos.sort((a, b) => b.created - a.created);
                 this.todos = todos;
             });
         },
