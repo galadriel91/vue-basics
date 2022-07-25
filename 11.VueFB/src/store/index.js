@@ -4,6 +4,7 @@ import { dbService } from '@/utils/fs';
 export const useStore = defineStore('store', {
     state: () => ({
         todos: [],
+        loading: false,
     }),
     actions: {
         async addTodoItem(todo) {
