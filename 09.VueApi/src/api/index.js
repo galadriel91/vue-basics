@@ -16,4 +16,8 @@ const getEditNoteItem = id => {
     return instance.get(`notes/${id}`);
 };
 
-export { addNoteItem, getNoteItem, getEditNoteItem };
+const updateNoteItem = (id, note) => {
+    return instance.patch(`notes/${id}`, note);
+};
+
+export { addNoteItem, getNoteItem, getEditNoteItem, updateNoteItem };

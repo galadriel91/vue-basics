@@ -24,7 +24,7 @@
             <div class="infoWrap" :class="{ noUpdate: !item.update }">
                 <div class="dateWrap" v-if="item.update">
                     <span>최근 수정일:</span>
-                    <span>{{ DATE }}</span>
+                    <!-- <span>{{ DATE }}</span> -->
                 </div>
                 <div class="buttonWrap">
                     <button @click="onClickMain">취소</button>
@@ -38,6 +38,7 @@
 <script>
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from '../../store';
 
 // import { defineDate } from 'Utils/aboutDate';
 export default {
@@ -47,7 +48,9 @@ export default {
             required: true,
         },
     },
-    setup() {
+    setup(props) {
+        const store = useStore();
+        const { updateNote } = store;
         const router = useRouter();
         const title = ref('');
         const content = ref('');
@@ -56,8 +59,21 @@ export default {
         const onClickMain = () => {
             router.push('/');
         };
-        const onSubmitForm = () => {};
-
+        const onSubmitForm = () => {
+            if (title.value.length && content.value.length) {
+                updateNote({
+                    id: props.item.id,
+                    title: title.value,
+                    content: content.value,
+                    date: new Date(),
+                    update: true,
+                });
+                onClickMain();
+            } else {
+                alert('다시 한번 확인해 주세요');
+                titleInput.value.focus();
+            }
+        };
         onMounted(() => {
             titleInput.value.focus();
         });
@@ -70,33 +86,6 @@ export default {
             onSubmitForm,
         };
     },
-
-    // methods: {
-    //     onClickMain() {
-    //         this.$router.push('/');
-    //     },
-    //     onSubmitForm() {
-    //         if (this.title.length && this.content.length) {
-    //             this.$store.commit('UPDATE_NOTE', {
-    //                 id: this.item.id,
-    //                 title: this.title,
-    //                 content: this.content,
-    //                 date: new Date(),
-    //                 update: true,
-    //             });
-    //             this.$router.push('/');
-    //         } else {
-    //             alert('다시 한번 확인해 주세요');
-    //             this.$refs.titleInput.focus();
-    //         }
-    //     },
-    // },
-    // computed: {
-    //     DATE() {
-    //         const result = defineDate(this.item.date);
-    //         return result;
-    //     },
-    // },
 };
 </script>
 
