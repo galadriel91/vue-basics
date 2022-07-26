@@ -5,11 +5,18 @@ export const router = createRouter({
     routes: [
         {
             path: '/',
+            name: 'main',
             component: () => import('@/pages/MainPage.vue'),
         },
         {
             path: '/create',
+            name: 'create',
             component: () => import('@/pages/CreatePage.vue'),
+        },
+        {
+            path: '/edit/:id',
+            name: 'eidt',
+            component: () => import('@/pages/EditPage.vue'),
         },
     ],
 });

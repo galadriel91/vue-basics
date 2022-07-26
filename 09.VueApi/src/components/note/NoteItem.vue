@@ -40,7 +40,9 @@ export default {
         const store = useStore();
         const router = useRouter();
         const onClickRemoveItem = () => {};
-        const onClickEditPage = () => {};
+        const onClickEditPage = () => {
+            router.push(`/edit/${props.item.id}`);
+        };
         return {
             onClickRemoveItem,
             onClickEditPage,
