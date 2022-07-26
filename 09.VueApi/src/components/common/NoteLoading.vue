@@ -10,7 +10,7 @@ import { computed } from 'vue';
 export default {
     setup() {
         const LOADING = computed(() => {
-            return true;
+            return false;
         });
         return {
             LOADING,
