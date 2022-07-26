@@ -10,8 +10,8 @@
         </div>
         <div class="contentInfoWrap">
             <div class="dateWrap">
-                <!-- <span>{{ DATE }}</span> -->
-                <!-- <span v-if="item.update">최근 수정</span> -->
+                <span>{{ DATE }}</span>
+                <span v-if="item.update">최근 수정</span>
             </div>
             <div class="btnWrap">
                 <button class="xi-pen-o" @click="onClickEditPage"></button>
@@ -27,6 +27,7 @@
 <script>
 import { useStore } from '@/store';
 import { useRouter } from 'vue-router';
+import { useDate } from '@/composables/useDate';
 export default {
     props: {
         item: {
@@ -35,18 +36,15 @@ export default {
         },
     },
     setup(props) {
+        const DATE = useDate(props.item);
         const store = useStore();
         const router = useRouter();
-        // const { onRemoveItem } = store;
-        const onClickRemoveItem = () => {
-            // onRemoveItem(props.item.id);
-        };
-        const onClickEditPage = () => {
-            // router.push(`/edit/${props.item.id}`);
-        };
+        const onClickRemoveItem = () => {};
+        const onClickEditPage = () => {};
         return {
             onClickRemoveItem,
             onClickEditPage,
+            DATE,
         };
     },
 };
