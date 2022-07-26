@@ -1,13 +1,15 @@
 <template>
     <div class="container">
         <RouterView />
+        <NoteLoading />
     </div>
 </template>
 
 <script>
+import NoteLoading from '@/components/common/NoteLoading.vue';
 export default {
-    setup() {
-        return {};
+    components: {
+        NoteLoading,
     },
 };
 </script>
