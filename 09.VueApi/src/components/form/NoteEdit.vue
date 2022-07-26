@@ -36,20 +36,41 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
 // import { defineDate } from 'Utils/aboutDate';
 export default {
     props: {
         item: {
             type: Object,
-            required: false,
+            required: true,
         },
     },
-    data() {
+    setup() {
+        const router = useRouter();
+        const title = ref('');
+        const content = ref('');
+        const titleInput = ref(null);
+
+        const onClickMain = () => {
+            router.push('/');
+        };
+        const onSubmitForm = () => {};
+
+        onMounted(() => {
+            titleInput.value.focus();
+        });
+
         return {
-            title: '',
-            content: '',
+            title,
+            content,
+            titleInput,
+            onClickMain,
+            onSubmitForm,
         };
     },
+
     // methods: {
     //     onClickMain() {
     //         this.$router.push('/');
@@ -75,9 +96,6 @@ export default {
     //         const result = defineDate(this.item.date);
     //         return result;
     //     },
-    // },
-    // mounted() {
-    //     this.$refs.titleInput.focus();
     // },
 };
 </script>

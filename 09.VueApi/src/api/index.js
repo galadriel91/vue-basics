@@ -12,4 +12,8 @@ const getNoteItem = () => {
     return instance.get('notes');
 };
 
-export { addNoteItem, getNoteItem };
+const getEditNoteItem = id => {
+    return instance.get(`notes/${id}`);
+};
+
+export { addNoteItem, getNoteItem, getEditNoteItem };
