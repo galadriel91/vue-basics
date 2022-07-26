@@ -12,6 +12,7 @@ export const useStore = defineStore('store', {
         },
         async getNote() {
             const { data } = await getNoteItem();
+            this.notes = data;
             return data;
         },
     },
