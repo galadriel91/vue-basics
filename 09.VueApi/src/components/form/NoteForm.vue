@@ -32,42 +32,42 @@
 <script>
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-// import { useStore } from '@/store';
+import { useStore } from '@/store';
 export default {
     setup() {
         const router = useRouter();
-        // const store = useStore();
-        // const { onAddItem } = store;
+        const store = useStore();
+        const { addNote } = store;
         // data
         const title = ref('');
         const titleInput = ref('');
         const content = ref('');
-        // const onClickMain = () => {
-        //     router.push('/');
-        // };
-        // const onInitialForm = () => {
-        //     title.value = '';
-        //     content.value = '';
-        // };
-        // const onSubmitForm = () => {
-        //     if (title.value.length && content.value.length) {
-        //         onAddItem({
-        //             id: Date.now(),
-        //             title: title.value,
-        //             content: content.value,
-        //             date: new Date(),
-        //             update: false,
-        //         });
-        //         onClickMain();
-        //         onInitialForm();
-        //     } else {
-        //         alert('다시 한번 확인해 주세요');
-        //     }
-        // };
-        // onMounted(() => {
-        //     titleInput.value.focus();
-        // });
-        return { title, content, titleInput };
+        const onClickMain = () => {
+            router.push('/');
+        };
+        const onInitialForm = () => {
+            title.value = '';
+            content.value = '';
+        };
+        const onSubmitForm = () => {
+            if (title.value.length && content.value.length) {
+                addNote({
+                    id: Date.now(),
+                    title: title.value,
+                    content: content.value,
+                    date: new Date(),
+                    update: false,
+                });
+                onClickMain();
+                onInitialForm();
+            } else {
+                alert('다시 한번 확인해 주세요');
+            }
+        };
+        onMounted(() => {
+            titleInput.value.focus();
+        });
+        return { title, content, titleInput, onSubmitForm };
     },
 };
 </script>

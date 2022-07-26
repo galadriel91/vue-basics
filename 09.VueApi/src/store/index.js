@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { addNoteItem, getNoteItem } from '@/api';
 
-export const store = defineStore('store', {
+export const useStore = defineStore('store', {
     state: () => ({
         notes: [],
     }),
