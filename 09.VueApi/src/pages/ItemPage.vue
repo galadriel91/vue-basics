@@ -1,18 +1,17 @@
 <template>
     <div>
-        <!-- <NotePost :item="edit" /> -->
-        Edit
+        <NotePost :item="edit" />
     </div>
 </template>
 
 <script>
-// import NotePost from '@/components/item/NotePost.vue';
+import NotePost from '@/components/item/NotePost.vue';
 import { storeToRefs } from 'pinia';
 import { useStore } from '../store';
 import { useLoading } from '@/composables/useLoading';
 export default {
     components: {
-        // NotePost,
+        NotePost,
     },
     setup() {
         const store = useStore();

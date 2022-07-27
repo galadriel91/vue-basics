@@ -24,7 +24,8 @@
 </template>
 
 <script>
-import { defineDate } from 'Utils/aboutDate';
+import { useDate } from '@/composables/useDate';
+import { useRouter } from 'vue-router';
 export default {
     props: {
         item: {
@@ -32,27 +33,37 @@ export default {
             required: false,
         },
     },
-    methods: {
-        onClickMain() {
-            this.$router.push('/');
-        },
-        onClickEdit() {
-            this.$router.push(`/edit/${this.item.id}`);
-        },
-        onClickRemove() {
-            const result = confirm('노트를 삭제하시겠습니까?');
-            if (result) {
-                this.$store.commit('REMOVE_NOTE', this.item.id);
-                this.$router.push('/');
-            }
-        },
+    setup(props) {
+        const router = useRouter();
+        const DATE = useDate(props.item);
+        const onClickMain = () => {
+            router.push('/');
+        };
+        const onClickEdit = () => {
+            router.push(`/edit/${props.item.id}`);
+        };
+        const onClickRemove = () => {};
+        return {
+            onClickMain,
+            onClickEdit,
+            DATE,
+        };
     },
-    computed: {
-        DATE() {
-            const result = defineDate(this.item.date);
-            return result;
-        },
-    },
+    // methods: {
+    //     onClickRemove() {
+    //         const result = confirm('노트를 삭제하시겠습니까?');
+    //         if (result) {
+    //             this.$store.commit('REMOVE_NOTE', this.item.id);
+    //             this.$router.push('/');
+    //         }
+    //     },
+    // },
+    // computed: {
+    //     DATE() {
+    //         const result = defineDate(this.item.date);
+    //         return result;
+    //     },
+    // },
 };
 </script>
 
