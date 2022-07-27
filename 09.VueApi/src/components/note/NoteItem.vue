@@ -1,6 +1,6 @@
 <template>
     <li class="noteItem">
-        <div class="contentWrap">
+        <div class="contentWrap" @click="onClickItemPage">
             <h3 class="contentWrapTitle">{{ item.title }}</h3>
             <div class="contentWrapContent">
                 <p>
@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { useStore } from '@/store';
 import { useRouter } from 'vue-router';
 import { useDate } from '@/composables/useDate';
 export default {
@@ -37,15 +36,18 @@ export default {
     },
     setup(props) {
         const DATE = useDate(props.item);
-        const store = useStore();
         const router = useRouter();
         const onClickRemoveItem = () => {};
         const onClickEditPage = () => {
             router.push(`/edit/${props.item.id}`);
         };
+        const onClickItemPage = () => {
+            router.push(`/item/${props.item.id}`);
+        };
         return {
             onClickRemoveItem,
             onClickEditPage,
+            onClickItemPage,
             DATE,
         };
     },

@@ -34,4 +34,11 @@ export default [
         beforeEnter: getParamsNote(),
         meta: { title: 'Edit' },
     },
+    {
+        path: '/item/:id',
+        name: 'POST',
+        component: () => import('@/pages/ItemPage.vue'),
+        beforeEnter: getParamsNote(),
+        meta: { title: 'Post Note' },
+    },
 ];
