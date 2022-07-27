@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <NoteHeader />
+        <NoteHeader v-if="!showing" />
         <RouterView />
         <NoteLoading />
     </div>
@@ -9,10 +9,21 @@
 <script>
 import NoteHeader from '@/components/common/NoteHeader.vue';
 import NoteLoading from '@/components/common/NoteLoading.vue';
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 export default {
     components: {
         NoteLoading,
         NoteHeader,
+    },
+    setup() {
+        const route = useRoute();
+        const showing = computed(() => {
+            return route.meta.title === 'Error';
+        });
+        return {
+            showing,
+        };
     },
 };
 </script>

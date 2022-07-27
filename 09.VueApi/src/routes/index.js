@@ -10,7 +10,7 @@ export const router = createRouter({
         },
         {
             path: '/404',
-            component: () => import('@/pages/NotPage'),
+            component: () => import('@/pages/NotPage.vue'),
             meta: { title: 'Error' },
         },
         {
@@ -21,16 +21,30 @@ export const router = createRouter({
             path: '/main',
             name: 'main',
             component: () => import('@/pages/MainPage.vue'),
+            beforeEnter: (to, from, next) => {
+                const store = useStore();
+                const { getNote } = store;
+                getNote()
+                    .then(() => {
+                        next();
+                    })
+                    .catch(() => {
+                        next('/404');
+                    });
+            },
+            meta: { title: 'Main' },
         },
         {
             path: '/create',
             name: 'create',
             component: () => import('@/pages/CreatePage.vue'),
+            meta: { title: 'Create' },
         },
         {
             path: '/edit/:id',
             name: 'edit',
             component: () => import('@/pages/EditPage.vue'),
+            meta: { title: 'Edit' },
         },
     ],
 });
