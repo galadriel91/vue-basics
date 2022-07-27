@@ -4,15 +4,15 @@ import { useStore } from '@/store';
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
-        // {
-        //     path: '/:pathMatch(.*)',
-        //     redirect: '/404',
-        // },
-        // {
-        //     path: '/404',
-        //     component: () => import('@/pages/NotPage'),
-        //     meta: { title: 'Error' },
-        // },
+        {
+            path: '/:pathMatch(.*)',
+            redirect: '/404',
+        },
+        {
+            path: '/404',
+            component: () => import('@/pages/NotPage'),
+            meta: { title: 'Error' },
+        },
         {
             path: '/',
             redirect: '/main',
