@@ -1,4 +1,4 @@
-import { getNote } from './guard';
+import { getNote, getParamsNote } from './guard';
 
 export default [
     {
@@ -31,6 +31,7 @@ export default [
         path: '/edit/:id',
         name: 'edit',
         component: () => import('@/pages/EditPage.vue'),
+        beforeEnter: getParamsNote(),
         meta: { title: 'Edit' },
     },
 ];

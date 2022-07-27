@@ -11,3 +11,15 @@ export const getNote = () => (to, from, next) => {
             next('/404');
         });
 };
+
+export const getParamsNote = () => (to, from, next) => {
+    const store = useStore();
+    const { getEditNote } = store;
+    getEditNote(to.params.id)
+        .then(() => {
+            next();
+        })
+        .catch(() => {
+            next('/404');
+        });
+};
