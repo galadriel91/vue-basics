@@ -10,8 +10,15 @@ export const useStore = defineStore('store', {
     state: () => ({
         notes: [],
         edit: {},
+        loading: false,
     }),
     actions: {
+        onLoading() {
+            this.loading = true;
+        },
+        offLoading() {
+            this.loading = false;
+        },
         async addNote(note) {
             const { data } = await addNoteItem(note);
             return data;

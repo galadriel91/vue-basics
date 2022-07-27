@@ -2,7 +2,8 @@ import { useStore } from '@/store';
 
 export const getNote = () => (to, from, next) => {
     const store = useStore();
-    const { getNote } = store;
+    const { getNote, onLoading } = store;
+    onLoading();
     getNote()
         .then(() => {
             next();
@@ -14,7 +15,8 @@ export const getNote = () => (to, from, next) => {
 
 export const getParamsNote = () => (to, from, next) => {
     const store = useStore();
-    const { getEditNote } = store;
+    const { getEditNote, onLoading } = store;
+    onLoading();
     getEditNote(to.params.id)
         .then(() => {
             next();

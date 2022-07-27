@@ -1,19 +1,18 @@
 <template>
-    <div class="loadingWrap" v-if="LOADING">
+    <div class="loadingWrap" v-if="loading">
         <div class="loader"></div>
     </div>
 </template>
 
 <script>
-import { computed } from 'vue';
-
+import { useStore } from '@/store';
+import { storeToRefs } from 'pinia';
 export default {
     setup() {
-        const LOADING = computed(() => {
-            return false;
-        });
+        const store = useStore();
+        const { loading } = storeToRefs(store);
         return {
-            LOADING,
+            loading,
         };
     },
 };

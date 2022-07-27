@@ -6,8 +6,10 @@
 </template>
 
 <script>
+import { useLoading } from '@/composables/useLoading';
 export default {
     setup() {
+        useLoading();
         return {};
     },
 };

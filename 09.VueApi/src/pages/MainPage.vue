@@ -8,9 +8,9 @@
 
 <script>
 import NoteItem from '@/components/note/NoteItem.vue';
+import { useLoading } from '@/composables/useLoading';
 import { useStore } from '@/store';
 import { storeToRefs } from 'pinia';
-import { onMounted } from 'vue';
 export default {
     components: {
         NoteItem,
@@ -18,10 +18,7 @@ export default {
     setup() {
         const store = useStore();
         const { notes } = storeToRefs(store);
-        const { getNote } = store;
-        onMounted(() => {
-            getNote();
-        });
+        useLoading();
         return {
             notes,
         };

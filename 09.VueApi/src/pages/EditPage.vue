@@ -6,6 +6,7 @@
 
 <script>
 import NoteEdit from '@/components/form/NoteEdit.vue';
+import { useLoading } from '@/composables/useLoading';
 import { useStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 export default {
@@ -15,6 +16,7 @@ export default {
     setup() {
         const store = useStore();
         const { edit } = storeToRefs(store);
+        useLoading();
         return {
             edit,
         };
