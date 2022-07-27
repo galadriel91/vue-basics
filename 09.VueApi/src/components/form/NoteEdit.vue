@@ -24,7 +24,7 @@
             <div class="infoWrap" :class="{ noUpdate: !item.update }">
                 <div class="dateWrap" v-if="item.update">
                     <span>최근 수정일:</span>
-                    <!-- <span>{{ DATE }}</span> -->
+                    <span>{{ DATE }}</span>
                 </div>
                 <div class="buttonWrap">
                     <button @click="onClickMain">취소</button>
@@ -38,9 +38,8 @@
 <script>
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useStore } from '../../store';
-
-// import { defineDate } from 'Utils/aboutDate';
+import { useStore } from '@/store';
+import { useDate } from '@/composables/useDate';
 export default {
     props: {
         item: {
@@ -49,6 +48,8 @@ export default {
         },
     },
     setup(props) {
+        console.log(props.item.date);
+        const DATE = useDate(props.item);
         const store = useStore();
         const { updateNote } = store;
         const router = useRouter();
@@ -84,6 +85,7 @@ export default {
             titleInput,
             onClickMain,
             onSubmitForm,
+            DATE,
         };
     },
 };
