@@ -27,6 +27,7 @@
 <script>
 import { useRouter } from 'vue-router';
 import { useDate } from '@/composables/useDate';
+import { useStore } from '@/store';
 export default {
     props: {
         item: {
@@ -35,9 +36,15 @@ export default {
         },
     },
     setup(props) {
+        const store = useStore();
+        const { removeNote, getNote } = store;
         const DATE = useDate(props.item);
         const router = useRouter();
-        const onClickRemoveItem = () => {};
+        const onClickRemoveItem = () => {
+            removeNote(props.item.id).then(() => {
+                getNote();
+            });
+        };
         const onClickEditPage = () => {
             router.push(`/edit/${props.item.id}`);
         };

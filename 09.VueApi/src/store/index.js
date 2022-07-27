@@ -4,6 +4,7 @@ import {
     getNoteItem,
     getEditNoteItem,
     updateNoteItem,
+    removeNoteItem,
 } from '@/api';
 
 export const useStore = defineStore('store', {
@@ -35,6 +36,10 @@ export const useStore = defineStore('store', {
         },
         async updateNote(note) {
             const { data } = await updateNoteItem(note.id, note);
+            return data;
+        },
+        async removeNote(id) {
+            const { data } = await removeNoteItem(id);
             return data;
         },
     },

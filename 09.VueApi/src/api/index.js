@@ -20,4 +20,14 @@ const updateNoteItem = (id, note) => {
     return instance.patch(`notes/${id}`, note);
 };
 
-export { addNoteItem, getNoteItem, getEditNoteItem, updateNoteItem };
+const removeNoteItem = id => {
+    return instance.delete(`notes/${id}`);
+};
+
+export {
+    addNoteItem,
+    getNoteItem,
+    getEditNoteItem,
+    updateNoteItem,
+    removeNoteItem,
+};

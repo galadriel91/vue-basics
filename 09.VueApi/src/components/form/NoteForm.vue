@@ -37,7 +37,7 @@ export default {
     setup() {
         const router = useRouter();
         const store = useStore();
-        const { addNote } = store;
+        const { addNote, getNote } = store;
         // data
         const title = ref('');
         const titleInput = ref('');
@@ -57,9 +57,11 @@ export default {
                     content: content.value,
                     date: new Date(),
                     update: false,
+                }).then(() => {
+                    getNote();
+                    onClickMain();
+                    onInitialForm();
                 });
-                onClickMain();
-                onInitialForm();
             } else {
                 alert('다시 한번 확인해 주세요');
             }
