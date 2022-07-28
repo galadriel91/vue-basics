@@ -9,7 +9,7 @@ const addNoteItem = note => {
 };
 
 const getNoteItem = page => {
-    return instance.get(`notes?_page=${page}&_limit=3&_order=desc`);
+    return instance.get(`notes?_page=${page}&_sort=id&_order=desc&_limit=3`);
 };
 
 const getEditNoteItem = id => {
