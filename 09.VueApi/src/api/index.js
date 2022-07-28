@@ -9,7 +9,7 @@ const addNoteItem = note => {
 };
 
 const getNoteItem = () => {
-    return instance.get('notes');
+    return instance.get(`notes?_limit=3`);
 };
 
 const getEditNoteItem = id => {

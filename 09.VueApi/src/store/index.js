@@ -11,6 +11,9 @@ export const useStore = defineStore('store', {
     state: () => ({
         notes: [],
         edit: {},
+        totalItem: '',
+        currentPage: 1,
+        limit: 3,
         loading: false,
     }),
     actions: {
@@ -25,9 +28,10 @@ export const useStore = defineStore('store', {
             return data;
         },
         async getNote() {
-            const { data } = await getNoteItem();
-            this.notes = data;
-            return data;
+            const response = await getNoteItem();
+            this.totalItem = response.headers['x-total-count'];
+            this.notes = response.data;
+            return response.data;
         },
         async getEditNote(id) {
             const { data } = await getEditNoteItem(id);
