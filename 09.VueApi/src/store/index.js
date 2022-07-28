@@ -23,14 +23,18 @@ export const useStore = defineStore('store', {
         offLoading() {
             this.loading = false;
         },
+        setCurrentPage(value) {
+            this.currentPage = value;
+        },
         async addNote(note) {
             const { data } = await addNoteItem(note);
             return data;
         },
-        async getNote() {
-            const response = await getNoteItem();
+        async getNote(page = 1) {
+            const response = await getNoteItem(page);
             this.totalItem = response.headers['x-total-count'];
             this.notes = response.data;
+            this.setCurrentPage(page);
             return response.data;
         },
         async getEditNote(id) {

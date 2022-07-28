@@ -8,8 +8,8 @@ const addNoteItem = note => {
     return instance.post('notes', note);
 };
 
-const getNoteItem = () => {
-    return instance.get(`notes?_limit=3`);
+const getNoteItem = page => {
+    return instance.get(`notes?_page=${page}&_limit=3&_order=desc`);
 };
 
 const getEditNoteItem = id => {
