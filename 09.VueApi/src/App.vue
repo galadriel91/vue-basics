@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <NoteHeader v-if="!showing" />
+        <NoteSearch v-if="isPagi" />
         <RouterView />
         <NotePagi v-if="isPagi" />
         <NoteLoading />
@@ -9,6 +10,7 @@
 
 <script>
 import NoteHeader from '@/components/common/NoteHeader.vue';
+import NoteSearch from '@/components/common/NoteSearch.vue';
 import NoteLoading from '@/components/common/NoteLoading.vue';
 import NotePagi from '@/components/note/NotePagi.vue';
 import { computed } from 'vue';
@@ -17,6 +19,7 @@ export default {
     components: {
         NoteLoading,
         NoteHeader,
+        NoteSearch,
         NotePagi,
     },
     setup() {
