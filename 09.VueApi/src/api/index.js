@@ -8,8 +8,12 @@ const addNoteItem = note => {
     return instance.post('notes', note);
 };
 
-const getNoteItem = page => {
-    return instance.get(`notes?_page=${page}&_sort=id&_order=desc&_limit=3`);
+const getNoteItem = (page, search) => {
+    return instance.get(`notes?_page=${page}&_sort=id&_order=desc&_limit=3`, {
+        params: {
+            title_like: search,
+        },
+    });
 };
 
 const getEditNoteItem = id => {

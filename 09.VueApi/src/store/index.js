@@ -11,6 +11,7 @@ export const useStore = defineStore('store', {
     state: () => ({
         notes: [],
         edit: {},
+        searchValue: '',
         totalItem: '',
         currentPage: 1,
         limit: 3,
@@ -26,12 +27,15 @@ export const useStore = defineStore('store', {
         setCurrentPage(value) {
             this.currentPage = value;
         },
+        setSearchValue(value) {
+            this.searchValue = value;
+        },
         async addNote(note) {
             const { data } = await addNoteItem(note);
             return data;
         },
-        async getNote(page = 1) {
-            const response = await getNoteItem(page);
+        async getNote(page = 1, search) {
+            const response = await getNoteItem(page, search);
             this.totalItem = response.headers['x-total-count'];
             this.notes = response.data;
             this.setCurrentPage(page);
