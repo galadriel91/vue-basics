@@ -34,6 +34,8 @@ export default {
                 return 'Edit Page';
             } else if (name === 'POST') {
                 return 'Post Page';
+            } else if (name === 'search') {
+                return 'Search Page';
             }
         });
         const onClickCreate = () => {

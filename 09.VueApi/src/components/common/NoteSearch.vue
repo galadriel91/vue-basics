@@ -14,9 +14,11 @@
 <script>
 import { ref } from 'vue';
 import { useStore } from '@/store';
+import { useRouter } from 'vue-router';
 
 export default {
     setup() {
+        const router = useRouter();
         const store = useStore();
         const { getNote, setSearchValue } = store;
         const searchValue = ref('');
@@ -24,6 +26,7 @@ export default {
             setSearchValue(searchValue.value);
             getNote(1, searchValue.value).then(() => {
                 searchValue.value = '';
+                router.push('/search');
             });
         };
         return { searchValue, onSubmitForm };

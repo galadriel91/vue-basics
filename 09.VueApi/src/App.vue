@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <NoteHeader v-if="!showing" />
-        <NoteSearch v-if="isPagi" />
+        <NoteSearch />
         <RouterView />
         <NotePagi v-if="isPagi" />
         <NoteLoading />
@@ -28,7 +28,7 @@ export default {
             return route.meta.title === 'Error';
         });
         const isPagi = computed(() => {
-            return route.meta.title === 'Main';
+            return route.meta.title === 'Main' || route.meta.title === 'Search';
         });
         return {
             showing,

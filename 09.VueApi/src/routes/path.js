@@ -41,4 +41,10 @@ export default [
         beforeEnter: getParamsNote(),
         meta: { title: 'Post Note' },
     },
+    {
+        path: '/search',
+        name: 'search',
+        component: () => import('@/pages/SearchPage.vue'),
+        meta: { title: 'Search' },
+    },
 ];

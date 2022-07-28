@@ -1,24 +1,17 @@
 <template>
     <div>
         <ul>
-            <li
-                v-if="currentPage !== 1"
-                @click="onClickPage(currentPage - 1, searchValue)"
-            >
+            <li v-if="currentPage !== 1" @click="onClickPage(currentPage - 1)">
                 <a href="javascript:void(0);">이전</a>
             </li>
-            <li
-                v-for="page in pages"
-                :key="page"
-                @click="onClickPage(page, searchValue)"
-            >
+            <li v-for="page in pages" :key="page" @click="onClickPage(page)">
                 <RouterLink :class="{ active: page == currentPage }" to="/">{{
                     page
                 }}</RouterLink>
             </li>
             <li
                 v-if="currentPage !== pages"
-                @click="onClickPage(currentPage + 1, searchValue)"
+                @click="onClickPage(currentPage + 1)"
             >
                 <a href="javascript:void(0);">다음</a>
             </li>
@@ -34,8 +27,7 @@ import { storeToRefs } from 'pinia';
 export default {
     setup() {
         const store = useStore();
-        const { totalItem, limit, currentPage, searchValue } =
-            storeToRefs(store);
+        const { totalItem, limit, currentPage } = storeToRefs(store);
         const { getNote } = store;
         const pages = computed(() => {
             return Math.ceil(totalItem.value / limit.value);
@@ -43,7 +35,7 @@ export default {
         const onClickPage = (page, search) => {
             getNote(page, search);
         };
-        return { pages, currentPage, onClickPage, searchValue };
+        return { pages, currentPage, onClickPage };
     },
 };
 </script>
