@@ -27,7 +27,7 @@
                     <span>{{ DATE }}</span>
                 </div>
                 <div class="buttonWrap">
-                    <button @click="onClickMain">취소</button>
+                    <button type="button" @click="onClickMain">취소</button>
                     <button type="submit">수정</button>
                 </div>
             </div>
@@ -68,8 +68,13 @@ export default {
                     content: content.value,
                     date: new Date(),
                     update: true,
-                });
-                onClickMain();
+                })
+                    .then(() => {
+                        onClickMain();
+                    })
+                    .catch(() => {
+                        router.push('/404');
+                    });
             } else {
                 alert('다시 한번 확인해 주세요');
                 titleInput.value.focus();

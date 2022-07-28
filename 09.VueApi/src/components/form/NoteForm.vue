@@ -57,11 +57,15 @@ export default {
                     content: content.value,
                     date: new Date(),
                     update: false,
-                }).then(() => {
-                    getNote();
-                    onClickMain();
-                    onInitialForm();
-                });
+                })
+                    .then(() => {
+                        getNote();
+                        onClickMain();
+                        onInitialForm();
+                    })
+                    .catch(err => {
+                        router.push('/404');
+                    });
             } else {
                 alert('다시 한번 확인해 주세요');
             }

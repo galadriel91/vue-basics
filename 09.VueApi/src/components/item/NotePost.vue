@@ -26,6 +26,7 @@
 <script>
 import { useDate } from '@/composables/useDate';
 import { useRouter } from 'vue-router';
+import { useStore } from '@/store';
 export default {
     props: {
         item: {
@@ -34,6 +35,8 @@ export default {
         },
     },
     setup(props) {
+        const store = useStore();
+        const { removeNote } = store;
         const router = useRouter();
         const DATE = useDate(props.item);
         const onClickMain = () => {
@@ -42,28 +45,25 @@ export default {
         const onClickEdit = () => {
             router.push(`/edit/${props.item.id}`);
         };
-        const onClickRemove = () => {};
+        const onClickRemove = () => {
+            const result = confirm('노트를 삭제하시겠습니까?');
+            if (result) {
+                removeNote(props.item.id)
+                    .then(() => {
+                        router.push('/');
+                    })
+                    .catch(() => {
+                        router.push('/404');
+                    });
+            }
+        };
         return {
             onClickMain,
             onClickEdit,
+            onClickRemove,
             DATE,
         };
     },
-    // methods: {
-    //     onClickRemove() {
-    //         const result = confirm('노트를 삭제하시겠습니까?');
-    //         if (result) {
-    //             this.$store.commit('REMOVE_NOTE', this.item.id);
-    //             this.$router.push('/');
-    //         }
-    //     },
-    // },
-    // computed: {
-    //     DATE() {
-    //         const result = defineDate(this.item.date);
-    //         return result;
-    //     },
-    // },
 };
 </script>
 
