@@ -1,17 +1,29 @@
 <template>
     <header>
         <h1>{{ headerName }}</h1>
-        <button class="xi-plus" @click="onClickCreate"></button>
+        <button
+            class="xi-plus"
+            @click="onClickCreate"
+            v-if="notes.length && !showBtns"
+        ></button>
     </header>
 </template>
 
 <script>
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { useStore } from '@/store';
+import { storeToRefs } from 'pinia';
 export default {
     setup() {
+        const store = useStore();
         const router = useRouter();
         const route = useRoute();
+        const { notes } = storeToRefs(store);
+        const showBtns = computed(() => {
+            const name = route.name;
+            return name === 'create';
+        });
         const headerName = computed(() => {
             const name = route.name;
             if (name === 'main') {
@@ -28,8 +40,10 @@ export default {
             router.push('/create');
         };
         return {
+            notes,
             onClickCreate,
             headerName,
+            showBtns,
         };
     },
 };

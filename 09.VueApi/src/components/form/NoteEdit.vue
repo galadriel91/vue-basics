@@ -23,7 +23,7 @@
             </div>
             <div class="infoWrap" :class="{ noUpdate: !item.update }">
                 <div class="dateWrap" v-if="item.update">
-                    <span>최근 수정일:</span>
+                    <span>최근 수정일 : </span>
                     <span>{{ DATE }}</span>
                 </div>
                 <div class="buttonWrap">
@@ -60,6 +60,7 @@ export default {
         const onClickMain = () => {
             router.push('/');
         };
+
         const onSubmitForm = () => {
             if (title.value.length && content.value.length) {
                 updateNote({

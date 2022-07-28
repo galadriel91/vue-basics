@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="buttonWrap">
-                <button @click="onClickMain">취소</button>
+                <button type="button" @click="onClickMain">취소</button>
                 <button type="submit">저장</button>
             </div>
         </form>
@@ -73,7 +73,7 @@ export default {
         onMounted(() => {
             titleInput.value.focus();
         });
-        return { title, content, titleInput, onSubmitForm };
+        return { title, content, titleInput, onSubmitForm, onClickMain };
     },
 };
 </script>
