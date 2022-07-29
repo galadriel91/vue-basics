@@ -3,7 +3,7 @@
         <ul v-if="notes.length">
             <NoteItem v-for="note in notes" :key="note.id" :item="note" />
         </ul>
-        <NotePagi :keyword="searchValue" />
+        <NotePagi :keyword="searchValue" v-if="totalItem > 3" />
     </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
     setup() {
         const router = useRouter();
         const store = useStore();
-        const { notes, searchValue } = storeToRefs(store);
+        const { notes, searchValue, totalItem } = storeToRefs(store);
         const { setSearchValue } = store;
         const onClickCreate = () => {
             router.push('/create');
@@ -35,6 +35,7 @@ export default {
             notes,
             searchValue,
             onClickCreate,
+            totalItem,
         };
     },
 };

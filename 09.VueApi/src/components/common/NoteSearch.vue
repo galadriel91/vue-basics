@@ -23,11 +23,15 @@ export default {
         const { getNote, setSearchValue } = store;
         const searchValue = ref('');
         const onSubmitForm = () => {
-            setSearchValue(searchValue.value);
-            getNote(1, searchValue.value).then(() => {
-                searchValue.value = '';
-                router.push('/search');
-            });
+            if (searchValue.value.length) {
+                setSearchValue(searchValue.value);
+                getNote(1, searchValue.value).then(() => {
+                    searchValue.value = '';
+                    router.push('/search');
+                });
+            } else {
+                alert('검색어를 입력해 주세요');
+            }
         };
         return { searchValue, onSubmitForm };
     },

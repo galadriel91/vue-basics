@@ -6,7 +6,7 @@
         <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
         </div>
-        <NotePagi />
+        <NotePagi v-if="totalItem > 3" />
     </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
     setup() {
         const router = useRouter();
         const store = useStore();
-        const { notes } = storeToRefs(store);
+        const { notes, totalItem } = storeToRefs(store);
         useLoading();
         const onClickCreate = () => {
             router.push('/create');
@@ -33,6 +33,7 @@ export default {
         return {
             notes,
             onClickCreate,
+            totalItem,
         };
     },
 };

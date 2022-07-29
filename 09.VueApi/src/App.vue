@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <NoteHeader v-if="!showing" />
-        <NoteSearch />
+        <NoteSearch v-if="!showing" />
         <RouterView />
         <NoteLoading />
     </div>
