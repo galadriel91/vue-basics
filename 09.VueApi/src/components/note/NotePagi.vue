@@ -1,13 +1,22 @@
 <template>
     <div>
         <ul>
-            <li v-if="currentPage !== 1" @click="onClickPage(currentPage - 1)">
+            <li
+                v-if="currentPage !== 1"
+                @click="onClickPage(currentPage - 1, keyword)"
+            >
                 <a href="javascript:void(0);">이전</a>
             </li>
-            <li v-for="page in pages" :key="page" @click="onClickPage(page)">
-                <RouterLink :class="{ active: page == currentPage }" to="/">{{
-                    page
-                }}</RouterLink>
+            <li
+                v-for="page in pages"
+                :key="page"
+                @click="onClickPage(page, keyword)"
+            >
+                <a
+                    :class="{ active: page == currentPage, keyword }"
+                    href="javascript:void(0);"
+                    >{{ page }}</a
+                >
             </li>
             <li
                 v-if="currentPage !== pages"
@@ -25,7 +34,13 @@ import { computed } from 'vue';
 import { storeToRefs } from 'pinia';
 
 export default {
-    setup() {
+    props: {
+        keyword: {
+            type: String,
+            required: false,
+        },
+    },
+    setup(props) {
         const store = useStore();
         const { totalItem, limit, currentPage } = storeToRefs(store);
         const { getNote } = store;

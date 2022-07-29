@@ -11,7 +11,7 @@ import NoteItem from '@/components/note/NoteItem.vue';
 import { useLoading } from '@/composables/useLoading';
 import { useStore } from '@/store';
 import { storeToRefs } from 'pinia';
-import { useRouter } from 'vue-router';
+import { onBeforeRouteLeave, useRouter } from 'vue-router';
 export default {
     components: {
         NoteItem,
@@ -20,10 +20,14 @@ export default {
         const router = useRouter();
         const store = useStore();
         const { notes } = storeToRefs(store);
+        const { setSearchValue } = store;
         const onClickCreate = () => {
             router.push('/create');
         };
         useLoading();
+        onBeforeRouteLeave(() => {
+            setSearchValue('');
+        });
         return {
             notes,
             onClickCreate,
