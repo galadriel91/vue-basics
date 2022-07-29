@@ -2,7 +2,7 @@
     <div class="container">
         <NoteHeader v-if="!showing" />
         <NoteSearch v-if="!showing" />
-        <RouterView />
+        <RouterView :key="$route.path" />
         <NoteLoading />
     </div>
 </template>

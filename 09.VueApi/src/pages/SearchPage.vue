@@ -13,7 +13,7 @@ import NotePagi from '@/components/note/NotePagi.vue';
 import { useLoading } from '@/composables/useLoading';
 import { useStore } from '@/store';
 import { storeToRefs } from 'pinia';
-import { onBeforeRouteLeave, useRouter } from 'vue-router';
+import { onBeforeRouteLeave, onBeforeRouteUpdate, useRouter } from 'vue-router';
 export default {
     components: {
         NoteItem,
@@ -23,11 +23,22 @@ export default {
         const router = useRouter();
         const store = useStore();
         const { notes, searchValue, totalItem } = storeToRefs(store);
-        const { setSearchValue } = store;
+        const { setSearchValue, getNote, onLoading } = store;
         const onClickCreate = () => {
             router.push('/create');
         };
         useLoading();
+        onBeforeRouteUpdate((to, from, next) => {
+            onLoading();
+            setSearchValue(to.params.keyword);
+            getNote(1, to.params.keyword)
+                .then(() => {
+                    next();
+                })
+                .catch(() => {
+                    next('/404');
+                });
+        });
         onBeforeRouteLeave(() => {
             setSearchValue('');
         });

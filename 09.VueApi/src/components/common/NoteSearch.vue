@@ -13,22 +13,16 @@
 
 <script>
 import { ref } from 'vue';
-import { useStore } from '@/store';
 import { useRouter } from 'vue-router';
 
 export default {
     setup() {
         const router = useRouter();
-        const store = useStore();
-        const { getNote, setSearchValue } = store;
         const searchValue = ref('');
         const onSubmitForm = () => {
             if (searchValue.value.length) {
-                setSearchValue(searchValue.value);
-                getNote(1, searchValue.value).then(() => {
-                    searchValue.value = '';
-                    router.push('/search');
-                });
+                router.push(`/search/${searchValue.value}`);
+                searchValue.value = '';
             } else {
                 alert('검색어를 입력해 주세요');
             }

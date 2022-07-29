@@ -42,9 +42,10 @@ export default [
         meta: { title: 'Post Note' },
     },
     {
-        path: '/search',
+        path: '/search/:keyword',
         name: 'search',
         component: () => import('@/pages/SearchPage.vue'),
+        beforeEnter: getNote(),
         meta: { title: 'Search' },
     },
 ];
