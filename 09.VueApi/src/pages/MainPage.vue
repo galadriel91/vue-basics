@@ -6,11 +6,13 @@
         <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
         </div>
+        <NotePagi />
     </div>
 </template>
 
 <script>
 import NoteItem from '@/components/note/NoteItem.vue';
+import NotePagi from '@/components/note/NotePagi.vue';
 import { useLoading } from '@/composables/useLoading';
 import { useStore } from '@/store';
 import { storeToRefs } from 'pinia';
@@ -18,6 +20,7 @@ import { useRouter } from 'vue-router';
 export default {
     components: {
         NoteItem,
+        NotePagi,
     },
     setup() {
         const router = useRouter();
