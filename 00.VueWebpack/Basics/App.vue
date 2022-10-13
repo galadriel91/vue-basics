@@ -1,15 +1,18 @@
 <template>
     <div class="container">
-        App
+        <VueWebpack/>
     </div>
 </template>
 
 <script>
+    import VueWebpack from 'Components/VueWebpack';
     export default {
-
+        components:{
+            VueWebpack
+        }
     }
 </script>
 
 <style lang="scss">
-@import 'Style/index';
+    @import 'Style/index';
 </style>
