@@ -1,12 +1,15 @@
 <template>
     <div class="container">
-        App
+        <VueWebpack/>
     </div>
 </template>
 
 <script>
+import VueWebpack from 'Components/VueWebpack.vue';
 export default {
-    
+    components:{
+        VueWebpack
+    }
 }
 </script>
 
