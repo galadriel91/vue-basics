@@ -14,5 +14,5 @@
 </script>
 
 <style lang="scss">
-    // @import 'Style/index';
+    @import 'Style/index';
 </style>
