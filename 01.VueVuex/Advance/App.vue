@@ -1,15 +1,14 @@
 <template>
     <div class="container">
-        <!-- <VueVuex/> -->
-        App
+        <VueVuex/>
     </div>
 </template>
 
 <script>
-// import VueVuex from 'Components/VueVuex.vue';
+import VueVuex from 'Components/VueVuex.vue';
 export default {
     components:{
-        // VueVuex
+        VueVuex
     }
 }
 </script>
