@@ -1,0 +1,30 @@
+div{
+    h1{
+        text-align: center;
+        font-size: 3rem; font-weight: bold; color: #000;
+    }
+    img{
+        height: 12rem;
+    }
+}
+.numberWrap{
+    text-align: center;
+    div{
+        margin: 0 auto 2rem;
+        width: 7rem; height: 7rem; border-radius: 50%;
+        border: 2px solid #000; line-height: 7rem;
+        font-size: 1.6rem; font-weight: bold; color: #000;
+    }
+    button{
+        margin: 0 1rem; 
+        width: 7rem; height: 3rem; background: none;
+        border: 1px solid #000; border-radius: .5rem;
+        font-size: 1.4rem; font-weight: bold; color: #000; cursor: pointer;
+        &.plusBtn{
+            background: #42b883;
+        }
+        &.minusBtn{
+            background: crimson;
+        }
+    }
+}

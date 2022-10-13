@@ -9,3 +9,7 @@
 
     }
 </script>
+
+<style lang="scss">
+@import 'Style/index';
+</style>
