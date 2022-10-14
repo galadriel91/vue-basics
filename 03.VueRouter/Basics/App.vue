@@ -1,10 +1,9 @@
 <template>
     <div>
-        App
-        <!-- <RouterNav/>
+        <!-- <RouterNav/> -->
         <div class="container">
             <RouterView/>
-        </div>         -->
+        </div>
     </div>
 </template>
 
