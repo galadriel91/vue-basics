@@ -1,11 +1,17 @@
 <template>
-    <div>App</div>
+    <div>
+        <CommonFooter />
+    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import CommonFooter from './components/common/CommonFooter.vue';
 
 export default defineComponent({
+    components: {
+        CommonFooter,
+    },
     setup() {
         return {};
     },
