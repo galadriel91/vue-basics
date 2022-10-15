@@ -7,7 +7,7 @@ const getPage = () => async (to: RouteLocationNormalizedLoaded) => {
     const common = useCommon();
     const { FETCH_LIST } = item;
     const { ON_LOADING } = common;
-    // ON_LOADING();
+    ON_LOADING();
     try {
         await FETCH_LIST(to.name as string);
     } catch {
@@ -20,7 +20,7 @@ const getParamsPage = () => async (to: RouteLocationNormalizedLoaded) => {
     const common = useCommon();
     const { FETCH_USER, FETCH_POST } = item;
     const { ON_LOADING } = common;
-    // ON_LOADING();
+    ON_LOADING();
     try {
         if (to.name === 'user') {
             await FETCH_USER(to.params.id as string);

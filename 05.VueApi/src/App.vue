@@ -1,7 +1,9 @@
 <template>
     <div>
         <CommonNav />
-        <RouterView />
+        <div class="pageWrap">
+            <RouterView :key="$route.path" />
+        </div>
         <CommonFooter />
         <CommonLoading />
     </div>

@@ -11,7 +11,7 @@
 <script lang="ts">
 import UserItem from '@/components/user/UserItem.vue';
 import { defineComponent } from 'vue';
-// import { useLoading } from '@/composables/useLoading';
+import { useLoading } from '@/composables/useLoading';
 import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
 
@@ -20,7 +20,7 @@ export default defineComponent({
         UserItem,
     },
     setup() {
-        // useLoading();
+        useLoading();
         const item = useItem();
         const { user } = storeToRefs(item);
         return { user };
