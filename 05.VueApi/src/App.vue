@@ -21,12 +21,9 @@ export default defineComponent({
         CommonLoading,
         CommonNav,
     },
-    setup() {
-        return {};
-    },
 });
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/index.scss';
+@import '@/assets/scss/index';
 </style>
