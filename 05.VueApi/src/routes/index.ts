@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { getPage } from './guards';
+import { getPage, getParamsPage } from './guards';
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -32,6 +32,12 @@ export const router = createRouter({
             name: 'jobs',
             component: () => import('@/pages/ListsPage.vue'),
             beforeEnter: getPage(),
+        },
+        {
+            path: '/user/:id',
+            name: 'user',
+            component: () => import('@/pages/UserPage.vue'),
+            beforeEnter: getParamsPage(),
         },
     ],
 });
