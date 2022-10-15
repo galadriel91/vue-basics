@@ -1,5 +1,6 @@
 <template>
     <div>
+        <CommonNav />
         <RouterView />
         <CommonFooter />
         <CommonLoading />
@@ -10,11 +11,13 @@
 import { defineComponent } from 'vue';
 import CommonFooter from './components/common/CommonFooter.vue';
 import CommonLoading from './components/common/CommonLoading.vue';
+import CommonNav from './components/common/CommonNav.vue';
 
 export default defineComponent({
     components: {
         CommonFooter,
         CommonLoading,
+        CommonNav,
     },
     setup() {
         return {};
