@@ -47,8 +47,8 @@
 </template>
 
 <script lang="ts">
-import type { TodoItems } from '@/types';
 import { defineComponent, nextTick, ref, type PropType } from 'vue';
+import type { TodoItems } from '@/types';
 
 export default defineComponent({
     emits: ['checkItem', 'removeItem', 'submitItem'],

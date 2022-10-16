@@ -16,11 +16,11 @@
 </template>
 
 <script lang="ts">
-import type { TodoItems } from '@/types';
-import { defineComponent, ref } from 'vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
 import TodoItem from './components/TodoItem.vue';
+import { defineComponent, ref } from 'vue';
+import type { TodoItems } from '@/types';
 
 const storage = {
     save(item: TodoItems[]) {
@@ -45,17 +45,17 @@ export default defineComponent({
             todos.value = storage.fetch();
         };
         onGetItem();
-        const onCheckItem = (value: number) => {
-            const index = todos.value.findIndex(v => v.id === value);
-            todos.value[index].isCheck = !todos.value[index].isCheck;
-            storage.save(todos.value);
-        };
         const onAddItem = (value: string) => {
             todos.value.unshift({
                 title: value,
                 id: Date.now(),
                 isCheck: false,
             });
+            storage.save(todos.value);
+        };
+        const onCheckItem = (value: number) => {
+            const index = todos.value.findIndex(v => v.id === value);
+            todos.value[index].isCheck = !todos.value[index].isCheck;
             storage.save(todos.value);
         };
         const onRemoveItem = (value: number) => {
@@ -80,5 +80,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/index.scss';
+@import '@/assets/scss/index';
 </style>
