@@ -9,6 +9,7 @@
                 :todo="todo"
                 @checkItem="onCheckItem"
                 @removeItem="onRemoveItem"
+                @submitItem="onUpdateItem"
             />
         </ul>
     </div>
@@ -62,11 +63,17 @@ export default defineComponent({
             todos.value.splice(index, 1);
             storage.save(todos.value);
         };
+        const onUpdateItem = (value: { id: number; title: string }) => {
+            const index = todos.value.findIndex(v => v.id === value.id);
+            todos.value[index].title = value.title;
+            storage.save(todos.value);
+        };
         return {
             todos,
             onAddItem,
             onCheckItem,
             onRemoveItem,
+            onUpdateItem,
         };
     },
 });
