@@ -51,7 +51,7 @@ import type { TodoItems } from '@/types';
 import { defineComponent, nextTick, ref, type PropType } from 'vue';
 
 export default defineComponent({
-    emits: ['checkItem'],
+    emits: ['checkItem', 'removeItem'],
     props: {
         todo: {
             type: Object as PropType<TodoItems>,
@@ -66,9 +66,9 @@ export default defineComponent({
             emit('checkItem', props.todo.id);
             isUpdate.value = false;
         };
-        // const onClickRemove = () => {
-        //     emit('removeItem', props.todo.id);
-        // };
+        const onClickRemove = () => {
+            emit('removeItem', props.todo.id);
+        };
         // const onClickUpdate = () => {
         //     isUpdate.value = true;
         //     nextTick(() => {
@@ -87,7 +87,7 @@ export default defineComponent({
             update,
             isUpdate,
             onClickCheck,
-            // onClickRemove,
+            onClickRemove,
             // onClickUpdate,
             // onSubmitUpdate,
         };

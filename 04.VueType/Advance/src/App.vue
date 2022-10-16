@@ -8,6 +8,7 @@
                 :key="todo.id"
                 :todo="todo"
                 @checkItem="onCheckItem"
+                @removeItem="onRemoveItem"
             />
         </ul>
     </div>
@@ -56,10 +57,16 @@ export default defineComponent({
             });
             storage.save(todos.value);
         };
+        const onRemoveItem = (value: number) => {
+            const index = todos.value.findIndex(v => v.id === value);
+            todos.value.splice(index, 1);
+            storage.save(todos.value);
+        };
         return {
             todos,
             onAddItem,
             onCheckItem,
+            onRemoveItem,
         };
     },
 });
