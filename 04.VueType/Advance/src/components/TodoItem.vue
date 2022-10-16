@@ -51,47 +51,47 @@ import type { TodoItems } from '@/types';
 import { defineComponent, nextTick, ref, type PropType } from 'vue';
 
 export default defineComponent({
-    // emits: ['checkItem', 'removeItem', 'submitItem'],
-    // props: {
-    //     todo: {
-    //         type: Object as PropType<TodoItems>,
-    //         required: true,
-    //     },
-    // },
-    // setup(props, { emit }) {
-    //     const update = ref<HTMLInputElement | null>(null);
-    //     const isUpdate = ref(false);
-    //     const value = ref('');
-    //     const onClickCheck = () => {
-    //         emit('checkItem', props.todo.id);
-    //         isUpdate.value = false;
-    //     };
-    //     const onClickRemove = () => {
-    //         emit('removeItem', props.todo.id);
-    //     };
-    //     const onClickUpdate = () => {
-    //         isUpdate.value = true;
-    //         nextTick(() => {
-    //             update.value?.focus();
-    //         });
-    //     };
-    //     const onSubmitUpdate = () => {
-    //         emit('submitItem', {
-    //             id: props.todo.id,
-    //             title: value.value,
-    //         });
-    //         isUpdate.value = false;
-    //     };
-    //     return {
-    //         value,
-    //         update,
-    //         isUpdate,
-    //         onClickCheck,
-    //         onClickRemove,
-    //         onClickUpdate,
-    //         onSubmitUpdate,
-    //     };
-    // },
+    emits: ['checkItem'],
+    props: {
+        todo: {
+            type: Object as PropType<TodoItems>,
+            required: true,
+        },
+    },
+    setup(props, { emit }) {
+        const update = ref<HTMLInputElement | null>(null);
+        const isUpdate = ref(false);
+        const value = ref('');
+        const onClickCheck = () => {
+            emit('checkItem', props.todo.id);
+            isUpdate.value = false;
+        };
+        // const onClickRemove = () => {
+        //     emit('removeItem', props.todo.id);
+        // };
+        // const onClickUpdate = () => {
+        //     isUpdate.value = true;
+        //     nextTick(() => {
+        //         update.value?.focus();
+        //     });
+        // };
+        // const onSubmitUpdate = () => {
+        //     emit('submitItem', {
+        //         id: props.todo.id,
+        //         title: value.value,
+        //     });
+        //     isUpdate.value = false;
+        // };
+        return {
+            value,
+            update,
+            isUpdate,
+            onClickCheck,
+            // onClickRemove,
+            // onClickUpdate,
+            // onSubmitUpdate,
+        };
+    },
 });
 </script>
 
