@@ -1,19 +1,34 @@
 <template>
     <div class="container">
         <TodoHeader />
+        <TodoInput @addItem="onAddItem" />
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import TodoHeader from './components/TodoHeader.vue';
+import TodoInput from './components/TodoInput.vue';
 
 export default defineComponent({
     components: {
         TodoHeader,
+        TodoInput,
     },
     setup() {
-        return {};
+        const todos = ref([]);
+        const onAddItem = (value: string) => {
+            todos.value.unshift({
+                title: value,
+                id: Date.now(),
+                isCheck: false,
+            });
+            // storage.save(todos.value);
+        };
+        return {
+            onAddItem,
+            todos,
+        };
     },
 });
 </script>
