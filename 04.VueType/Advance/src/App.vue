@@ -11,6 +11,17 @@ import { defineComponent, ref } from 'vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
 
+const storage = {
+    save(item: TodoItems[]) {
+        localStorage.setItem('todos', JSON.stringify(item));
+    },
+    fetch(): TodoItems[] {
+        const item = localStorage.getItem('todos') || '[]';
+        const todoItem = JSON.parse(item);
+        return todoItem;
+    },
+};
+
 export default defineComponent({
     components: {
         TodoHeader,
@@ -24,7 +35,7 @@ export default defineComponent({
                 id: Date.now(),
                 isCheck: false,
             });
-            // storage.save(todos.value);
+            storage.save(todos.value);
         };
         return {
             onAddItem,
