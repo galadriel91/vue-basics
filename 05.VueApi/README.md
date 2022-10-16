@@ -25,7 +25,41 @@
 ##  DevDependencies
 
 - Sass : [Vuex](https://www.npmjs.com/package/sass)
-## Vue Cli
- - npm install -g @vue/cli 
- - vue create [프로젝트 폴더명] or .[현재 디렉토리]
+
+
+##  Vue3 Vite
+
+- npm init vue
+
+	
+
+	- Add TypeScript - Yes
+
+	
+
+	- Add JSX Support - No
+
+	
+
+	- Add Vue Router for Single Page Application development? - No
+
+	
+
+	- Add Pinia for state management? - No
+
+	
+
+	- Add Vitest for Unit Testing? - No
+
+	
+
+	- Add Cypress for both Unit and End-to-End testing? - No
+
+	
+
+	- Add ESLint for code quality? - Yes
+
+	
+
+	- Add Prettier for code formatting? - Yes
 
