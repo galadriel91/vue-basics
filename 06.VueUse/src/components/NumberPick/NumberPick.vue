@@ -26,11 +26,11 @@ export default defineComponent({
     },
     setup() {
         const { getNumber } = useNumber();
-        let timeout = [];
+        let timeout = [] as number[];
         const isStart = ref(true);
         const getBall = ref(getNumber());
         const numberBall = ref([] as number[]);
-        const bonus = ref('');
+        const bonus = ref(0);
 
         const onClickStart = () => {
             isStart.value = false;
@@ -47,7 +47,7 @@ export default defineComponent({
         const onClickReset = () => {
             (getBall.value = getNumber()),
                 (numberBall.value = []),
-                (bonus.value = '');
+                (bonus.value = 0);
             onClickStart();
         };
 
