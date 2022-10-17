@@ -20,9 +20,14 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
+import { useNumber } from '@/composable/randomNumber';
+import NumberItem from './NumberItem.vue';
 import type { NumberArray } from './types';
 
 export default defineComponent({
+    components: {
+        NumberItem,
+    },
     setup() {
         const { getNumber } = useNumber();
         const numbers = ref(getNumber());
