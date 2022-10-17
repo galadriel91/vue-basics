@@ -22,12 +22,12 @@ import { defineComponent, ref, computed, onBeforeUnmount } from 'vue';
 
 export default defineComponent({
     setup() {
-        let startTime = '';
-        let endTime = '';
-        let timeout = '';
+        let startTime = 0;
+        let endTime = 0;
+        let timeout = 0;
         const state = ref('waiting');
         const message = ref('클릭해서 시작해 주세요');
-        const tries = ref([]);
+        const tries = ref([] as number[]);
 
         const onClickReset = () => {
             clearTimeout(timeout);
