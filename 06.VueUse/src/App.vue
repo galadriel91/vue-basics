@@ -1,16 +1,16 @@
 <template>
     <div class="container">
-        <NumberPick />
+        <ResponsiveTest />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import NumberPick from './components/NumberPick/NumberPick.vue';
+import ResponsiveTest from '@/components/ResponsiveTest.vue';
 
 export default defineComponent({
     components: {
-        NumberPick,
+        ResponsiveTest,
     },
     setup() {
         return {};
