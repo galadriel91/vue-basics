@@ -1,16 +1,16 @@
 <template>
     <div class="container">
-        <NumberBaseball />
+        <NumberPick />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import NumberBaseball from './components/NumberBaseball/NumberBaseball.vue';
+import NumberPick from './components/NumberPick/NumberPick.vue';
 
 export default defineComponent({
     components: {
-        NumberBaseball,
+        NumberPick,
     },
     setup() {
         return {};
