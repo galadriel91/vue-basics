@@ -1,19 +1,16 @@
 <template>
     <div class="container">
-        <!-- <TimesTable /> -->
-        <WordRelay />
+        <NumberBaseball />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TimesTable from './components/TimesTable.vue';
-import WordRelay from './components/WordRelay.vue';
+import NumberBaseball from './components/NumberBaseball/NumberBaseball.vue';
 
 export default defineComponent({
     components: {
-        WordRelay,
-        TimesTable,
+        NumberBaseball,
     },
     setup() {
         return {};
