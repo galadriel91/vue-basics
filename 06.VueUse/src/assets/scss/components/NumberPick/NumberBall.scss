@@ -4,7 +4,7 @@
     font-size: 1.6rem; font-weight: bold; color: #000; line-height: 5rem; text-align: center;
 }
 
-@media screen and(max-width:1000px) {
+@media all and (max-width:1000px) {
     .ball{
         margin: 0 .7rem;
         width: 3.5rem; line-height: 3.5rem; font-size: 1.4rem;

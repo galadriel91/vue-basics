@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent, ref, onBeforeUnmount } from 'vue';
 import NumberBall from '@/components/NumberPick/NumberBall.vue';
-// import { useNumber } from '../composable/getNumber';
+import { useNumber } from '@/composable/getNumber';
 
 export default defineComponent({
     components: {
@@ -29,7 +29,7 @@ export default defineComponent({
         let timeout = [];
         const isStart = ref(true);
         const getBall = ref(getNumber());
-        const numberBall = ref([]);
+        const numberBall = ref([] as number[]);
         const bonus = ref('');
 
         const onClickStart = () => {
