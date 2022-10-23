@@ -1,8 +1,8 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const commonStore = defineStore("common", {
-  state: () => ({
-    loading: true,
-  }),
-  actions: {},
+export const commonStore = defineStore('common', {
+    state: () => ({
+        loading: true,
+    }),
+    actions: {},
 });
