@@ -1,5 +1,5 @@
 <template>
-    <div>App</div>
+    <div class="container">App</div>
 </template>
 
 <script lang="ts">
@@ -12,4 +12,6 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss">
+@import '@/assets/scss/index.scss';
+</style>
