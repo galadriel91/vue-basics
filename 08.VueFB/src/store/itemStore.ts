@@ -23,8 +23,7 @@ export const useItem = defineStore('item', {
             dbService.doc(`todos/${item.id}`).update({ isCheck: item.isCheck });
         },
         REMOVE_TODO(item: number) {
-            const index = this.todos.findIndex(v => v.id === item);
-            this.todos.splice(index, 1);
+            dbService.doc(`todos/${item}`).delete();
         },
         UPDATE_TODO(item: UpdateItem) {
             const index = this.todos.findIndex(v => v.id === item.id);
