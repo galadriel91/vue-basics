@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia';
 
-export const commonStore = defineStore('common', {
+export const useCommon = defineStore('common', {
     state: () => ({
-        loading: true,
+        loading: false,
     }),
     actions: {},
 });
