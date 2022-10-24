@@ -24,6 +24,7 @@ export default defineComponent({
         const onSubmitForm = async () => {
             if (value.value.length) {
                 ADD_TODO({
+                    id: Date.now(),
                     created: Date.now(),
                     content: value.value,
                     isCheck: false,

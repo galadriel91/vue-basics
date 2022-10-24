@@ -1,7 +1,7 @@
 <template>
     <li>
         <div class="itemWrap">
-            <!-- <div class="checkWrap">
+            <div class="checkWrap">
                 <button
                     class="xi-checkbox-blank"
                     v-if="!item.isCheck"
@@ -12,7 +12,7 @@
                     v-else
                     @click="onClickCheck"
                 ></button>
-            </div> -->
+            </div>
             <div class="titleWrap">
                 <h4 :class="{ complete: item.isCheck }" v-if="!isUpdate">
                     {{ item.content }}
@@ -36,12 +36,12 @@
                     v-if="!isUpdate"
                 ></button> -->
             </div>
-            <!-- <div class="buttonWrap">
+            <div class="buttonWrap">
                 <button
                     class="xi-minus-square-o"
                     @click="onClickRemove"
                 ></button>
-            </div> -->
+            </div>
         </div>
     </li>
 </template>
@@ -60,7 +60,7 @@ export default defineComponent({
     },
     setup(props) {
         const item = useItem();
-        // const { CHECK_TODO, REMOVE_TODO, UPDATE_TODO } = item;
+        const { CHECK_TODO, REMOVE_TODO } = item;
         const value = ref('');
         const update = ref<HTMLInputElement>();
         const isUpdate = ref(false);
@@ -69,17 +69,17 @@ export default defineComponent({
             const target = update.value as HTMLInputElement;
             target.focus();
         };
-        // const onClickCheck = () => {
-        //     CHECK_TODO({
-        //         id: props.item.id,
-        //         isCheck: !props.item.isCheck,
-        //     });
-        //     isUpdate.value = false;
-        //     value.value = '';
-        // };
-        // const onClickRemove = () => {
-        //     REMOVE_TODO(props.item.id);
-        // };
+        const onClickCheck = () => {
+            CHECK_TODO({
+                id: props.item.id,
+                isCheck: !props.item.isCheck,
+            });
+            isUpdate.value = false;
+            value.value = '';
+        };
+        const onClickRemove = () => {
+            REMOVE_TODO(props.item.id);
+        };
         // const onClickUpdate = () => {
         //     isUpdate.value = true;
         //     nextTick(() => {
@@ -98,8 +98,8 @@ export default defineComponent({
             value,
             isUpdate,
             update,
-            // onClickCheck,
-            // onClickRemove,
+            onClickCheck,
+            onClickRemove,
             // onClickUpdate,
             // onSubmitUpdate,
         };
