@@ -1,18 +1,18 @@
 <template>
     <ul>
-        <!-- <TodoItem v-for="todo in todos" :key="todo.created" :item="todo" /> -->
+        <TodoItem v-for="todo in todos" :key="todo.created" :item="todo" />
     </ul>
 </template>
 
 <script lang="ts">
-// import TodoItem from './TodoItem.vue';
+import TodoItem from './TodoItem.vue';
 import { defineComponent } from 'vue';
 import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
 
 export default defineComponent({
     components: {
-        // TodoItem,
+        TodoItem,
     },
     setup() {
         const item = useItem();
