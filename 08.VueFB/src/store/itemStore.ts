@@ -1,7 +1,7 @@
+import type { AddItem, CheckItem, UpdateItem, TodoItem } from './types';
 import { defineStore } from 'pinia';
 import { dbService } from '@/utils/fb';
-import type { AddItem, CheckItem, UpdateItem, TodoItem } from './types';
-console.log(dbService);
+
 export const useItem = defineStore('item', {
     state: () => ({
         todos: [] as TodoItem[],
@@ -16,17 +16,22 @@ export const useItem = defineStore('item', {
                     ...(todo.data() as AddItem),
                     id: todo.id,
                 }));
+                todos.sort((a, b) => b.created - a.created);
                 this.todos = todos;
             });
         },
-        CHECK_TODO(item: CheckItem) {
-            dbService.doc(`todos/${item.id}`).update({ isCheck: item.isCheck });
+        async CHECK_TODO(item: CheckItem) {
+            await dbService
+                .doc(`todos/${item.id}`)
+                .update({ isCheck: item.isCheck });
         },
-        REMOVE_TODO(item: number) {
-            dbService.doc(`todos/${item}`).delete();
+        async REMOVE_TODO(item: number) {
+            await dbService.doc(`todos/${item}`).delete();
         },
-        UPDATE_TODO(item: UpdateItem) {
-            dbService.doc(`todos/${item.id}`).update({ content: item.content });
+        async UPDATE_TODO(item: UpdateItem) {
+            await dbService
+                .doc(`todos/${item.id}`)
+                .update({ content: item.content });
         },
     },
 });

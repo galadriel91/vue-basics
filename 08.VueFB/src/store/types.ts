@@ -6,19 +6,18 @@ interface TodoItem {
 }
 
 interface AddItem {
-    id: number;
     created: number;
     content: string;
     isCheck: boolean;
 }
 
 interface CheckItem {
-    id: number;
+    id: string;
     isCheck: boolean;
 }
 
 interface UpdateItem {
-    id: number;
+    id: string;
     content: string;
 }
 
