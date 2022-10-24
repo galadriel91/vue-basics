@@ -4,5 +4,12 @@ export const useCommon = defineStore('common', {
     state: () => ({
         loading: false,
     }),
-    actions: {},
+    actions: {
+        ON_LOADING() {
+            this.loading = true;
+        },
+        OFF_LOADING() {
+            this.loading = false;
+        },
+    },
 });

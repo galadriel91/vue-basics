@@ -8,11 +8,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import TodoContainer from './components/TodoContainer.vue';
 import TodoLoading from '@/components/TodoLoading.vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from '@/components/TodoInput.vue';
-import TodoContainer from './components/TodoContainer.vue';
+import { useCommon } from '@/store/commonStore';
+import { useItem } from '@/store/itemStore';
+import { defineComponent, watch } from 'vue';
+import { storeToRefs } from 'pinia';
 
 export default defineComponent({
     components: {
@@ -22,7 +25,13 @@ export default defineComponent({
         TodoContainer,
     },
     setup() {
-        return {};
+        const common = useCommon();
+        const item = useItem();
+        const { OFF_LOADING } = common;
+        const { todos } = storeToRefs(item);
+        watch(todos, () => {
+            OFF_LOADING();
+        });
     },
 });
 </script>
