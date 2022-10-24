@@ -3,6 +3,7 @@
         <TodoHeader />
         <TodoLoading />
         <TodoInput />
+        <TodoContainer />
     </div>
 </template>
 
@@ -11,11 +12,13 @@ import { defineComponent } from 'vue';
 import TodoLoading from '@/components/TodoLoading.vue';
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from '@/components/TodoInput.vue';
+import TodoContainer from './components/TodoContainer.vue';
 export default defineComponent({
     components: {
         TodoLoading,
         TodoHeader,
         TodoInput,
+        TodoContainer,
     },
     setup() {
         return {};
