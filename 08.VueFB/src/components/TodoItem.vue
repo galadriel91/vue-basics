@@ -17,7 +17,7 @@
                 <h4 :class="{ complete: item.isCheck }" v-if="!isUpdate">
                     {{ item.content }}
                 </h4>
-                <!-- <form v-else @submit.prevent="onSubmitUpdate">
+                <form v-else @submit.prevent="onSubmitUpdate">
                     <input
                         type="text"
                         :placeholder="item.content"
@@ -29,12 +29,12 @@
                         class="xi-check-min"
                         @mousedown="onSubmitUpdate"
                     ></button>
-                </form> -->
-                <!-- <button
+                </form>
+                <button
                     class="xi-pen updateBtn"
                     @click="onClickUpdate"
                     v-if="!isUpdate"
-                ></button> -->
+                ></button>
             </div>
             <div class="buttonWrap">
                 <button
@@ -60,15 +60,11 @@ export default defineComponent({
     },
     setup(props) {
         const item = useItem();
-        const { CHECK_TODO, REMOVE_TODO } = item;
+        const { CHECK_TODO, REMOVE_TODO, UPDATE_TODO } = item;
         const value = ref('');
-        const update = ref<HTMLInputElement>();
+        const update = ref<HTMLInputElement | null>(null);
         const isUpdate = ref(false);
 
-        const onFocusInput = () => {
-            const target = update.value as HTMLInputElement;
-            target.focus();
-        };
         const onClickCheck = () => {
             CHECK_TODO({
                 id: props.item.id,
@@ -80,28 +76,28 @@ export default defineComponent({
         const onClickRemove = () => {
             REMOVE_TODO(props.item.id);
         };
-        // const onClickUpdate = () => {
-        //     isUpdate.value = true;
-        //     nextTick(() => {
-        //         onFocusInput();
-        //     });
-        // };
-        // const onSubmitUpdate = () => {
-        //     UPDATE_TODO({
-        //         id: props.item.id,
-        //         content: value.value,
-        //     });
-        //     isUpdate.value = false;
-        //     value.value = '';
-        // };
+        const onClickUpdate = () => {
+            isUpdate.value = true;
+            nextTick(() => {
+                update.value?.focus();
+            });
+        };
+        const onSubmitUpdate = () => {
+            UPDATE_TODO({
+                id: props.item.id,
+                content: value.value,
+            });
+            isUpdate.value = false;
+            value.value = '';
+        };
         return {
             value,
             isUpdate,
             update,
             onClickCheck,
             onClickRemove,
-            // onClickUpdate,
-            // onSubmitUpdate,
+            onClickUpdate,
+            onSubmitUpdate,
         };
     },
 });

@@ -18,4 +18,9 @@ interface CheckItem {
     isCheck: boolean;
 }
 
-export type { TodoItem, AddItem, CheckItem };
+interface UpdateItem {
+    id: number;
+    content: string;
+}
+
+export type { TodoItem, AddItem, CheckItem, UpdateItem };

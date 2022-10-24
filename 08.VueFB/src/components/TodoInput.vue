@@ -30,15 +30,15 @@ export default defineComponent({
                     isCheck: false,
                 });
                 value.value = '';
-                input?.value?.focus();
+                input.value?.focus();
             } else {
                 alert('다시 한번 확인 해 주세요');
-                input?.value?.focus();
+                input.value?.focus();
             }
         };
 
         onMounted(() => {
-            input?.value?.focus();
+            input.value?.focus();
         });
         return {
             value,

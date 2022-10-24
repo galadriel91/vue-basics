@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import type { AddItem, CheckItem } from './types';
+import type { AddItem, CheckItem, UpdateItem } from './types';
 
 export const useItem = defineStore('item', {
     state: () => ({
@@ -16,6 +16,10 @@ export const useItem = defineStore('item', {
         REMOVE_TODO(item: number) {
             const index = this.todos.findIndex(v => v.id === item);
             this.todos.splice(index, 1);
+        },
+        UPDATE_TODO(item: UpdateItem) {
+            const index = this.todos.findIndex(v => v.id === item.id);
+            this.todos[index].content = item.content;
         },
     },
 });
