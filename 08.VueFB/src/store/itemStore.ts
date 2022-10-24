@@ -1,14 +1,23 @@
 import { defineStore } from 'pinia';
 import { dbService } from '@/utils/fb';
-import type { AddItem, CheckItem, UpdateItem } from './types';
-
+import type { AddItem, CheckItem, UpdateItem, TodoItem } from './types';
+console.log(dbService);
 export const useItem = defineStore('item', {
     state: () => ({
-        todos: [] as AddItem[],
+        todos: [] as TodoItem[],
     }),
     actions: {
-        ADD_TODO(item: AddItem) {
-            this.todos.push(item);
+        async ADD_TODO(item: AddItem) {
+            await dbService.collection('todos').add(item);
+        },
+        GET_TODO() {
+            dbService.collection('todos').onSnapshot(snap => {
+                const todos = snap.docs.map(todo => ({
+                    ...(todo.data() as AddItem),
+                    id: todo.id,
+                }));
+                this.todos = todos;
+            });
         },
         CHECK_TODO(item: CheckItem) {
             const index = this.todos.findIndex(v => v.id === item.id);

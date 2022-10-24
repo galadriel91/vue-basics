@@ -17,8 +17,8 @@ export default defineComponent({
     setup() {
         const item = useItem();
         const { todos } = storeToRefs(item);
-        // const { GET_TODO } = item;
-        // GET_TODO();
+        const { GET_TODO } = item;
+        GET_TODO();
         return {
             todos,
         };

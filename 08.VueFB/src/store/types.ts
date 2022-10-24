@@ -1,6 +1,5 @@
 interface TodoItem {
-    // id: string;
-    id: number;
+    id: string;
     created: number;
     content: string;
     isCheck: boolean;
