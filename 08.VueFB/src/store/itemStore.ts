@@ -26,8 +26,7 @@ export const useItem = defineStore('item', {
             dbService.doc(`todos/${item}`).delete();
         },
         UPDATE_TODO(item: UpdateItem) {
-            const index = this.todos.findIndex(v => v.id === item.id);
-            this.todos[index].content = item.content;
+            dbService.doc(`todos/${item.id}`).update({ content: item.content });
         },
     },
 });
