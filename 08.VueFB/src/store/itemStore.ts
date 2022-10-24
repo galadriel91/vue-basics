@@ -34,7 +34,7 @@ export const useItem = defineStore('item', {
                 .doc(`todos/${item.id}`)
                 .update({ isCheck: item.isCheck });
         },
-        async REMOVE_TODO(item: number) {
+        async REMOVE_TODO(item: string) {
             onLoading();
             await dbService.doc(`todos/${item}`).delete();
         },
