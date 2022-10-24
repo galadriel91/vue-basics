@@ -20,8 +20,7 @@ export const useItem = defineStore('item', {
             });
         },
         CHECK_TODO(item: CheckItem) {
-            const index = this.todos.findIndex(v => v.id === item.id);
-            this.todos[index].isCheck = item.isCheck;
+            dbService.doc(`todos/${item.id}`).update({ isCheck: item.isCheck });
         },
         REMOVE_TODO(item: number) {
             const index = this.todos.findIndex(v => v.id === item);
