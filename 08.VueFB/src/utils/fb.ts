@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// 파이어 스토어 연결
+import 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,5 +12,5 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_APP_APP_ID,
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+export const dbService = firebase.firestore();

@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { dbService } from '@/utils/fb';
 import type { AddItem, CheckItem, UpdateItem } from './types';
 
 export const useItem = defineStore('item', {
