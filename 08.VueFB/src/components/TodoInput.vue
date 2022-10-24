@@ -19,12 +19,7 @@ export default defineComponent({
         const item = useItem();
         const { ADD_TODO } = item;
         const value = ref('');
-        const input = ref<HTMLInputElement>();
-
-        const onFocusInput = () => {
-            const target = input.value as HTMLInputElement;
-            target.focus();
-        };
+        const input = ref<HTMLInputElement | null>(null);
 
         const onSubmitForm = async () => {
             if (value.value.length) {
@@ -34,15 +29,15 @@ export default defineComponent({
                     isCheck: false,
                 });
                 value.value = '';
-                onFocusInput();
+                input?.value?.focus();
             } else {
                 alert('다시 한번 확인 해 주세요');
-                onFocusInput();
+                input?.value?.focus();
             }
         };
 
         onMounted(() => {
-            onFocusInput();
+            input?.value?.focus();
         });
         return {
             value,
