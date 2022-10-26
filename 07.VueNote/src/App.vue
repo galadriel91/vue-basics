@@ -1,11 +1,17 @@
 <template>
-    <div>App</div>
+    <div>
+        <NoteLoading />
+    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import NoteLoading from './components/common/NoteLoading.vue';
 
 export default defineComponent({
+    components: {
+        NoteLoading,
+    },
     setup() {
         return {};
     },
