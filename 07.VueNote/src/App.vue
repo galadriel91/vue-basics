@@ -1,5 +1,6 @@
 <template>
     <div>
+        <RouterView />
         <NoteLoading />
     </div>
 </template>
