@@ -23,5 +23,11 @@ export const router = createRouter({
             // beforeEnter: getPage(),
             meta: { title: 'Main Page', search: true },
         },
+        {
+            path: '/create',
+            name: 'create',
+            component: () => import('@/pages/CreatePage.vue'),
+            meta: { title: 'Create Page', search: false },
+        },
     ],
 });
