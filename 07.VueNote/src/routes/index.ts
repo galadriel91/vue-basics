@@ -29,5 +29,12 @@ export const router = createRouter({
             component: () => import('@/pages/CreatePage.vue'),
             meta: { title: 'Create Page', search: false },
         },
+        {
+            path: '/note/:id',
+            name: 'note',
+            component: () => import('@/pages/NotePage.vue'),
+            // beforeEnter: getDetailNote(),
+            meta: { title: 'Note Page', search: false },
+        },
     ],
 });
