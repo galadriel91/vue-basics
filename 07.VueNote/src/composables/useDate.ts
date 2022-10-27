@@ -1,9 +1,9 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-export const useDate = (note: any) => {
+export const useDate = (noteDate: any) => {
     const route = useRoute();
-    const date = new Date(note.date);
+    const date = new Date(noteDate);
     const daysArray = ['일', '월', '화', '수', '목', '금', '토'];
     const year = date.getFullYear();
     const month =

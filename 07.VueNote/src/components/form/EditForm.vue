@@ -56,7 +56,7 @@ export default defineComponent({
         const title = ref('');
         const content = ref('');
         const titleInput = ref<HTMLInputElement | null>(null);
-        const DATE = useDate(props.item);
+        const DATE = useDate(props.item.date);
         const onClickBefore = () => {
             router.go(-1);
         };

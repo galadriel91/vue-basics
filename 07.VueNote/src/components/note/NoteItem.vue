@@ -42,7 +42,7 @@ export default defineComponent({
         const router = useRouter();
         const item = useItem();
         const { REMOVE_NOTE } = item;
-        const DATE = useDate(props.item);
+        const DATE = useDate(props.item.date);
         const onClickItemPage = () => {
             router.push(`/note/${props.item.id}`);
         };
