@@ -11,7 +11,7 @@ export const useItem = defineStore('item', {
             const { data } = await getNote();
             this.notes = data;
         },
-        async ADD_NOTES(value: NoteItems) {
+        async ADD_NOTE(value: NoteItems) {
             await AddNote(value);
         },
     },

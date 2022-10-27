@@ -24,8 +24,6 @@ export default defineComponent({
         // useLoading();
         const item = useItem();
         const { notes } = storeToRefs(item);
-        const { GET_NOTE } = item;
-        GET_NOTE();
 
         return {
             notes,
