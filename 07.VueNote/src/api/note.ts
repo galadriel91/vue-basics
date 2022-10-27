@@ -16,3 +16,7 @@ export const GetDetailNote = (id: string) => {
 export const UpdateNote = (id: number, note: NoteItems) => {
     return axios.patch(`http://localhost:5000/notes/${id}`, note);
 };
+
+export const RemoveNote = (id: number) => {
+    return axios.delete(`http://localhost:5000/notes/${id}`);
+};

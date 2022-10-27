@@ -40,7 +40,7 @@ export default defineComponent({
     setup(props) {
         const router = useRouter();
         const item = useItem();
-        // const { REMOVE_NOTE } = item;
+        const { REMOVE_NOTE } = item;
         const DATE = useDate(props.item);
         const onClickMain = () => {
             router.go(-1);
@@ -48,10 +48,10 @@ export default defineComponent({
         const onClickEdit = () => {
             router.push(`/edit/${props.item.id}`);
         };
-        const onClickRemove = () => {
+        const onClickRemove = async () => {
             const result = confirm('노트를 삭제하시겠습니까?');
             if (result) {
-                // REMOVE_NOTE(props.item.id);
+                await REMOVE_NOTE(props.item.id);
                 onClickMain();
             }
         };

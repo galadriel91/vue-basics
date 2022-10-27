@@ -41,7 +41,7 @@ export default defineComponent({
     setup(props) {
         const router = useRouter();
         const item = useItem();
-        // const { REMOVE_NOTE } = item;
+        const { REMOVE_NOTE } = item;
         const DATE = useDate(props.item);
         const onClickItemPage = () => {
             router.push(`/note/${props.item.id}`);
@@ -50,8 +50,7 @@ export default defineComponent({
             router.push(`/edit/${props.item.id}`);
         };
         const onClickRemove = async () => {
-            console.log(1);
-            // REMOVE_NOTE(props.item.id);
+            await REMOVE_NOTE(props.item.id);
         };
 
         return {

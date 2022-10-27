@@ -1,4 +1,10 @@
-import { AddNote, GetDetailNote, GetNote, UpdateNote } from '@/api/note';
+import {
+    AddNote,
+    GetDetailNote,
+    GetNote,
+    RemoveNote,
+    UpdateNote,
+} from '@/api/note';
 import { defineStore } from 'pinia';
 import type { NoteItems } from './types';
 
@@ -18,6 +24,9 @@ export const useItem = defineStore('item', {
         },
         async UPDATE_NOTE(value: NoteItems) {
             await UpdateNote(value.id, value);
+        },
+        async REMOVE_NOTE(id: number) {
+            await RemoveNote(id);
         },
         async GET_DETAIL_NOTE(id: string, name: string) {
             const { data } = await GetDetailNote(id);
