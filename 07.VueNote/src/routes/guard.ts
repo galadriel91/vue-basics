@@ -18,11 +18,7 @@ export const getDetailNote =
         const common = useCommon();
         const item = useItem();
         const { ON_LOADING } = common;
-        const { GET_DETAIL_NOTE, GET_EDIT_NOTE } = item;
+        const { GET_DETAIL_NOTE } = item;
         ON_LOADING();
-        if (to.name === 'edit') {
-            await GET_EDIT_NOTE(to.params.id as string);
-        } else {
-            await GET_DETAIL_NOTE(to.params.id as string);
-        }
+        GET_DETAIL_NOTE(to.params.id as string, to.name as string);
     };

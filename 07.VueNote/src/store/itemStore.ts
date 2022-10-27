@@ -19,13 +19,13 @@ export const useItem = defineStore('item', {
         async UPDATE_NOTE(value: NoteItems) {
             await UpdateNote(value.id, value);
         },
-        async GET_DETAIL_NOTE(id: string) {
+        async GET_DETAIL_NOTE(id: string, name: string) {
             const { data } = await GetDetailNote(id);
-            this.post = data;
-        },
-        async GET_EDIT_NOTE(id: string) {
-            const { data } = await GetDetailNote(id);
-            this.edit = data;
+            if (name === 'edit') {
+                this.edit = data;
+            } else {
+                this.post = data;
+            }
         },
     },
 });
