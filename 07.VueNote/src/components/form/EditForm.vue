@@ -51,35 +51,32 @@ export default defineComponent({
     },
     setup(props) {
         const item = useItem();
-        // const { UPDATE_NOTE } = item;
+        const { UPDATE_NOTE } = item;
         const router = useRouter();
         const title = ref('');
         const content = ref('');
-        const titleInput = ref<HTMLInputElement>();
+        const titleInput = ref<HTMLInputElement | null>(null);
         // const DATE = useDate(props.item);
         const onClickBefore = () => {
             router.go(-1);
         };
-        const inputFocus = () => {
-            const target = titleInput.value as HTMLInputElement;
-            target.focus();
-        };
-        const onSubmitForm = () => {
+        const onSubmitForm = async () => {
             if (title.value.length && content.value.length) {
-                // UPDATE_NOTE({
-                //     id: props.item.id,
-                //     title: title.value,
-                //     content: content.value,
-                //     date: new Date(),
-                //     update: true,
-                // });
+                await UPDATE_NOTE({
+                    id: props.item.id,
+                    title: title.value,
+                    content: content.value,
+                    date: new Date(),
+                    update: true,
+                });
+                router.push('/');
             } else {
                 alert('다시 한번 확인해 주세요');
-                inputFocus();
+                titleInput.value?.focus();
             }
         };
         onMounted(() => {
-            inputFocus();
+            titleInput.value?.focus();
         });
         return {
             title,
