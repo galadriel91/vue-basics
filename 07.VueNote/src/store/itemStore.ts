@@ -1,4 +1,4 @@
-import { getNote } from '@/api/note';
+import { AddNote, getNote } from '@/api/note';
 import { defineStore } from 'pinia';
 import type { NoteItems } from './types';
 
@@ -11,8 +11,8 @@ export const useItem = defineStore('item', {
             const { data } = await getNote();
             this.notes = data;
         },
-        ADD_NOTES(value: NoteItems) {
-            this.notes.push(value);
+        async ADD_NOTES(value: NoteItems) {
+            await AddNote(value);
         },
     },
 });
