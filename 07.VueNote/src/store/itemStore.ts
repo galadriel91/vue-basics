@@ -13,11 +13,22 @@ export const useItem = defineStore('item', {
         notes: [] as NoteItems[],
         post: {} as NoteItems,
         edit: {} as NoteItems,
+        totalItems: '',
+        limit: 3,
+        currentPage: 1,
     }),
     actions: {
+        CHANGE_PAGE(page: number) {
+            this.currentPage = page;
+        },
         async GET_NOTE() {
-            const { data } = await GetNote();
-            this.notes = data;
+            const params = {
+                _limit: this.limit,
+                _page: this.currentPage,
+            };
+            const response = await GetNote(params);
+            this.notes = response.data;
+            this.totalItems = response.headers['x-total-count'] as string;
         },
         async ADD_NOTE(value: NoteItems) {
             await AddNote(value);

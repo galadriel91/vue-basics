@@ -20,5 +20,5 @@ export const getDetailNote =
         const { ON_LOADING } = common;
         const { GET_DETAIL_NOTE } = item;
         ON_LOADING();
-        GET_DETAIL_NOTE(to.params.id as string, to.name as string);
+        await GET_DETAIL_NOTE(to.params.id as string, to.name as string);
     };

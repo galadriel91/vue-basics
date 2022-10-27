@@ -1,8 +1,8 @@
 import type { NoteItems } from '@/store/types';
 import axios from 'axios';
 
-export const GetNote = () => {
-    return axios.get('http://localhost:5000/notes');
+export const GetNote = (params: object) => {
+    return axios.get('http://localhost:5000/notes', { params });
 };
 
 export const AddNote = (note: NoteItems) => {
