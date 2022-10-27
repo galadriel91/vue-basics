@@ -1,12 +1,11 @@
 <template>
     <div>
-        에딧페이지
-        <!-- <EditForm :item="edit" /> -->
+        <EditForm :item="edit" />
     </div>
 </template>
 
 <script lang="ts">
-// import EditForm from '../components/form/EditForm.vue';
+import EditForm from '../components/form/EditForm.vue';
 import { useLoading } from '@/composables/useLoading';
 import { useItem } from '@/store/itemStore';
 import { defineComponent } from 'vue';
@@ -14,15 +13,15 @@ import { storeToRefs } from 'pinia';
 
 export default defineComponent({
     components: {
-        // EditForm,
+        EditForm,
     },
     setup() {
         const item = useItem();
-        // const { edit } = storeToRefs(item);
+        const { edit } = storeToRefs(item);
         useLoading();
 
         return {
-            // edit,
+            edit,
         };
     },
 });

@@ -6,6 +6,7 @@ export const useItem = defineStore('item', {
     state: () => ({
         notes: [] as NoteItems[],
         post: {} as NoteItems,
+        edit: {} as NoteItems,
     }),
     actions: {
         async GET_NOTE() {
@@ -19,6 +20,10 @@ export const useItem = defineStore('item', {
         async GET_DETAIL_NOTE(id: string) {
             const { data } = await GetDetailNote(id);
             this.post = data;
+        },
+        async GET_EDIT_NOTE(id: string) {
+            const { data } = await GetDetailNote(id);
+            this.edit = data;
         },
     },
 });
