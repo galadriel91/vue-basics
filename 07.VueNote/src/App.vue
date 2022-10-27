@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <NoteHeader />
-        <RouterView />
+        <RouterView :key="$route.path" />
         <NoteLoading />
     </div>
 </template>

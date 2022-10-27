@@ -23,6 +23,8 @@ export const useItem = defineStore('item', {
         },
         async GET_NOTE() {
             const params = {
+                _sort: 'id',
+                _order: 'desc',
                 _limit: this.limit,
                 _page: this.currentPage,
             };

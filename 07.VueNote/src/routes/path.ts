@@ -41,4 +41,11 @@ export default [
         beforeEnter: getDetailNote(),
         meta: { title: 'Edit Page', search: false },
     },
+    {
+        path: '/search/:keyword',
+        name: 'search',
+        component: () => import('@/pages/SearchPage.vue'),
+        beforeEnter: getPage(),
+        meta: { title: 'Search Page', search: true },
+    },
 ];
