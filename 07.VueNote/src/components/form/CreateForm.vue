@@ -38,13 +38,13 @@ export default defineComponent({
     setup() {
         const router = useRouter();
         const item = useItem();
-        const { ADD_NOTES } = item;
+        const { ADD_NOTE } = item;
         const title = ref('');
         const content = ref('');
         const titleInput = ref<HTMLInputElement | null>(null);
-        const onSubmitForm = () => {
+        const onSubmitForm = async () => {
             if (title.value.length && content.value.length) {
-                ADD_NOTES({
+                await ADD_NOTE({
                     id: Date.now(),
                     title: title.value,
                     content: content.value,

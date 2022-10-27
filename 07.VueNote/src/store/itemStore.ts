@@ -8,6 +8,7 @@ export const useItem = defineStore('item', {
     }),
     actions: {
         async GET_NOTE() {
+            console.log(1);
             const { data } = await getNote();
             this.notes = data;
         },
