@@ -1,4 +1,4 @@
-import { getPage } from './guard';
+import { getPage, getDetailNote } from './guard';
 
 export default [
     {
@@ -31,7 +31,7 @@ export default [
         path: '/note/:id',
         name: 'note',
         component: () => import('@/pages/NotePage.vue'),
-        // beforeEnter: getDetailNote(),
+        beforeEnter: getDetailNote(),
         meta: { title: 'Note Page', search: false },
     },
 ];
