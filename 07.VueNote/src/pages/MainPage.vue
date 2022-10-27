@@ -10,7 +10,7 @@
 <script lang="ts">
 // import NotePagination from '../components/note/NotePagination.vue';
 import NoteItem from '../components/note/NoteItem.vue';
-// import { useLoading } from '@/composables/useLoading';
+import { useLoading } from '@/composables/useLoading';
 import { useItem } from '@/store/itemStore';
 import { defineComponent } from 'vue';
 import { storeToRefs } from 'pinia';
@@ -21,7 +21,7 @@ export default defineComponent({
         // NotePagination,
     },
     setup() {
-        // useLoading();
+        useLoading();
         const item = useItem();
         const { notes } = storeToRefs(item);
 
