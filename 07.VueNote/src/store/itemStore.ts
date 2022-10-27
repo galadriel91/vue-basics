@@ -16,13 +16,18 @@ export const useItem = defineStore('item', {
         totalItems: '',
         limit: 3,
         currentPage: 1,
+        keyword: '',
     }),
     actions: {
         CHANGE_PAGE(page: number) {
             this.currentPage = page;
         },
+        SET_KEYWORD(keyword: string) {
+            this.keyword = keyword;
+        },
         async GET_NOTE() {
             const params = {
+                q: this.keyword,
                 _sort: 'id',
                 _order: 'desc',
                 _limit: this.limit,
