@@ -24,7 +24,7 @@
             <div class="infoWrap" :class="{ noUpdate: !item.update }">
                 <div class="dateWrap" v-if="item.update">
                     <span>최근 수정일 : </span>
-                    <!-- <span>{{ DATE }}</span> -->
+                    <span>{{ DATE }}</span>
                 </div>
                 <div class="buttonWrap">
                     <button type="button" @click="onClickBefore">취소</button>
@@ -38,7 +38,7 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted, type PropType } from 'vue';
 import type { NoteItems } from '@/store/types';
-// import { useDate } from '@/composables/useDate';
+import { useDate } from '@/composables/useDate';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
 
@@ -56,7 +56,7 @@ export default defineComponent({
         const title = ref('');
         const content = ref('');
         const titleInput = ref<HTMLInputElement | null>(null);
-        // const DATE = useDate(props.item);
+        const DATE = useDate(props.item);
         const onClickBefore = () => {
             router.go(-1);
         };
@@ -84,7 +84,7 @@ export default defineComponent({
             titleInput,
             onClickBefore,
             onSubmitForm,
-            // DATE,
+            DATE,
         };
     },
 });

@@ -10,7 +10,7 @@
         </div>
         <div class="contentInfoWrap">
             <div class="dateWrap">
-                <!-- <span>{{ DATE }}</span> -->
+                <span>{{ DATE }}</span>
                 <span v-if="item.update">최근 수정</span>
             </div>
             <div class="btnWrap">
@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
-// import { useDate } from '@/composables/useDate';
+import { useDate } from '@/composables/useDate';
 import type { NoteItems } from '@/store/types';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
@@ -42,7 +42,7 @@ export default defineComponent({
         const router = useRouter();
         const item = useItem();
         // const { REMOVE_NOTE } = item;
-        // const DATE = useDate(props.item);
+        const DATE = useDate(props.item);
         const onClickItemPage = () => {
             router.push(`/note/${props.item.id}`);
         };
@@ -55,7 +55,7 @@ export default defineComponent({
         };
 
         return {
-            // DATE,
+            DATE,
             onClickItemPage,
             onClickRemove,
             onClickEditPage,

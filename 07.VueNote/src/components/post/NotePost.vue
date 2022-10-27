@@ -7,7 +7,7 @@
             <div class="contentWrap">
                 <p>{{ item.content }}</p>
                 <div class="dateWrap">
-                    <!-- <span>{{ DATE }}</span> -->
+                    <span>{{ DATE }}</span>
                     <span v-if="item.update">수정</span>
                     <span v-else>작성</span>
                 </div>
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
-// import { useDate } from '@/composables/useDate';
+import { useDate } from '@/composables/useDate';
 import type { NoteItems } from '@/store/types';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
@@ -41,7 +41,7 @@ export default defineComponent({
         const router = useRouter();
         const item = useItem();
         // const { REMOVE_NOTE } = item;
-        // const DATE = useDate(props.item);
+        const DATE = useDate(props.item);
         const onClickMain = () => {
             router.go(-1);
         };
@@ -57,7 +57,7 @@ export default defineComponent({
         };
 
         return {
-            // DATE,
+            DATE,
             onClickMain,
             onClickEdit,
             onClickRemove,
