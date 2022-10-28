@@ -1,46 +1,61 @@
-# vue-note
+#  Vue3 Note Api Basics
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue3 + Router, Pinia , Json-server Api 통신 학습.
 
-## Recommended IDE Setup
+##  개발 환경 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Chrome](https://www.google.com/intl/ko/chrome/)
 
-## Type Support for `.vue` Imports in TS
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- [Node.js](https://nodejs.org/ko/)
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+##  Dependencies
 
-## Customize configuration
+- Pinia : [Pinia](https://www.npmjs.com/package/pinia)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- VueRouter : [Vuex](https://www.npmjs.com/package/vue-router)
 
-## Project Setup
+- Axios : [Vuex](https://www.npmjs.com/package/axios)
 
-```sh
-npm install
-```
+- JsonServer : [JsonServer](https://www.npmjs.com/package/json-server)
 
-### Compile and Hot-Reload for Development
+##  Vue3 Vite
 
-```sh
-npm run dev
-```
+  
 
-### Type-Check, Compile and Minify for Production
+- npm init vue
 
-```sh
-npm run build
-```
+	
 
-### Lint with [ESLint](https://eslint.org/)
+	- Add TypeScript - Yes
 
-```sh
-npm run lint
-```
+	
+
+	- Add JSX Support - No
+
+	
+
+	- Add Vue Router for Single Page Application development? - No
+
+	
+
+	- Add Pinia for state management? - No
+
+	
+
+	- Add Vitest for Unit Testing? - No
+
+	
+
+	- Add Cypress for both Unit and End-to-End testing? - No
+
+	
+
+	- Add ESLint for code quality? - Yes
+
+	
+
+	- Add Prettier for code formatting? - Yes

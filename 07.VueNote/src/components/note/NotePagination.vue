@@ -28,12 +28,6 @@ import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
 
 export default defineComponent({
-    // props: {
-    //     keyword: {
-    //         type: String,
-    //         required: true,
-    //     },
-    // },
     setup() {
         const item = useItem();
         const { totalItems, limit, currentPage } = storeToRefs(item);
