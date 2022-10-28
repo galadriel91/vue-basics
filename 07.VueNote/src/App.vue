@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <NoteHeader />
-        <NoteSearch />
+        <NoteSearch v-if="notes.length" />
         <RouterView :key="$route.path" />
         <NoteLoading />
     </div>
@@ -23,12 +23,12 @@ export default defineComponent({
     },
     setup() {
         const item = useItem();
-        const { currentPage } = storeToRefs(item);
+        const { currentPage, notes } = storeToRefs(item);
         const { GET_NOTE } = item;
         watch(currentPage, () => {
             GET_NOTE();
         });
-        return {};
+        return { notes };
     },
 });
 </script>

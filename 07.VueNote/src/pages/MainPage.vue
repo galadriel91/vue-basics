@@ -1,8 +1,11 @@
 <template>
     <div>
-        <ul>
+        <ul v-if="notes.length > 0">
             <NoteItem v-for="note in notes" :item="note" :key="note.id" />
         </ul>
+        <div v-else class="btnWrap">
+            <button class="xi-plus" @click="onClickCreate"></button>
+        </div>
         <NotePagination v-if="parseInt(totalItems) > 3" />
     </div>
 </template>
@@ -14,6 +17,7 @@ import { useLoading } from '@/composables/useLoading';
 import { useItem } from '@/store/itemStore';
 import { defineComponent } from 'vue';
 import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
     components: {
@@ -22,12 +26,18 @@ export default defineComponent({
     },
     setup() {
         useLoading();
+        const router = useRouter();
         const item = useItem();
         const { notes, totalItems } = storeToRefs(item);
+
+        const onClickCreate = () => {
+            router.push('/create');
+        };
 
         return {
             notes,
             totalItems,
+            onClickCreate,
         };
     },
 });

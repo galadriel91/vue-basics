@@ -9,7 +9,7 @@
         <button
             class="xi-plus"
             @click="onClickCreate"
-            v-show="!showBtns"
+            v-show="showBtns"
         ></button>
     </header>
 </template>
@@ -18,15 +18,20 @@
 import { defineComponent, ref, computed } from 'vue';
 import { useHeader } from '@/composables/useHeader';
 import { useRouter, useRoute } from 'vue-router';
+import { useItem } from '@/store/itemStore';
+import { storeToRefs } from 'pinia';
 
 export default defineComponent({
     setup() {
+        const item = useItem();
+        const { notes } = storeToRefs(item);
         const router = useRouter();
         const route = useRoute();
         const headerName = ref(useHeader());
         const showBtns = computed(() => {
+            // 생성 페이지가 아니어야함
             const name = route.name;
-            return name === 'create';
+            return name !== 'create' && notes.value.length > 0;
         });
         const search = computed(() => {
             return route.name === 'search';
