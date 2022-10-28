@@ -2,7 +2,9 @@
     <div class="container">
         <NoteHeader />
         <NoteSearch v-if="notes.length" />
-        <NoteAlert v-if="showAlert"> {{ alertMessage }} </NoteAlert>
+        <NoteAlert v-if="showAlert" :className="alertInfo.class">
+            {{ alertInfo.message }}
+        </NoteAlert>
         <RouterView :key="$route.path" />
         <NoteLoading />
     </div>
@@ -26,13 +28,12 @@ export default defineComponent({
     },
     setup() {
         const item = useItem();
-        const { currentPage, notes, alertMessage, showAlert } =
-            storeToRefs(item);
+        const { currentPage, notes, alertInfo, showAlert } = storeToRefs(item);
         const { GET_NOTE } = item;
         watch(currentPage, () => {
             GET_NOTE();
         });
-        return { notes, alertMessage, showAlert };
+        return { notes, alertInfo, showAlert };
     },
 });
 </script>

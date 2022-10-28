@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="className">
         <slot></slot>
     </div>
 </template>
@@ -8,6 +8,12 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+    props: {
+        className: {
+            type: String,
+            required: true,
+        },
+    },
     setup() {
         return {};
     },
