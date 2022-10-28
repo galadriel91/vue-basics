@@ -17,6 +17,8 @@ export const useItem = defineStore('item', {
         limit: 3,
         currentPage: 1,
         keyword: '',
+        alertMessage: '',
+        showAlert: false,
     }),
     actions: {
         CHANGE_PAGE(page: number) {
@@ -24,6 +26,13 @@ export const useItem = defineStore('item', {
         },
         SET_KEYWORD(keyword: string) {
             this.keyword = keyword;
+        },
+        SHOW_ALERT(message: string) {
+            this.showAlert = true;
+            this.alertMessage = message;
+            setTimeout(() => {
+                this.showAlert = false;
+            }, 2000);
         },
         async GET_NOTE() {
             const params = {
@@ -39,12 +48,15 @@ export const useItem = defineStore('item', {
         },
         async ADD_NOTE(value: NoteItems) {
             await AddNote(value);
+            this.SHOW_ALERT('노트가 등록 되었습니다');
         },
         async UPDATE_NOTE(value: NoteItems) {
             await UpdateNote(value.id, value);
+            this.SHOW_ALERT('노트가 수정 되었습니다');
         },
         async REMOVE_NOTE(id: number) {
             await RemoveNote(id);
+            this.SHOW_ALERT('노트가 삭제 되었습니다');
         },
         async GET_DETAIL_NOTE(id: string, name: string) {
             const { data } = await GetDetailNote(id);
