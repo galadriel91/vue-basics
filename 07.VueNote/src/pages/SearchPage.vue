@@ -3,6 +3,12 @@
         <ul v-if="notes.length">
             <NoteItem v-for="note in notes" :key="note.id" :item="note" />
         </ul>
+        <div v-else class="resultWrap">
+            <p>
+                <span>{{ $route.params.keyword }}</span
+                >에 대한 검색 결과가 없습니다.
+            </p>
+        </div>
         <NotePagination v-if="parseInt(totalItems) > 3" />
     </div>
 </template>
@@ -50,3 +56,7 @@ export default defineComponent({
     },
 });
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/pages/SearchPage';
+</style>
