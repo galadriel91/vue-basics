@@ -10,7 +10,7 @@
 <script lang="ts">
 import NotePagination from '@/components/note/NotePagination.vue';
 import NoteItem from '@/components/note/NoteItem.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, onBeforeUnmount } from 'vue';
 import { useLoading } from '@/composables/useLoading';
 import { useCommon } from '@/store/commonStore';
 import { useItem } from '@/store/itemStore';
@@ -37,6 +37,10 @@ export default defineComponent({
             ON_LOADING();
             SET_KEYWORD(to.params.keyword as string);
             await GET_NOTE();
+        });
+
+        onBeforeUnmount(() => {
+            SET_KEYWORD('');
         });
 
         return {

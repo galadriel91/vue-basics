@@ -8,10 +8,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, watch } from 'vue';
 import NoteHeader from './components/common/NoteHeader.vue';
 import NoteLoading from './components/common/NoteLoading.vue';
 import NoteSearch from './components/common/NoteSearch.vue';
+import { useItem } from '@/store/itemStore';
+import { storeToRefs } from 'pinia';
 
 export default defineComponent({
     components: {
@@ -20,6 +22,12 @@ export default defineComponent({
         NoteSearch,
     },
     setup() {
+        const item = useItem();
+        const { currentPage } = storeToRefs(item);
+        const { GET_NOTE } = item;
+        watch(currentPage, () => {
+            GET_NOTE();
+        });
         return {};
     },
 });

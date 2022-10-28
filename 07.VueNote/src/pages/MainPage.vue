@@ -12,7 +12,7 @@ import NotePagination from '../components/note/NotePagination.vue';
 import NoteItem from '../components/note/NoteItem.vue';
 import { useLoading } from '@/composables/useLoading';
 import { useItem } from '@/store/itemStore';
-import { defineComponent, watch } from 'vue';
+import { defineComponent } from 'vue';
 import { storeToRefs } from 'pinia';
 
 export default defineComponent({
@@ -23,12 +23,7 @@ export default defineComponent({
     setup() {
         useLoading();
         const item = useItem();
-        const { notes, totalItems, currentPage } = storeToRefs(item);
-        const { GET_NOTE } = item;
-
-        watch(currentPage, () => {
-            GET_NOTE();
-        });
+        const { notes, totalItems } = storeToRefs(item);
 
         return {
             notes,
