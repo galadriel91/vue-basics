@@ -1,22 +1,22 @@
 import type { NoteItems } from '@/store/types';
-import axios from 'axios';
+import { notes } from './index';
 
 export const GetNote = (params: object) => {
-    return axios.get('http://localhost:5000/notes', { params });
+    return notes.get('/', { params });
 };
 
 export const AddNote = (note: NoteItems) => {
-    return axios.post('http://localhost:5000/notes', note);
+    return notes.post('/', note);
 };
 
 export const GetDetailNote = (id: string) => {
-    return axios.get(`http://localhost:5000/notes/${id}`);
+    return notes.get(`/${id}`);
 };
 
 export const UpdateNote = (id: number, note: NoteItems) => {
-    return axios.patch(`http://localhost:5000/notes/${id}`, note);
+    return notes.patch(`/${id}`, note);
 };
 
 export const RemoveNote = (id: number) => {
-    return axios.delete(`http://localhost:5000/notes/${id}`);
+    return notes.delete(`/${id}`);
 };
