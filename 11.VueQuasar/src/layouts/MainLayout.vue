@@ -41,10 +41,16 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
     {
-        title: 'Docs',
+        title: 'Typo',
         caption: 'quasar.dev',
         icon: 'school',
         to: '/typo',
+    },
+    {
+        title: 'Color',
+        caption: 'quasar.dev',
+        icon: 'school',
+        to: '/color',
     },
 ];
 
