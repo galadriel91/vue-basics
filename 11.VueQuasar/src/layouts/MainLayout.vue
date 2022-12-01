@@ -52,6 +52,12 @@ const linksList = [
         icon: 'school',
         to: '/color',
     },
+    {
+        title: 'Space',
+        caption: 'quasar.dev',
+        icon: 'school',
+        to: '/space',
+    },
 ];
 
 export default defineComponent({
