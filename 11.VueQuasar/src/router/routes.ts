@@ -9,6 +9,7 @@ const routes: RouteRecordRaw[] = [
             { path: 'typo', component: () => import('pages/TypoPage.vue') },
             { path: 'color', component: () => import('pages/ColorPage.vue') },
             { path: 'space', component: () => import('pages/SpacingPage.vue') },
+            { path: 'break', component: () => import('pages/BreakPage.vue') },
         ],
     },
 
