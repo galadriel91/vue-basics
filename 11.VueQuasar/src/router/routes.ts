@@ -10,6 +10,7 @@ const routes: RouteRecordRaw[] = [
             { path: 'color', component: () => import('pages/ColorPage.vue') },
             { path: 'space', component: () => import('pages/SpacingPage.vue') },
             { path: 'break', component: () => import('pages/BreakPage.vue') },
+            { path: 'helper', component: () => import('pages/HelperPage.vue') },
         ],
     },
 

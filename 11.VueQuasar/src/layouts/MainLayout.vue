@@ -64,6 +64,12 @@ const linksList = [
         icon: 'school',
         to: '/break',
     },
+    {
+        title: 'Helper',
+        caption: 'quasar.dev',
+        icon: 'school',
+        to: '/helper',
+    },
 ];
 
 export default defineComponent({
