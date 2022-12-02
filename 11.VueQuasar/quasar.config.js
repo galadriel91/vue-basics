@@ -27,7 +27,7 @@ module.exports = configure(function (/* ctx */) {
         // app boot file (/src/boot)
         // --> boot files are part of "main.js"
         // https://v2.quasar.dev/quasar-cli-vite/boot-files
-        boot: [],
+        boot: ['darkMode'],
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
         css: ['app.scss'],
@@ -108,7 +108,7 @@ module.exports = configure(function (/* ctx */) {
             // directives: [],
 
             // Quasar plugins
-            plugins: [],
+            plugins: ['LocalStorage'],
         },
 
         // animations: 'all', // --- includes all animations

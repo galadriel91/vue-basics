@@ -13,13 +13,26 @@
 
                 <q-toolbar-title> Quasar App </q-toolbar-title>
 
-                <div>Quasar v{{ $q.version }}</div>
+                <div>
+                    <q-btn
+                        flat
+                        round
+                        dense
+                        :icon="isDark"
+                        @click="darkToggle"
+                    />
+                </div>
             </q-toolbar>
         </q-header>
 
         <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
             <q-list>
-                <q-item-label header> Essential Links </q-item-label>
+                <q-item-label header>
+                    <q-avatar size="lg" class="q-mr-sm">
+                        <img src="/logo.ico" />
+                    </q-avatar>
+                    Quasar v{{ $q.version }}
+                </q-item-label>
 
                 <EssentialLink
                     v-for="link in essentialLinks"
@@ -72,6 +85,8 @@ const linksList = [
     },
 ];
 
+import { useQuasar } from 'quasar';
+import { computed } from 'vue';
 export default defineComponent({
     name: 'MainLayout',
 
@@ -80,7 +95,17 @@ export default defineComponent({
     },
 
     setup() {
+        const $q = useQuasar();
         const leftDrawerOpen = ref(false);
+
+        const darkToggle = () => {
+            $q.dark.toggle();
+            $q.localStorage.set('isDark', $q.dark.isActive);
+        };
+
+        const isDark = computed(() => {
+            return $q.dark.isActive ? 'light_mode' : 'dark_mode';
+        });
 
         return {
             essentialLinks: linksList,
@@ -88,6 +113,8 @@ export default defineComponent({
             toggleLeftDrawer() {
                 leftDrawerOpen.value = !leftDrawerOpen.value;
             },
+            darkToggle,
+            isDark,
         };
     },
 });
