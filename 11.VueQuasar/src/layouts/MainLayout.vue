@@ -89,6 +89,12 @@ const linksList = [
         icon: 'school',
         to: '/grid',
     },
+    {
+        title: 'Insta',
+        caption: 'quasar.dev',
+        icon: 'school',
+        to: '/insta',
+    },
 ];
 
 import { useQuasar } from 'quasar';

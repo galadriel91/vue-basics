@@ -12,6 +12,7 @@ const routes: RouteRecordRaw[] = [
             { path: 'break', component: () => import('pages/BreakPage.vue') },
             { path: 'helper', component: () => import('pages/HelperPage.vue') },
             { path: 'grid', component: () => import('pages/GridPage.vue') },
+            { path: 'insta', component: () => import('pages/InstaPage.vue') },
         ],
     },
 

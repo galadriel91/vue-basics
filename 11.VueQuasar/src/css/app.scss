@@ -16,3 +16,9 @@ body {
     // 동적 스타일 변경
     --q-primary: #121212;
 }
+
+body.body--dark {
+    .text-grey-10 {
+        color: #fff !important;
+    }
+}
