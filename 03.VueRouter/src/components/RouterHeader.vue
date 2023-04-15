@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Vue Router Page</h1>
+        header
     </div>
 </template>
 
