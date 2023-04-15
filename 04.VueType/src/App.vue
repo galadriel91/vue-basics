@@ -1,10 +1,12 @@
 <template>
     <div class="container">
-        Todo
+        <TodoHeader/>
     </div>
 </template>
 
 <script setup lang="ts">
+import TodoHeader from '@/components/TodoHeader.vue';
+
 
 </script>
 
