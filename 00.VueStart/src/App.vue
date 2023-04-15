@@ -1,13 +1,14 @@
 <template>
     <div>
-        Vue3
+        <VueComponent/>
     </div>
 </template>
 
 <script setup>
+import VueComponent from './components/VueComponent.vue';
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
