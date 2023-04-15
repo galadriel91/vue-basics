@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <VueComponent/>
+        <VueVuex/>
     </div>
 </template>
 
 <script setup>
-import VueComponent from './components/VueComponent.vue';
+import VueVuex from './components/VueVuex.vue';
 
 </script>
 

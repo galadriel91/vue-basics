@@ -1,5 +1,5 @@
 <template>
-    <div class="number">{{ initNum }}</div>
+    <div class="number">{{ NUMBER }}</div>
     <div class="btnWrap">
         <button @click="onClickPlus">+</button>
         <button @click="onClickMinus">-</button>
@@ -7,15 +7,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
+import { useStore } from "vuex";
 
-const initNum = ref(0)
-const onClickPlus = () => { 
-    initNum.value++
+const store = useStore()
+const NUMBER = computed(()=>store.state.number)
+const onClickPlus = () => {
+    store.commit('ADD_NUM')
 }
 const onClickMinus = () => {
-    initNum.value--
+    store.commit('MINUS_NUM')
 }
+
 </script>
 
 <style lang="scss" scoped>
