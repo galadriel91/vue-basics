@@ -10,12 +10,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineEmits } from 'vue';
+import { ref } from 'vue';
 
     const emit = defineEmits([
         'addItem'
     ]);
-    
+
     const value = ref('')
     const onSubmitForm = () => {
         if (value.value) {
