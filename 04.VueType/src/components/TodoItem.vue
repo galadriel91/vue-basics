@@ -58,7 +58,8 @@
     });
     
     const emit = defineEmits([
-        'checkItem'
+        'checkItem',
+        'removeItem'
     ])
 
     const isUpdate = ref(false)
@@ -68,7 +69,7 @@
         emit('checkItem', props.todo.id)
     }
     const onClickRemove = () => {
-
+        emit('removeItem', props.todo.id)
     }
     const onClickUpdate = () => {
 

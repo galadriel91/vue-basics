@@ -3,7 +3,8 @@
         <TodoHeader/>
         <TodoInput @addItem="onAddItem"/>
         <ul>
-            <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" @checkItem="onCheckItem"/>
+            <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" 
+            @checkItem="onCheckItem" @removeItem="onRemoveItem"/>
         </ul>
     </div>
 </template>
@@ -30,6 +31,10 @@
         const index = todos.value.findIndex(v => v.id === value);
         todos.value[index].isCheck = !todos.value[index].isCheck;
     }
+    const onRemoveItem = (value: number) => {
+            const index = todos.value.findIndex(v => v.id === value);
+            todos.value.splice(index, 1);
+        };
 
 </script>
 
