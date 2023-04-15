@@ -1,6 +1,8 @@
-#  Vue Start
+#  Vue & Vuex
 
-Setup Vue with Vite
+Setup Vue & Vuex
+
+이제는 Vuex 말고 Pinia를 쓰자.
 
 ##  개발 환경 
 
@@ -15,6 +17,8 @@ Setup Vue with Vite
 ##  Dependencies
 
 - Vue : [Vue](https://www.npmjs.com/package/vue)
+
+- Vuex : [Vuex](https://www.npmjs.com/package/vuex)
 
 ##  DevDependencies
   
