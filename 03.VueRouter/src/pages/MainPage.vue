@@ -1,4 +1,5 @@
 <template>
+    <img src="../assets/images/vue.png" alt="뷰 로고 이미지">
     <div class="number">{{ initNum }}</div>
     <div class="btnWrap">
         <button @click="onClickPlus">+</button>
@@ -19,5 +20,5 @@ const onClickMinus = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/components/VueComponent';
+@import '@/assets/scss/pages/MainPage';
 </style>

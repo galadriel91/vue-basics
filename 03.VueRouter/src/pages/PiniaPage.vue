@@ -1,4 +1,5 @@
 <template>
+    <img src="../assets/images/pinia.svg" alt="피니아 로고">
     <div class="number">{{ number }}</div>
     <div class="btnWrap">
         <button @click="onClickPlus">+</button>
@@ -22,5 +23,5 @@ const onClickMinus = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/components/VueComponent';
+@import '@/assets/scss/pages/PiniaPage';
 </style>

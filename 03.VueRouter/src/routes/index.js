@@ -5,6 +5,10 @@ export const router = createRouter({
     routes:[
         {
             path:'/',
+            redirect:'main'
+        },
+        {
+            path:'/main',
             component:import('@/pages/MainPage.vue')
         },
         {
