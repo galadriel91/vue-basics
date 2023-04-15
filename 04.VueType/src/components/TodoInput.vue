@@ -10,12 +10,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, defineEmits } from 'vue';
 
-const value = ref('')
-const onSubmitForm = () => {
+    const emit = defineEmits([
+        'addItem'
+    ]);
     
-}
+    const value = ref('')
+    const onSubmitForm = () => {
+        if (value.value) {
+            emit('addItem', value.value);
+            initValue();
+        } else {
+            alert('오늘 할 일을 입력해 주세요');
+        }
+    };
+    const initValue = () => {
+        value.value = '';
+    };
 
 </script>
 

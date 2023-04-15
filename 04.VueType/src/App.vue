@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <TodoHeader/>
-        <TodoInput/>
+        <TodoInput @addItem="onAddItem"/>
         <ul>
             <TodoItem/>
         </ul>
@@ -13,6 +13,11 @@ import TodoHeader from '@/components/TodoHeader.vue';
 import TodoInput from '@/components/TodoInput.vue';
 import TodoItem from '@/components/TodoItem.vue';
 
+const todos = []
+
+const onAddItem = () => {
+    console.log(1)
+}
 
 </script>
 
