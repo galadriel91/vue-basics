@@ -1,33 +1,35 @@
-#  Vue & VueRouter
+# vue-router
 
-Vue & VueRouter 연결
+This template should help get you started developing with Vue 3 in Vite.
 
-##  개발 환경 
+## Recommended IDE Setup
 
-- [Chrome](https://www.google.com/intl/ko/chrome/)
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+## Customize configuration
 
-- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-- [Node.js](https://nodejs.org/ko/)
+## Project Setup
 
-##  Dependencies
+```sh
+npm install
+```
 
-- Vue : [Vue](https://www.npmjs.com/package/vue)
+### Compile and Hot-Reload for Development
 
-- Vuex : [Vuex](https://www.npmjs.com/package/vuex)
+```sh
+npm run dev
+```
 
-- Pinia : [Pinia](https://www.npmjs.com/package/pinia)
+### Compile and Minify for Production
 
-- VueRouter : [VueRouter](https://www.npmjs.com/package/vue-router)
-  
-##  DevDependencies
-  
-- Webpack : [Webpack](https://www.npmjs.com/package/webpack), [WebpackCli](https://www.npmjs.com/package/webpack-cli), [WebpackDevServer](https://www.npmjs.com/package/webpack-dev-server)
+```sh
+npm run build
+```
 
-- Vue : [VueLoader](https://www.npmjs.com/package/vue-loader), [VueTemplateCompiler](https://www.npmjs.com/package/vue-template-compiler), [@Vue/compiler-sfc](https://www.npmjs.com/package/@vue/compiler-sfc)
+### Lint with [ESLint](https://eslint.org/)
 
-- Style : [CssLoader](https://www.npmjs.com/package/css-loader), [StyleLoader](https://www.npmjs.com/package/style-loader), [SassLoader](https://www.npmjs.com/package/sass-loader), [NodeSass](https://www.npmjs.com/package/node-sass)
-
-- File : [FileLoader](https://www.npmjs.com/package/file-loaders)
+```sh
+npm run lint
+```
