@@ -1,35 +1,61 @@
-# vue-router
+#  Vue Start
 
-This template should help get you started developing with Vue 3 in Vite.
+Setup Vue with Vite
 
-## Recommended IDE Setup
+##  개발 환경 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Chrome](https://www.google.com/intl/ko/chrome/)
 
-## Customize configuration
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 
-## Project Setup
+- [Node.js](https://nodejs.org/ko/)
 
-```sh
-npm install
-```
+##  Dependencies
 
-### Compile and Hot-Reload for Development
+- Vue : [Vue](https://www.npmjs.com/package/vue)
 
-```sh
-npm run dev
-```
+##  DevDependencies
+  
+- Sass : [Sass](https://www.npmjs.com/package/sass)
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+##  Vue3 Vite
 
-### Lint with [ESLint](https://eslint.org/)
+  
 
-```sh
-npm run lint
-```
+- npm init vue
+
+	
+
+	- Add TypeScript - No
+
+	
+
+	- Add JSX Support - No
+
+	
+
+	- Add Vue Router for Single Page Application development? - No
+
+	
+
+	- Add Pinia for state management? - No
+
+	
+
+	- Add Vitest for Unit Testing? - No
+
+	
+
+	- Add Cypress for both Unit and End-to-End testing? - No
+
+	
+
+	- Add ESLint for code quality? - Yes
+
+	
+
+	- Add Prettier for code formatting? - Yes
+
