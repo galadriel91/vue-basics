@@ -1,6 +1,6 @@
-#  Vue Start
+#  Vue & Pinia
 
-Setup Vue with Vite
+Setup Vue & Pinia
 
 ##  개발 환경 
 
@@ -15,6 +15,8 @@ Setup Vue with Vite
 ##  Dependencies
 
 - Vue : [Vue](https://www.npmjs.com/package/vue)
+
+- Pinia : [Pinia](https://www.npmjs.com/package/pinia)
 
 ##  DevDependencies
   
