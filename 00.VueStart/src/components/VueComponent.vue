@@ -8,15 +8,15 @@
 
 <script setup>
 
-import { ref } from 'vue';
+    import { ref } from 'vue';
 
-const initNum = ref(0)
-const onClickPlus = () => { 
-    initNum.value++
-}
-const onClickMinus = () => {
-    initNum.value--
-}
+    const initNum = ref(0)
+    const onClickPlus = () => { 
+        initNum.value++
+    }
+    const onClickMinus = () => {
+        initNum.value--
+    }
 
 </script>
 
