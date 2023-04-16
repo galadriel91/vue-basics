@@ -37,4 +37,10 @@ export default [
         component: () => import('@/pages/UserPage.vue'),
         beforeEnter:getParamsPage()
     },
+    {
+        path: '/post/:id',
+        name: 'post',
+        component: () => import('@/pages/PostPage.vue'),
+        beforeEnter:getParamsPage()
+    },
 ];
