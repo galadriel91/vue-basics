@@ -1,10 +1,11 @@
 <template>
     <div>
-        App
+        <CommonFooter/>
     </div>
 </template>
 
 <script setup lang="ts">
+    import CommonFooter from '@/components/common/CommonFooter.vue';
 
 </script>
 
