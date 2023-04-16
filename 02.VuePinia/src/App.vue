@@ -5,7 +5,8 @@
 </template>
 
 <script setup>
-import VuePinia from './components/VuePinia.vue';
+
+    import VuePinia from './components/VuePinia.vue';
 
 </script>
 

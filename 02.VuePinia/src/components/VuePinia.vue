@@ -7,25 +7,25 @@
 </template>
 
 <script setup>
-import { piniaStore } from '../store/piniaStore';
-import { storeToRefs } from 'pinia';
 
-const store = piniaStore();
-const { number } = storeToRefs(store)
-// const { onClickMinus , onClickPlus} = store
+    import { piniaStore } from '../store/piniaStore';
+    import { storeToRefs } from 'pinia';
 
-// 스토어 액션을 거치지 않고 바로 스테이트 값 변경이 가능 - Vuex와 다름
-const onClickPlus = () => {
-    number.value++
-}
+    const store = piniaStore();
+    const { number } = storeToRefs(store)
+    // const { onClickMinus , onClickPlus} = store
 
-const onClickMinus = () => {
-    number.value--
-}
+    // 스토어 액션을 거치지 않고 바로 스테이트 값 변경이 가능 - Vuex와 다름
+    const onClickPlus = () => {
+        number.value++
+    }
 
+    const onClickMinus = () => {
+        number.value--
+    }
 
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/components/VueComponent';
+@import '@/assets/scss/components/VuePinia';
 </style>
