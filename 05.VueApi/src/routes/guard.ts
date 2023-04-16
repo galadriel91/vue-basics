@@ -15,7 +15,6 @@ const getPage = () => async (to: RouteLocationNormalizedLoaded) => {
     }
 };
 
-
 const getParamsPage = () => async (to: RouteLocationNormalizedLoaded) => {
     const common = commonStore();
     const item = itemStore();
