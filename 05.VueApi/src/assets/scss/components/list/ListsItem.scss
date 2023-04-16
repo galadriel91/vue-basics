@@ -7,12 +7,15 @@ ul{
         a{
             transition: all .5s;
         }
-        height: 8rem; border-bottom: 1px solid #ddd;
+        height: 8rem; 
+        border-bottom: 1px solid #ddd;
         .itemWrap{
             display: flex; align-items: center; 
-            width: 120rem; height: 100%; margin: 0 auto;
+            margin: 0 auto;
+            width: 120rem; height: 100%; 
             .indexNumber{
-                width: 5%; text-align: center;
+                width: 5%; 
+                text-align: center;
                 font-size: 1.6rem; font-weight: bold; color: #000;
             }
             .itemInfo{
