@@ -2,6 +2,8 @@
 
 Setup Vue & Pinia
 
+이제는 Pinia를 쓰자.
+
 ##  개발 환경 
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
