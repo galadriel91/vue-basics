@@ -8,15 +8,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 
-const initNum = ref(0)
-const onClickPlus = () => { 
-    initNum.value++
-}
-const onClickMinus = () => {
-    initNum.value--
-}
+    import { ref } from 'vue';
+
+    const initNum = ref(0)
+    const onClickPlus = () => { 
+        initNum.value++
+    }
+    const onClickMinus = () => {
+        initNum.value--
+    }
+    
 </script>
 
 <style lang="scss" scoped>

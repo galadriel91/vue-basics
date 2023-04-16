@@ -9,7 +9,8 @@ import RouterHeader from './components/RouterHeader.vue';
 </template>
 
 <script setup>
-import RouterHeader from './components/RouterHeader.vue';
+
+    import RouterHeader from './components/RouterHeader.vue';
 
 </script>
 
