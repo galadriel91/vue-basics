@@ -1,4 +1,4 @@
-import { getPage } from './guard'
+import { getPage, getParamsPage } from './guard'
 
 export default [
     {
@@ -30,5 +30,11 @@ export default [
         name: 'jobs',
         component: () => import('@/pages/ListPage.vue'),
         beforeEnter:getPage()
+    },
+    {
+        path: '/user/:id',
+        name: 'user',
+        component: () => import('@/pages/UserPage.vue'),
+        beforeEnter:getParamsPage()
     },
 ];

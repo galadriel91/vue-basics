@@ -15,6 +15,25 @@ const getPage = () => async (to: RouteLocationNormalizedLoaded) => {
     }
 };
 
+
+const getParamsPage = () => async (to: RouteLocationNormalizedLoaded) => {
+    const common = commonStore();
+    const item = itemStore();
+    const { FETCH_USER, FETCH_POST } = item;
+    const { ON_LOADING } = common;
+    ON_LOADING();
+    try {
+        if (to.name === 'user') {
+            await FETCH_USER(to.params.id as string);
+        } else {
+            await FETCH_POST(to.params.id as string);
+        }
+    } catch {
+        return { path: '/404' };
+    }
+};
+
 export{
-    getPage
+    getPage,
+    getParamsPage
 }
