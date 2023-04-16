@@ -1,6 +1,7 @@
 <template>
     <div>
         <CommonNav/>
+        <RouterView/>
         <CommonFooter/>
         <CommonLoading/>
     </div>
