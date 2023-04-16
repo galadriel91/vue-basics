@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
     import type { TodoItems } from '@/types'
-    import  {ref, type PropType }from 'vue'
+    import  {ref, type PropType , nextTick }from 'vue'
 
     const props = defineProps({
         todo:{
@@ -59,23 +59,33 @@
     
     const emit = defineEmits([
         'checkItem',
-        'removeItem'
+        'removeItem',
+        'updateItem'
     ])
 
     const isUpdate = ref(false)
     const value = ref('')
-    
+    const update = ref<HTMLInputElement | null>(null);
+
     const onClickCheck = () => {
         emit('checkItem', props.todo.id)
+        isUpdate.value = false
     }
     const onClickRemove = () => {
         emit('removeItem', props.todo.id)
     }
     const onClickUpdate = () => {
-
+        isUpdate.value = !isUpdate.value
+        nextTick(() => {
+            update.value?.focus();
+        });
     }
     const onSubmitUpdate = () => {
-        
+        emit('updateItem' , {
+            id:props.todo.id, 
+            title:value.value
+        })
+        isUpdate.value = false;
     }
 </script>
 

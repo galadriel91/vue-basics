@@ -4,7 +4,7 @@
         <TodoInput @addItem="onAddItem"/>
         <ul>
             <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" 
-            @checkItem="onCheckItem" @removeItem="onRemoveItem"/>
+            @checkItem="onCheckItem" @removeItem="onRemoveItem" @updateItem="onUpdateItem"/>
         </ul>
     </div>
 </template>
@@ -32,10 +32,13 @@
         todos.value[index].isCheck = !todos.value[index].isCheck;
     }
     const onRemoveItem = (value: number) => {
-            const index = todos.value.findIndex(v => v.id === value);
-            todos.value.splice(index, 1);
-        };
-
+        const index = todos.value.findIndex(v => v.id === value);
+        todos.value.splice(index, 1);
+    };
+    const onUpdateItem = (value: { id: number; title: string }) => {
+        const index = todos.value.findIndex(v => v.id === value.id);
+        todos.value[index].title = value.title;
+    };
 </script>
 
 <style lang="scss">
