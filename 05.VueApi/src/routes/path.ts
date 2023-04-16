@@ -2,6 +2,14 @@ import { getPage } from './guard'
 
 export default [
     {
+        path: '/:pathMatch(.*)',
+        redirect: '/404',
+    },
+    {
+        path: '/404',
+        component: () => import('@/pages/NotPage.vue'),
+    },
+    {
         path: '/',
         redirect: '/news',
     },
