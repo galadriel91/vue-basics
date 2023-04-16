@@ -1,6 +1,6 @@
 #  Vue Start
 
-Setup Vue with Vite
+Setup Vue with vite
 
 ##  개발 환경 
 
