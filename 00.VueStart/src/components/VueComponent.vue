@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
+
 import { ref } from 'vue';
 
 const initNum = ref(0)
@@ -16,6 +17,7 @@ const onClickPlus = () => {
 const onClickMinus = () => {
     initNum.value--
 }
+
 </script>
 
 <style lang="scss" scoped>

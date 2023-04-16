@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+
 import VueComponent from './components/VueComponent.vue';
 
 </script>
