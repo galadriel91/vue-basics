@@ -23,6 +23,7 @@
                         :placeholder="todo.title"
                         ref="update"
                         v-model="value"
+                        @blur="onInputBlur"
                     />
                     <button
                         type="submit"
@@ -70,6 +71,7 @@
     const onClickCheck = () => {
         emit('checkItem', props.todo.id)
         isUpdate.value = false
+        value.value = ''
     }
     const onClickRemove = () => {
         emit('removeItem', props.todo.id)
@@ -87,6 +89,11 @@
         })
         isUpdate.value = false;
     }
+    const onInputBlur = () => {
+        isUpdate.value = false
+        value.value = ''
+    }
+
 </script>
 
 <style lang="scss" scoped>
