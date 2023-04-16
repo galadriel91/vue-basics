@@ -14,6 +14,7 @@
 <script setup lang="ts">
 
     import { computed, type ComputedRef } from 'vue';
+    
     const YEAR: ComputedRef<number> = computed(() =>
         new Date().getFullYear(),
     );

@@ -21,31 +21,25 @@
     </div>
 </template>
 
-<script lang="ts">
-import type { PostsItem, UserItems } from '@/store/types';
-import { computed } from 'vue';
-import { defineComponent, type PropType } from 'vue';
+<script lang="ts" setup>
+    import { computed ,  type PropType } from 'vue';
+    import type { PostsItem, UserItems } from '@/store/types';
 
-export default defineComponent({
-    props: {
-        item: {
+    const props = defineProps({
+        item:{
             type: Object as PropType<UserItems | PostsItem>,
             required: true,
-        },
-    },
-    setup(props) {
-        const userItem = computed(() => {
-            if ('about' in props.item) {
-                return props.item.about;
-            } else {
-                return false;
-            }
-        });
-        return {
-            userItem,
-        };
-    },
-});
+        }
+    })
+
+    const userItem = computed(() => {
+        if ('about' in props.item) {
+            return props.item.about;
+        } else {
+            return false;
+        }
+    });
+
 </script>
 
 <style lang="scss" scoped>

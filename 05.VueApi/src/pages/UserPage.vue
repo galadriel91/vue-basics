@@ -8,24 +8,17 @@
     </div>
 </template>
 
-<script lang="ts">
-import UserItem from '@/components/user/UserItem.vue';
-import { defineComponent } from 'vue';
-import { useLoading } from '@/composables/useLoading';
-import { itemStore } from '@/store/itemStore';
-import { storeToRefs } from 'pinia';
+<script lang="ts" setup>
 
-export default defineComponent({
-    components: {
-        UserItem,
-    },
-    setup() {
-        useLoading();
-        const item = itemStore();
-        const { user } = storeToRefs(item);
-        return { user };
-    },
-});
+    import { useLoading } from '@/composables/useLoading';
+    import { itemStore } from '@/store/itemStore';
+    import { storeToRefs } from 'pinia';
+    import UserItem from '@/components/user/UserItem.vue';
+
+    useLoading();
+    const item = itemStore();
+    const { user } = storeToRefs(item);
+
 </script>
 
 <style lang="scss" scoped>

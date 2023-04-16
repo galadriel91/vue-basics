@@ -9,10 +9,13 @@
 </template>
 
 <script lang="ts" setup>
+
     import { commonStore } from '@/store/commonStore';
     import { storeToRefs } from 'pinia';
+    
     const common = commonStore();
     const { loading } = storeToRefs(common);
+
 </script>
 
 <style lang="scss" scoped>

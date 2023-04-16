@@ -35,6 +35,7 @@
 
     import { itemStore } from '@/store/itemStore';
     import { storeToRefs } from 'pinia';
+    
     const items = itemStore();
     const { lists } = storeToRefs(items);
 

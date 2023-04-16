@@ -6,9 +6,11 @@
 </template>
 
 <script lang="ts" setup>
+
     import { useLoading }from '@/composables/useLoading'    
 
     useLoading();
+    
 </script>
 
 <style lang="scss" scoped>
