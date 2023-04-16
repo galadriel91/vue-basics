@@ -1,7 +1,7 @@
 <template>
     <div>
         <CommonNav/>
-        <RouterView/>
+        <RouterView :key="$route.path" />
         <CommonFooter/>
         <CommonLoading/>
     </div>

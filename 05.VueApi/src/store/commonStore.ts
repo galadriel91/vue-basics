@@ -5,6 +5,11 @@ export const commonStore = defineStore('common' , {
         loading:false
     }),
     actions:{
-        
+        ON_LOADING(){
+            this.loading = true
+        },
+        OFF_LOADING(){
+            this.loading = false
+        }
     }
 })

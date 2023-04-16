@@ -6,7 +6,7 @@ const instance = axios.create({
     baseURL: 'https://api.hnpwa.com/v0/',
 });
 
-const fetchListItem = (pageName: string): Promise<AxiosResponse<ListItems>> => {
+const fetchListItem = (pageName: string): Promise<AxiosResponse<ListItems[]>> => {
     return instance.get(`${pageName}/1.json`);
 };
 
