@@ -2,6 +2,7 @@
     padding-top: 2rem; 
     display: flex; align-items: center;
     .xi-user-address{
+        margin-left: -1rem;
         font-size: 10rem; color: #777;
     }
     .userInfo{
@@ -13,17 +14,20 @@
             font-size: 1.6rem; color: #666; font-weight: bold;
         }
         span{
+            margin: .5rem 0; 
+            display: inline-block;
             font-size: 1.6rem; color: #444; font-weight: bold;
         }
     }
 }
 .userDesc{
-    padding:1rem 0 0 1rem; font-weight: bold;
+    padding: 1rem 0 0 .5rem; 
+    font-weight: bold;
     h3{
         font-size: 1.8rem ; color: #000;
     }
     div{
         margin-top: 1rem;
-        font-size: 1.4rem; color: #777;
+        font-size: 1.6rem; color: #777;
     }
 }

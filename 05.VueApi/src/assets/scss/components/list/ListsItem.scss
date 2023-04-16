@@ -2,7 +2,7 @@ ul{
     li{
         transition: all .5s;
         &:hover{
-            background: #f3ede7;
+            background: #fcf6ed;
         }
         a{
             transition: all .5s;
@@ -14,17 +14,17 @@ ul{
             margin: 0 auto;
             width: 120rem; height: 100%; 
             .indexNumber{
-                width: 5%; 
+                width: 5rem; 
                 text-align: center;
                 font-size: 1.6rem; font-weight: bold; color: #000;
             }
             .itemInfo{
-                margin-left: 3rem;
+                margin-left: 2rem;
                 p{
                     a{
                         font-size: 1.8rem; font-weight: bold; color: #000;
                         &:hover{
-                            color: #396EB0;
+                            color: #0E8388;
                         }
                     }
                 }
@@ -37,7 +37,7 @@ ul{
                         margin: 0 .5rem;
                         font-size: 1.4rem; color: #777; font-weight: bold;
                         &:hover{
-                            color: #396EB0;
+                            color: #0E8388;
                         }
                     }
                 }
