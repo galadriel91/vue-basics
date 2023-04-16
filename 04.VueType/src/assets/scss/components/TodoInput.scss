@@ -1,8 +1,11 @@
 form{
-    width: 120rem; height: 5rem; font-size: 0;
+    width: 120rem; height: 5rem; 
+    font-size: 0;
     input{
-        width: calc(100% - 5rem); background: #1C6B47;
-        font-size: 1.6rem; font-weight: bold; color: #fff; text-indent: 2rem; line-height: 5rem;
+        width: calc(100% - 5rem); 
+        text-indent: 2rem; line-height: 5rem;
+        font-size: 1.6rem; font-weight: bold; color: #fff; 
+        background: #1C6B47;
         &::placeholder{
             color: #fff;
         }
@@ -11,9 +14,9 @@ form{
         }
     }
     button{
-        height: 5rem;
-        width: 5rem; background: #143828; 
+        height: 5rem; width: 5rem; 
         font-size: 2rem; font-weight: bold; color: #fff; 
+        background: #143828; 
         cursor: pointer;
     }
 }
