@@ -5,7 +5,8 @@
 </template>
 
 <script setup>
-import VueVuex from './components/VueVuex.vue';
+
+    import VueVuex from './components/VueVuex.vue';
 
 </script>
 
