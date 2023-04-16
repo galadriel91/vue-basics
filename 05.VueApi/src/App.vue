@@ -1,5 +1,6 @@
 <template>
     <div>
+        <CommonNav/>
         <CommonFooter/>
         <CommonLoading/>
     </div>
@@ -8,6 +9,7 @@
 <script setup lang="ts">
     import CommonFooter from '@/components/common/CommonFooter.vue';
     import CommonLoading from '@/components/common/CommonLoading.vue';
+    import CommonNav from '@/components/common/CommonNav.vue';
 
 </script>
 
