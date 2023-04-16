@@ -2,7 +2,7 @@
 
 Setup Vue & Vuex
 
-이제는 Vuex 말고 Pinia를 쓰자.
+이제는 Pinia를 쓰자.
 
 ##  개발 환경 
 
