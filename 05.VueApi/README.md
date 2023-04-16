@@ -1,65 +1,46 @@
-#  Vue + Api
+# vue-api
 
-  [HackerNews](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md/) API
-  
-  Vite + Vue3 를 이용하여 기본적인 기능을 클론 코딩 및 Api 통신 학습.
+This template should help get you started developing with Vue 3 in Vite.
 
-##  개발 환경 
+## Recommended IDE Setup
 
-- [Chrome](https://www.google.com/intl/ko/chrome/)
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+## Type Support for `.vue` Imports in TS
 
-- [Vue.js Dev Tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-- [Node.js](https://nodejs.org/ko/)
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-##  Dependencies
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-- Pinia : [Pinia](https://www.npmjs.com/package/pinia)
+## Customize configuration
 
-- VueRouter : [Vuex](https://www.npmjs.com/package/vue-router)
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-- Axios : [Vuex](https://www.npmjs.com/package/axios)
+## Project Setup
 
-##  DevDependencies
+```sh
+npm install
+```
 
-- Sass : [Vuex](https://www.npmjs.com/package/sass)
+### Compile and Hot-Reload for Development
 
+```sh
+npm run dev
+```
 
-##  Vue3 Vite
+### Type-Check, Compile and Minify for Production
 
-- npm init vue
+```sh
+npm run build
+```
 
-	
+### Lint with [ESLint](https://eslint.org/)
 
-	- Add TypeScript - Yes
-
-	
-
-	- Add JSX Support - No
-
-	
-
-	- Add Vue Router for Single Page Application development? - No
-
-	
-
-	- Add Pinia for state management? - No
-
-	
-
-	- Add Vitest for Unit Testing? - No
-
-	
-
-	- Add Cypress for both Unit and End-to-End testing? - No
-
-	
-
-	- Add ESLint for code quality? - Yes
-
-	
-
-	- Add Prettier for code formatting? - Yes
-
+```sh
+npm run lint
+```
