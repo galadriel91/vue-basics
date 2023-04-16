@@ -4,12 +4,7 @@
 
 <script setup lang="ts">
     import ListItem from '@/components/list/ListsItem.vue';
-    import { onMounted } from 'vue';
-    import { commonStore } from '@/store/commonStore'
-    const { OFF_LOADING } = commonStore()
+    import { useLoading }from '@/composables/useLoading'    
 
-    onMounted(()=>{
-        OFF_LOADING()
-    })
-    
+    useLoading()
 </script>
