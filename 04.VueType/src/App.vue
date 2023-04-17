@@ -10,11 +10,12 @@
 </template>
 
 <script setup lang="ts">
+
+    import { ref } from 'vue';
+    import type { TodoItems } from '@/types'
     import TodoHeader from '@/components/TodoHeader.vue';
     import TodoInput from '@/components/TodoInput.vue';
     import TodoItem from '@/components/TodoItem.vue';
-    import type { TodoItems } from '@/types'
-    import { ref } from 'vue';
 
     const todos = ref([] as TodoItems[]);
 

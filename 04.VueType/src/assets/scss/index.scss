@@ -12,9 +12,9 @@ html{
 }
 
 body{
-    font-family: 'ChosunGu'; font-size: 1rem;
     background: #f3ede7; 
     box-sizing: border-box;
+    font-family: 'ChosunGu'; font-size: 1rem;
 }
 
 input{
@@ -44,12 +44,12 @@ ul{
         width: 1rem;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: grey;
         border-radius: 0 0 1rem 0;
+        background-color: grey;
     }
     &::-webkit-scrollbar-track {
-        background-color: #D6D2C4;
         border-radius: 0 0 1rem 0;
+        background-color: #D6D2C4;
     }
 }
 
