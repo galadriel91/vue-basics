@@ -2,7 +2,7 @@
 
   [HackerNews](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md/) API
   
-  Vite + Vue3 를 이용하여 기본적인 기능을 클론 코딩 및 Api 통신 학습.
+  Vite + Vue3 를 이용하여 기본적인 기능을 클론 코딩 및 Api 통신 학습
 
 ##  개발 환경 
 
