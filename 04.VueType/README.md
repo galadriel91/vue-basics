@@ -1,6 +1,8 @@
 #  Vue & TypeScript
 
-Setup Vue & TypeScript
+Setup Vue & TypeScript 
+
+Todo 구현 해보기
 
 ##  개발 환경 
 
