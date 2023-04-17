@@ -1,6 +1,6 @@
 #  Vue & VueRouter
 
-Setup Vue & VueRouter
+Setup Vue & Pinia & VueRouter
 
 ##  개발 환경 
 
