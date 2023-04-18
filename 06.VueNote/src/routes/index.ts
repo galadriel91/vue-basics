@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router';
+import { getDetail } from './guard';
 
 export const router = createRouter({
     history: createWebHistory(),
@@ -25,6 +26,12 @@ export const router = createRouter({
             path: '/create',
             component: () => import('@/pages/CreatePage.vue'),
             meta: { title: 'Create' },
+        },
+        {
+            path: '/edit/:id',
+            component: () => import('@/pages/EditPage.vue'),
+            meta: { title: 'Edit' },
+            beforeEnter: getDetail(),
         },
     ],
 });

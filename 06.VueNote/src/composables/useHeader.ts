@@ -9,9 +9,9 @@ export const useHeader = () => {
             return 'Todo Note';
         } else if (name === 'Create') {
             return 'Create Page';
-        } else if (name === 'edit') {
+        } else if (name === 'Edit') {
             return 'Edit Page';
-        } else if (name === 'note') {
+        } else if (name === 'Note') {
             return 'Note Page';
         } else {
             return 'Search Page';
