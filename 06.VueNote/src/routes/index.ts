@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router';
-import { getDetail } from './guard';
+import { getDetail, getItem } from './guard';
 
 export const router = createRouter({
     history: createWebHistory(),
@@ -21,6 +21,7 @@ export const router = createRouter({
             path: '/main',
             component: () => import('@/pages/MainPage.vue'),
             meta: { title: 'Main' },
+            beforeEnter: getItem(),
         },
         {
             path: '/create',

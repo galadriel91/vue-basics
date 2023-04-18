@@ -58,15 +58,15 @@ const DATE = useDate(props.item.date);
 const onClickBefore = () => {
     router.go(-1);
 };
-const onSubmitForm = async () => {
+const onSubmitForm = () => {
     if (title.value.length && content.value.length) {
-        // await UPDATE_NOTE({
-        //     id: props.item.id,
-        //     title: title.value,
-        //     content: content.value,
-        //     date: new Date(),
-        //     update: true,
-        // });
+        UPDATE_NOTE({
+            id: props.item.id,
+            title: title.value,
+            content: content.value,
+            date: new Date(),
+            update: true,
+        });
         router.push('/');
     } else {
         alert('다시 한번 확인해 주세요');

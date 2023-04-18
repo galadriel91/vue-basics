@@ -13,16 +13,16 @@
 import { useRouter } from 'vue-router';
 import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
+import { useLoading } from '@/composables/useLoading';
 import NoteItem from '@/components/note/NoteItem.vue';
 
 const item = useItem();
 const { notes } = storeToRefs(item);
-const { GET_NOTE } = item;
 const router = useRouter();
 const onClickCreate = () => {
     router.push('/create');
 };
-GET_NOTE();
+useLoading();
 </script>
 
 <style lang="scss" scoped>
