@@ -12,5 +12,10 @@ export const router = createRouter({
             component: () => import('@/pages/NotPage.vue'),
             meta: { title: 'Error' },
         },
+        {
+            path: '/create',
+            component: () => import('@/pages/CreatePage.vue'),
+            meta: { title: 'Create' },
+        },
     ],
 });
