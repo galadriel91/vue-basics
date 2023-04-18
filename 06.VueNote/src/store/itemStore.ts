@@ -12,6 +12,7 @@ export const useItem = defineStore('item', {
     state: () => ({
         notes: [] as NoteItems[],
         edit: {} as NoteItems,
+        post: {} as NoteItems,
     }),
     actions: {
         async ADD_NOTE(info: NoteItems) {
@@ -27,9 +28,13 @@ export const useItem = defineStore('item', {
         async UPDATE_NOTE(info: NoteItems) {
             await updateNote(info);
         },
-        async GET_DETAIL_NOTE(id: string) {
+        async GET_DETAIL_NOTE(id: string, name: string) {
             const { data } = await getEditNote(id);
-            this.edit = data;
+            if (name === 'Edit') {
+                this.edit = data;
+            } else {
+                this.post = data;
+            }
         },
     },
 });
