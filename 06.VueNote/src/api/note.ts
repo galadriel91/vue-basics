@@ -19,3 +19,7 @@ export const updateNote = (
 export const removeItem = (id: number): Promise<AxiosResponse<NoteItems>> => {
     return notes.delete(`/${id}`);
 };
+
+export const addItem = (info: NoteItems): Promise<AxiosResponse<NoteItems>> => {
+    return notes.post(`/`, info);
+};

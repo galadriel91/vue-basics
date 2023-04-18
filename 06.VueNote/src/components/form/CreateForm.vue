@@ -43,18 +43,18 @@ export default defineComponent({
         const content = ref('');
         const titleInput = ref<HTMLInputElement | null>(null);
         const onSubmitForm = async () => {
-            // if (title.value.length && content.value.length) {
-            //     await ADD_NOTE({
-            //         id: Date.now(),
-            //         title: title.value,
-            //         content: content.value,
-            //         date: new Date(),
-            //         update: false,
-            //     });
-            //     onClickMain();
-            // } else {
-            //     alert('다시 한번 확인해 주세요');
-            // }
+            if (title.value.length && content.value.length) {
+                await ADD_NOTE({
+                    id: Date.now(),
+                    title: title.value,
+                    content: content.value,
+                    date: new Date(),
+                    update: false,
+                });
+                onClickMain();
+            } else {
+                alert('다시 한번 확인해 주세요');
+            }
         };
         const onClickMain = () => {
             router.push('/');
