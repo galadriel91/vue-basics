@@ -48,7 +48,7 @@ const onClickEditPage = () => {
     router.push(`/edit/${props.item.id}`);
 };
 const onClickRemove = async () => {
-    // await REMOVE_NOTE(props.item.id);
+    await REMOVE_NOTE(props.item.id);
     GET_NOTE();
 };
 </script>

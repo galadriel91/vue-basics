@@ -48,9 +48,9 @@ const props = defineProps({
         required: true,
     },
 });
+const router = useRouter();
 const item = useItem();
 const { UPDATE_NOTE } = item;
-const router = useRouter();
 const title = ref('');
 const content = ref('');
 const titleInput = ref<HTMLInputElement | null>(null);
@@ -58,9 +58,9 @@ const DATE = useDate(props.item.date);
 const onClickBefore = () => {
     router.go(-1);
 };
-const onSubmitForm = () => {
+const onSubmitForm = async () => {
     if (title.value.length && content.value.length) {
-        UPDATE_NOTE({
+        await UPDATE_NOTE({
             id: props.item.id,
             title: title.value,
             content: content.value,

@@ -15,3 +15,7 @@ export const updateNote = (
 ): Promise<AxiosResponse<NoteItems>> => {
     return notes.patch(`/${info.id}`, info);
 };
+
+export const removeItem = (id: number): Promise<AxiosResponse<NoteItems>> => {
+    return notes.delete(`/${id}`);
+};

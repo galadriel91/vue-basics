@@ -2,14 +2,14 @@ import { useItem } from '@/store/itemStore';
 import { useCommon } from '@/store/commonStore';
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
 
-const getItem = () => (to: RouteLocationNormalizedLoaded) => {
+const getItem = () => async () => {
     const item = useItem();
     const common = useCommon();
 
     const { ON_LOADING } = common;
     const { GET_NOTE } = item;
     ON_LOADING();
-    GET_NOTE();
+    await GET_NOTE();
 };
 
 const getDetail = () => async (to: RouteLocationNormalizedLoaded) => {
