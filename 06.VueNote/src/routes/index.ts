@@ -13,6 +13,15 @@ export const router = createRouter({
             meta: { title: 'Error' },
         },
         {
+            path: '/',
+            redirect: '/main',
+        },
+        {
+            path: '/main',
+            component: () => import('@/pages/MainPage.vue'),
+            meta: { title: 'Main' },
+        },
+        {
             path: '/create',
             component: () => import('@/pages/CreatePage.vue'),
             meta: { title: 'Create' },
