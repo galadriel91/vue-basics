@@ -1,16 +1,16 @@
 <template>
     <li class="noteItem">
         <div class="contentWrap" @click="onClickItemPage">
-            <h3 class="contentWrapTitle">{{ item.title }}</h3>
+            <h3 class="contentWrapTitle">{{ props.item.title }}</h3>
             <div class="contentWrapContent">
                 <p>
-                    {{ item.content }}
+                    {{ props.item.content }}
                 </p>
             </div>
         </div>
         <div class="contentInfoWrap">
             <div class="dateWrap">
-                <!-- <span>{{ DATE }}</span> -->
+                <span>{{ DATE }}</span>
                 <span v-if="item.update">최근 수정</span>
             </div>
             <div class="btnWrap">
@@ -24,44 +24,33 @@
     </li>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from 'vue';
-// import { useDate } from '@/composables/useDate';
+<script setup lang="ts">
 import type { NoteItems } from '@/store/types';
+import type { PropType } from 'vue';
+import { useDate } from '@/composables/useDate';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
 
-export default defineComponent({
-    props: {
-        item: {
-            type: Object as PropType<NoteItems>,
-            required: true,
-        },
-    },
-    setup(props) {
-        const router = useRouter();
-        const item = useItem();
-        const { REMOVE_NOTE, GET_NOTE } = item;
-        // const DATE = useDate(props.item.date);
-        const onClickItemPage = () => {
-            router.push(`/note/${props.item.id}`);
-        };
-        const onClickEditPage = () => {
-            router.push(`/edit/${props.item.id}`);
-        };
-        const onClickRemove = async () => {
-            await REMOVE_NOTE(props.item.id);
-            GET_NOTE();
-        };
-
-        return {
-            // DATE,
-            onClickItemPage,
-            onClickRemove,
-            onClickEditPage,
-        };
+const props = defineProps({
+    item: {
+        type: Object as PropType<NoteItems>,
+        required: true,
     },
 });
+const router = useRouter();
+const item = useItem();
+const { REMOVE_NOTE, GET_NOTE } = item;
+const DATE = useDate(props.item.date);
+const onClickItemPage = () => {
+    router.push(`/note/${props.item.id}`);
+};
+const onClickEditPage = () => {
+    router.push(`/edit/${props.item.id}`);
+};
+const onClickRemove = async () => {
+    // await REMOVE_NOTE(props.item.id);
+    GET_NOTE();
+};
 </script>
 
 <style lang="scss" scoped>

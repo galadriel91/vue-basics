@@ -3,7 +3,7 @@
         <ul v-if="notes.length > 0">
             <NoteItem v-for="note in notes" :item="note" :key="note.id" />
         </ul>
-        <div class="btnWrap">
+        <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
         </div>
     </div>
@@ -12,8 +12,8 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { useItem } from '@/store/itemStore';
-import NoteItem from '@/components/note/NoteItem.vue';
 import { storeToRefs } from 'pinia';
+import NoteItem from '@/components/note/NoteItem.vue';
 
 const item = useItem();
 const { notes } = storeToRefs(item);

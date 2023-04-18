@@ -12,5 +12,6 @@ export const useItem = defineStore('item', {
             const { data } = await getNote();
             this.notes = data;
         },
+        REMOVE_NOTE() {},
     },
 });
