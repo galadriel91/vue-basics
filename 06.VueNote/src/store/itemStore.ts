@@ -39,7 +39,10 @@ export const useItem = defineStore('item', {
             }, 2000);
         },
         SET_PAGE() {
-            if ((parseInt(this.totalItems) - 1) % this.limit === 0) {
+            const isPagefull = this.limit === this.notes.length;
+            const checkPage =
+                (parseInt(this.totalItems) - 1) % this.limit === 0;
+            if (checkPage && !isPagefull) {
                 this.CHANGE_PAGE(this.currentPage - 1);
             }
         },
