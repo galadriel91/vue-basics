@@ -19,7 +19,14 @@ export const useItem = defineStore('item', {
             await addItem(info);
         },
         async GET_NOTE() {
-            const { data } = await getNote();
+            const params = {
+                // q: this.keyword,
+                _sort: 'id',
+                _order: 'desc',
+                // _limit: this.limit,
+                // _page: this.currentPage,
+            };
+            const { data } = await getNote(params);
             this.notes = data;
         },
         async REMOVE_NOTE(id: number) {
