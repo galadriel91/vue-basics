@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <NoteHeader />
+        <NoteSearch />
         <RouterView />
         <NoteLoading />
     </div>
@@ -9,6 +10,7 @@
 <script setup lang="ts">
 import NoteHeader from './components/common/NoteHeader.vue';
 import NoteLoading from './components/common/NoteLoading.vue';
+import NoteSearch from './components/common/NoteSearch.vue';
 </script>
 
 <style lang="scss">
