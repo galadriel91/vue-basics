@@ -24,14 +24,18 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
+import { useItem } from '@/store/itemStore';
+
 const item = useItem();
+
 const { totalItems, limit, currentPage } = storeToRefs(item);
 const { CHANGE_PAGE } = item;
+
 const pages = computed(() => {
     return Math.ceil(parseInt(totalItems.value) / limit.value);
 });
+
 const onChangePage = (page: number) => {
     CHANGE_PAGE(page);
 };

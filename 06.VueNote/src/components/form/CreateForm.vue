@@ -29,47 +29,41 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+<script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
 
-export default defineComponent({
-    setup() {
-        const router = useRouter();
-        const item = useItem();
-        const { ADD_NOTE } = item;
-        const title = ref('');
-        const content = ref('');
-        const titleInput = ref<HTMLInputElement | null>(null);
-        const onSubmitForm = async () => {
-            if (title.value.length && content.value.length) {
-                await ADD_NOTE({
-                    id: Date.now(),
-                    title: title.value,
-                    content: content.value,
-                    date: new Date(),
-                    update: false,
-                });
-                onClickMain();
-            } else {
-                alert('다시 한번 확인해 주세요');
-            }
-        };
-        const onClickMain = () => {
-            router.push('/');
-        };
-        onMounted(() => {
-            titleInput.value?.focus();
+const item = useItem();
+const router = useRouter();
+
+const title = ref('');
+const content = ref('');
+const titleInput = ref<HTMLInputElement | null>(null);
+
+const { ADD_NOTE } = item;
+
+const onSubmitForm = async () => {
+    if (title.value.length && content.value.length) {
+        await ADD_NOTE({
+            id: Date.now(),
+            title: title.value,
+            content: content.value,
+            date: new Date(),
+            update: false,
         });
-        return {
-            title,
-            titleInput,
-            content,
-            onSubmitForm,
-            onClickMain,
-        };
-    },
+        onClickMain();
+    } else {
+        alert('다시 한번 확인해 주세요');
+    }
+};
+
+const onClickMain = () => {
+    router.push('/');
+};
+
+onMounted(() => {
+    titleInput.value?.focus();
 });
 </script>
 

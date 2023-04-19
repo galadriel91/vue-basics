@@ -25,8 +25,8 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import { useDate } from '@/composables/useDate';
 import type { NoteItems } from '@/store/types';
+import { useDate } from '@/composables/useDate';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
 
@@ -38,14 +38,18 @@ const props = defineProps({
 });
 const router = useRouter();
 const item = useItem();
-const { REMOVE_NOTE } = item;
 const DATE = useDate(props.item.date);
+
+const { REMOVE_NOTE } = item;
+
 const onClickMain = () => {
     router.go(-1);
 };
+
 const onClickEdit = () => {
     router.push(`/edit/${props.item.id}`);
 };
+
 const onClickRemove = async () => {
     const result = confirm('노트를 삭제하시겠습니까?');
     if (result) {

@@ -18,12 +18,14 @@ import { useLoading } from '@/composables/useLoading';
 import NoteItem from '@/components/note/NoteItem.vue';
 import NotePagination from '@/components/note/NotePagination.vue';
 
+const router = useRouter();
 const item = useItem();
 const { notes, totalItems } = storeToRefs(item);
-const router = useRouter();
+
 const onClickCreate = () => {
     router.push('/create');
 };
+
 useLoading();
 </script>
 

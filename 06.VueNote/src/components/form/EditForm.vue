@@ -36,8 +36,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, type PropType } from 'vue';
 import type { NoteItems } from '@/store/types';
+import { ref, onMounted, type PropType } from 'vue';
 import { useDate } from '@/composables/useDate';
 import { useItem } from '@/store/itemStore';
 import { useRouter } from 'vue-router';
@@ -48,16 +48,21 @@ const props = defineProps({
         required: true,
     },
 });
+
 const router = useRouter();
 const item = useItem();
-const { UPDATE_NOTE } = item;
+const DATE = useDate(props.item.date);
+
 const title = ref('');
 const content = ref('');
 const titleInput = ref<HTMLInputElement | null>(null);
-const DATE = useDate(props.item.date);
+
+const { UPDATE_NOTE } = item;
+
 const onClickBefore = () => {
     router.go(-1);
 };
+
 const onSubmitForm = async () => {
     if (title.value.length && content.value.length) {
         await UPDATE_NOTE({
@@ -73,6 +78,7 @@ const onSubmitForm = async () => {
         titleInput.value?.focus();
     }
 };
+
 onMounted(() => {
     titleInput.value?.focus();
 });

@@ -15,10 +15,14 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useItem } from '@/store/itemStore';
+
 const router = useRouter();
 const item = useItem();
-const { CHANGE_PAGE } = item;
+
 const searchValue = ref('');
+
+const { CHANGE_PAGE } = item;
+
 const onSubmitForm = () => {
     if (searchValue.value.length) {
         CHANGE_PAGE(1);

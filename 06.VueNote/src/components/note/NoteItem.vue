@@ -37,16 +37,21 @@ const props = defineProps({
         required: true,
     },
 });
+
 const router = useRouter();
 const item = useItem();
-const { REMOVE_NOTE, GET_NOTE } = item;
 const DATE = useDate(props.item.date);
+
+const { REMOVE_NOTE, GET_NOTE } = item;
+
 const onClickItemPage = () => {
     router.push(`/note/${props.item.id}`);
 };
+
 const onClickEditPage = () => {
     router.push(`/edit/${props.item.id}`);
 };
+
 const onClickRemove = async () => {
     await REMOVE_NOTE(props.item.id);
     GET_NOTE();

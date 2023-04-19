@@ -16,16 +16,17 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useHeader } from '@/composables/useHeader';
+import { storeToRefs } from 'pinia';
 import { useRouter, useRoute } from 'vue-router';
 import { useItem } from '@/store/itemStore';
-import { storeToRefs } from 'pinia';
+import { useHeader } from '@/composables/useHeader';
 
 const router = useRouter();
 const route = useRoute();
 const item = useItem();
-const { notes } = storeToRefs(item);
 const headerName = ref(useHeader());
+
+const { notes } = storeToRefs(item);
 
 const showBtns = computed(() => {
     // 생성 페이지가 아니어야함

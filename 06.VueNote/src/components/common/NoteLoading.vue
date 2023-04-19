@@ -7,7 +7,9 @@
 <script setup lang="ts">
 import { useCommon } from '@/store/commonStore';
 import { storeToRefs } from 'pinia';
+
 const common = useCommon();
+
 const { loading } = storeToRefs(common);
 </script>
 
