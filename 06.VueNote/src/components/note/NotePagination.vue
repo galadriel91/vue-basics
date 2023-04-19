@@ -22,30 +22,19 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
-
-export default defineComponent({
-    setup() {
-        const item = useItem();
-        const { totalItems, limit, currentPage } = storeToRefs(item);
-        const { CHANGE_PAGE } = item;
-        const pages = computed(() => {
-            return Math.ceil(parseInt(totalItems.value) / limit.value);
-        });
-        const onChangePage = (page: number) => {
-            CHANGE_PAGE(page);
-        };
-
-        return {
-            currentPage,
-            pages,
-            onChangePage,
-        };
-    },
+const item = useItem();
+const { totalItems, limit, currentPage } = storeToRefs(item);
+const { CHANGE_PAGE } = item;
+const pages = computed(() => {
+    return Math.ceil(parseInt(totalItems.value) / limit.value);
 });
+const onChangePage = (page: number) => {
+    CHANGE_PAGE(page);
+};
 </script>
 
 <style lang="scss" scoped>

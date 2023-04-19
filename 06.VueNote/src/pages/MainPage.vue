@@ -6,6 +6,7 @@
         <div class="btnWrap" v-else>
             <button class="xi-plus" @click="onClickCreate"></button>
         </div>
+        <NotePagination />
     </div>
 </template>
 
@@ -15,6 +16,7 @@ import { useItem } from '@/store/itemStore';
 import { storeToRefs } from 'pinia';
 import { useLoading } from '@/composables/useLoading';
 import NoteItem from '@/components/note/NoteItem.vue';
+import NotePagination from '@/components/note/NotePagination.vue';
 
 const item = useItem();
 const { notes } = storeToRefs(item);

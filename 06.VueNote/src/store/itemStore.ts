@@ -13,6 +13,9 @@ export const useItem = defineStore('item', {
         notes: [] as NoteItems[],
         edit: {} as NoteItems,
         post: {} as NoteItems,
+        totalItems: '',
+        currentPage: 1,
+        limit: 3,
     }),
     actions: {
         async ADD_NOTE(info: NoteItems) {
@@ -23,11 +26,12 @@ export const useItem = defineStore('item', {
                 // q: this.keyword,
                 _sort: 'id',
                 _order: 'desc',
-                // _limit: this.limit,
-                // _page: this.currentPage,
+                _limit: this.limit,
+                _page: this.currentPage,
             };
-            const { data } = await getNote(params);
-            this.notes = data;
+            const response = await getNote(params);
+            this.notes = response.data;
+            this.totalItems = response.headers['x-total-count'];
         },
         async REMOVE_NOTE(id: number) {
             await removeItem(id);
@@ -42,6 +46,9 @@ export const useItem = defineStore('item', {
             } else {
                 this.post = data;
             }
+        },
+        CHANGE_PAGE(page: number) {
+            this.currentPage = page;
         },
     },
 });
