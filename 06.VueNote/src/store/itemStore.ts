@@ -16,6 +16,7 @@ export const useItem = defineStore('item', {
         totalItems: '',
         currentPage: 1,
         limit: 3,
+        keyword: '',
     }),
     actions: {
         async ADD_NOTE(info: NoteItems) {
@@ -23,7 +24,7 @@ export const useItem = defineStore('item', {
         },
         async GET_NOTE() {
             const params = {
-                // q: this.keyword,
+                q: this.keyword,
                 _sort: 'id',
                 _order: 'desc',
                 _limit: this.limit,
@@ -49,6 +50,9 @@ export const useItem = defineStore('item', {
         },
         CHANGE_PAGE(page: number) {
             this.currentPage = page;
+        },
+        SET_KEYWORD(keyowrd: string) {
+            this.keyword = keyowrd;
         },
     },
 });

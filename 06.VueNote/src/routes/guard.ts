@@ -2,12 +2,13 @@ import { useItem } from '@/store/itemStore';
 import { useCommon } from '@/store/commonStore';
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
 
-const getItem = () => async () => {
+const getItem = () => async (to: RouteLocationNormalizedLoaded) => {
     const item = useItem();
     const common = useCommon();
 
     const { ON_LOADING } = common;
-    const { GET_NOTE } = item;
+    const { GET_NOTE, SET_KEYWORD } = item;
+    SET_KEYWORD(to.params.keyword as string);
     ON_LOADING();
     await GET_NOTE();
 };

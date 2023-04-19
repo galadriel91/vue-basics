@@ -13,10 +13,10 @@
     </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import NotePagination from '@/components/note/NotePagination.vue';
 import NoteItem from '@/components/note/NoteItem.vue';
-import { defineComponent, onBeforeUnmount } from 'vue';
+import { onBeforeUnmount } from 'vue';
 import { useLoading } from '@/composables/useLoading';
 import { useCommon } from '@/store/commonStore';
 import { useItem } from '@/store/itemStore';
@@ -25,35 +25,22 @@ import {
     onBeforeRouteUpdate,
     type RouteLocationNormalizedLoaded,
 } from 'vue-router';
+const common = useCommon();
+const item = useItem();
+const { notes, totalItems } = storeToRefs(item);
+const { GET_NOTE, SET_KEYWORD } = item;
+const { ON_LOADING, OFF_LOADING } = common;
+useLoading();
 
-export default defineComponent({
-    components: {
-        NoteItem,
-        NotePagination,
-    },
-    setup() {
-        const common = useCommon();
-        const item = useItem();
-        const { notes, totalItems } = storeToRefs(item);
-        const { GET_NOTE, SET_KEYWORD } = item;
-        const { ON_LOADING } = common;
-        useLoading();
+onBeforeRouteUpdate(async (to: RouteLocationNormalizedLoaded) => {
+    ON_LOADING();
+    SET_KEYWORD(to.params.keyword as string);
+    await GET_NOTE();
+    OFF_LOADING();
+});
 
-        onBeforeRouteUpdate(async (to: RouteLocationNormalizedLoaded) => {
-            ON_LOADING();
-            SET_KEYWORD(to.params.keyword as string);
-            await GET_NOTE();
-        });
-
-        onBeforeUnmount(() => {
-            SET_KEYWORD('');
-        });
-
-        return {
-            notes,
-            totalItems,
-        };
-    },
+onBeforeUnmount(() => {
+    SET_KEYWORD('');
 });
 </script>
 

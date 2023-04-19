@@ -40,5 +40,11 @@ export const router = createRouter({
             meta: { title: 'Note' },
             beforeEnter: getDetail(),
         },
+        {
+            path: '/search/:keyword',
+            component: () => import('@/pages/SearchPage.vue'),
+            meta: { title: 'Search' },
+            beforeEnter: getItem(),
+        },
     ],
 });
