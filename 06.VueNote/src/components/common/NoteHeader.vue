@@ -29,12 +29,12 @@ const headerName = ref(useHeader());
 
 const showBtns = computed(() => {
     // 생성 페이지가 아니어야함
-    const name = route.name;
-    return name !== 'create' && notes.value.length > 0;
+    const name = route.meta.title;
+    return name !== 'Create' && notes.value.length > 0;
 });
 
 const search = computed(() => {
-    return route.name === 'search';
+    return route.meta.title === 'Search';
 });
 
 const onClickCreate = () => {
