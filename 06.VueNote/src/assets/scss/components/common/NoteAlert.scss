@@ -1,7 +1,9 @@
 div{
-    position: fixed; top: 1rem; right: 1rem; padding: 1rem;
-    background: #777; border-radius: .5rem;
-    color: #fff; font-size: 1.4rem;
+    position: fixed; top: 1rem; right: 1rem;
+    padding: 1rem;
+    background: #777; 
+    border-radius: .5rem;
+    font-size: 1.4rem; color: #fff; 
     &.success{
         background: #42b883;
     }

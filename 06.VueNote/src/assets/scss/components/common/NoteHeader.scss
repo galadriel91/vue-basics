@@ -1,16 +1,18 @@
 header{
-    display: flex; justify-content: space-between;
-    text-align: center;
     padding: 2.5rem 0;
+    display: flex; justify-content: space-between;
     height: 3rem; 
+    text-align: center;
     h1{
         margin: 0 auto;
-        font-size: 2.5rem; font-weight: normal; color: #000;
         line-height: 3rem;
+        font-size: 2.5rem; font-weight: normal; color: #000;
     }
     button{
-        color: #000; font-size: 2rem; background: none;
-        line-height: 3rem; cursor: pointer; transition: all .5s;
+        background: none;
+        line-height: 3rem; 
+        font-size: 2rem; color: #000; 
+        cursor: pointer; transition: all .5s;
         &:hover{
             color: #42b883;
         }
